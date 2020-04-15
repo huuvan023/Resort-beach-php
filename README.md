@@ -10,7 +10,7 @@ Danh sách thành viên:
     
     3.Nguyễn Duy Trường - 44.01.104.239
     
-    4.Phan Thụ Huyền Trân - 44.01.104.230
+    4.Phan Thị Huyền Trân - 44.01.104.230
     
     5.Lê Minh Trung - 44.01.104.233
 

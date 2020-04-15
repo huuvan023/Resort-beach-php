@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: Verdana,Geneva,Tahoma,sans-serif;
+    line-height: 1.4;
+    background-color: white;
+    color: black;
+    width: 100%;
+}
+
+/*Phần header*/
+.wrap-header {
+
+}
+
+
+
+
+/*Phần body*/
+.wrap{
+
+}
+
+/*Section 1 - room - type */
+.room-type{
+
+}
+
+/*Section 2 - service */
+.service{
+
+}
+
+/*Section 3 - gallery-newroom */
+.gallery-newroom{
+
+}
+
+/*Section 4 - video-preview */
+.video-preview{
+
+}
+
+
+
+
+/*Phần footer */
+.wrap-footer{
+
+}

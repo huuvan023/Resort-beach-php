@@ -7,7 +7,7 @@ Danh sách thành viên:
     1.Ngô Hữu Văn - 44.01.104.242 
     2.Trần Văn Việt - 44.01.104.244  
     3.Nguyễn Duy Trường - 44.01.104.239    
-    4.Phan Thụ Huyền Trân - 44.01.104.230
+    4.Phan Thị Huyền Trân - 44.01.104.230
     5.Lê Minh Trung - 44.01.104.233
 
 Trang web tham khảo: 

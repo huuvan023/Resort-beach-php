@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-Project Resort Beach
-=======
 Đồ  án web 2020
 
 Đề tài: Resort Beach
@@ -18,4 +15,3 @@ Trang web tham khảo:
     1.http://hoangngoc-resort.com/en/
     2.https://react-beach-resort-recording-youtube.netlify.com/
     2.https://react-beach-resort-recording-youtube.netlify.com/
->>>>>>> eee9afdf37d324a620c00ab15b3316f3df52fb07

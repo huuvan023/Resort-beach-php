@@ -1,3 +1,14 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: Verdana,Geneva,Tahoma,sans-serif;
+    line-height: 1.4;
+    background-color: white;
+    color: black;
+    width: 100%;
+    font-size: 15px;
+}
 /*Phần header*/
 
 header {
@@ -81,4 +92,228 @@ header {
     .nav-body li #icon2{
         display: none;
     }
+}
+
+
+
+.wrap {
+    padding-top: 10px;
+}
+/*Section Wrapbanner*/
+
+.wrap-banner {
+    background: url('./../../Assets/bg1.jpg') 50%/cover no-repeat;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    margin: 0;
+}
+.wrap-banner .overlay {
+    z-index: 1;
+    position: absolute;
+    background-color: rgba(0,0,0,.5);
+    max-width: 70%;
+    padding: 32px 96px;
+    text-align: center;
+}
+.overlay .overlay-header {
+    font-weight: 800;
+    font-size: 5vw;
+    color: #FFFFFF;
+    letter-spacing: 3px;
+    margin: 0 0 20px;
+}
+.overlay .overlay-button {
+    padding: 10px 0;
+}
+.overlay .overlay-button a {
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 7px 15px;
+    background-color: #af9a7d;
+    text-transform: uppercase;
+    transition: 0.5s;
+    border: 3px solid #af9a7d;
+    color: black;
+}
+.overlay .overlay-button a:hover {
+    background-color: #af9a7d2f;
+    color: #af9a7d;
+    text-decoration: none;
+}
+.line {
+    height: 7px;
+    width: 30%;
+    background-color: #af9a7d;
+    margin: 20px auto;
+}
+
+
+
+/* Section search-room*/
+
+.search-room {
+    margin: 5rem 0;
+}
+.search-room h1{
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 4rem;
+    padding: 10px 20px;
+    margin: 0;
+}
+.search-room .search-room-header {
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+}
+.search-room-body {
+    margin: 4rem auto;
+    font-size: 15px;
+    width: 90%;
+}
+.search-room-body input,select {
+    margin: 2rem 0;
+    background-color: white;
+    width: 100%;
+}
+.search-room-body select:focus {
+    background-color: #cfcfcf;
+}
+.frm-group label {
+    display: block;
+    letter-spacing: 2px;
+    margin-bottom: .5rem;
+}
+#labelPrice {
+    color: green;
+    font-weight: 700;
+}
+.search-room-body  button {
+    border: 2px solid #af9a7d;
+    padding: 5px 10px;
+    transition: 0.5s;
+    background-color: #af9a7d;
+}
+.search-room-body  button:hover {
+    border: 2px solid #af9a7d;
+    padding: 5px 10px;
+    color: #af9a7d;
+    background-color: #af9a7d1f;
+}
+
+
+
+
+/*Section room-list-card*/
+.room-list {
+    text-align: center;
+    margin: 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.room-list .room-list-header {
+    width: 40%;
+}
+.room-list .room-list-header h1{
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 4rem;
+    padding: 10px 20px;
+    margin: 0;
+}
+.room-list .room-list-card {
+    box-shadow: 2px 5px 3px 0 rgba(0,0,0,.5);
+    transition: 0.5s;
+}
+.room-list .room-list-card:hover {
+    box-shadow: 4px 6px 4px 1px rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, 0.363);
+}
+.room-list-card:hover .room-list-price-top{
+    display: none;
+}
+.room-list-card-body{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    
+}
+.room-list-body img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: -1;
+}
+.room-list-body .room-list-price-top {
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: white;
+    display: block;
+    padding: 0 8px 0 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.room-list-body .room-list-price-top h6{
+    font-size: 12px;
+    padding: 8px 8px 0 8px;
+}
+.room-list-body .room-list-price-top p{
+    font-size: 10px;
+}
+.room-list-body .room-list-overlay {
+    position: absolute;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+    display: none;
+}
+.room-list-body .room-list-overlay a{
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 4px 12px;
+    background-color: #af9a7d;
+    text-transform: uppercase;
+    transition: 0.5s;
+    border: 3px solid #af9a7d;
+    color: black;
+    transition: 0.5s;
+}
+.room-list-card:hover .room-list-overlay{
+    display: block;
+}
+.room-list-body .room-list-overlay a:hover{
+    text-decoration: none;
+    background-color: #af9a7d93;
+}
+.room-list .room-list-foot {
+    padding: 7px 5px;
+    background-color: #cfcfcf;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+
+/*Footer*/
+.wrap-footer{
+    padding: 5rem 15rem;
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: auto;
+    text-align: center;
+    line-height: 40px;
+}
+.wrap-footer h3 {
+    font-size: 3rem;
+}
+.wrap-footer i {
+    font-size: 3rem;
+    margin: 5px;
+    cursor: pointer;
 }

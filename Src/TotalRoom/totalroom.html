@@ -31,5 +31,249 @@
                 </div>
             </div>
         </header>
+
+        <div class="wrap">
+
+            <section class="wrap-banner row">
+                <div class="overlay">
+                    <h1 class="overlay-header">
+                        Phòng                    </h1>
+                    <div class="line"></div>
+                    <div class="overlay-button">
+                        <a href="./../Index/index.html">Trang chủ</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="search-room row">
+                <div class="search-room-header">
+                    <h1>Tìm phòng</h1>
+                    <div class="line"></div>
+                </div>
+                
+                <div class="search-room-body">
+                    <form>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="frm-group">
+                                <label for = "name">Tìm theo tên: </label>
+                                <input name = "name" type="text">
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="frm-group">
+                                <label for = "type">Tìm theo loại: </label>
+                                <select>
+                                    <option>Tất cả</option>
+                                    <option>Phòng V.I.P</option>
+                                    <option>Phòng gia đình</option>
+                                    <option>Phòng đơn</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="frm-group">
+                                <label for = "name">Tìm theo giá: <span id="labelPrice"></span></label>
+                                <input id="inputPrice" name = "price" value="0" type="range" max="2000" min="100">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="frm-group">
+                                <label for = "rating">Tìm theo xếp hạng: </label>
+                                <select>
+                                    <option>Tất cả</option>
+                                    <option>1 sao</option>
+                                    <option>2 sao</option>
+                                    <option>3 sao</option>
+                                    <option>4 sao</option>
+                                    <option>5 sao</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div style="display: flex;justify-content: center;align-items: center;" 
+                        class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-5 mb-2"> 
+                            <button type="submit" name ="submit">Tìm kiếm</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            
+            <section class="room-list row">
+                
+                <div class="room-list-header">
+                    <h1>Tất cả phòng</h1>
+                    <div class="line"></div>
+                </div>
+                <div class="room-list-body">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="room-list-card">
+                            <div class="room-list-card-body">
+                                <img src="./../../Assets/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                                <div class="room-list-price-top">
+                                    <h6>$500</h6>
+                                    <p>mỗi đêm</p>
+                                </div>
+                                <div class="room-list-overlay">
+                                    <a href="#" >Xem chi tiết</a>
+                                </div>
+                            </div>
+                            <div class="room-list-foot">
+                                Triple Basic
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="room-list-card">
+                            <div class="room-list-card-body">
+                                <img src="./../../Assets/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                                <div class="room-list-price-top">
+                                    <h6>$500</h6>
+                                    <p>mỗi đêm</p>
+                                </div>
+                                <div class="room-list-overlay">
+                                    <a href="#" >Xem chi tiết</a>
+                                </div>
+                            </div>
+                            <div class="room-list-foot">
+                                Triple Basic
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="room-list-card">
+                            <div class="room-list-card-body">
+                                <img src="./../../Assets/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                                <div class="room-list-price-top">
+                                    <h6>$500</h6>
+                                    <p>mỗi đêm</p>
+                                </div>
+                                <div class="room-list-overlay">
+                                    <a href="#" >Xem chi tiết</a>
+                                </div>
+                            </div>
+                            <div class="room-list-foot">
+                                Triple Basic
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="room-list-card">
+                            <div class="room-list-card-body">
+                                <img src="./../../Assets/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                                <div class="room-list-price-top">
+                                    <h6>$500</h6>
+                                    <p>mỗi đêm</p>
+                                </div>
+                                <div class="room-list-overlay">
+                                    <a href="#" >Xem chi tiết</a>
+                                </div>
+                            </div>
+                            <div class="room-list-foot">
+                                Triple Basic
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="room-list-card">
+                            <div class="room-list-card-body">
+                                <img src="./../../Assets/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                                <div class="room-list-price-top">
+                                    <h6>$500</h6>
+                                    <p>mỗi đêm</p>
+                                </div>
+                                <div class="room-list-overlay">
+                                    <a href="#" >Xem chi tiết</a>
+                                </div>
+                            </div>
+                            <div class="room-list-foot">
+                                Triple Basic
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="room-list-card">
+                            <div class="room-list-card-body">
+                                <img src="./../../Assets/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                                <div class="room-list-price-top">
+                                    <h6>$500</h6>
+                                    <p>mỗi đêm</p>
+                                </div>
+                                <div class="room-list-overlay">
+                                    <a href="#" >Xem chi tiết</a>
+                                </div>
+                            </div>
+                            <div class="room-list-foot">
+                                Triple Basic
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="room-list-card">
+                            <div class="room-list-card-body">
+                                <img src="./../../Assets/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                                <div class="room-list-price-top">
+                                    <h6>$500</h6>
+                                    <p>mỗi đêm</p>
+                                </div>
+                                <div class="room-list-overlay">
+                                    <a href="#" >Xem chi tiết</a>
+                                </div>
+                            </div>
+                            <div class="room-list-foot">
+                                Triple Basic
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+                </div>
+            </section>
+        </div>
+        <footer class="wrap-footer">
+            <!--Phần footer     Trân làm-->
+            <!--Không cần làm giống 100%,bỏ cái logo instagram rồi bỏ cái hình fanpage cũng được-->
+            <!--Mấy cái icon ở dưới chỗ  book now là dùng icon awesome-->
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <h3>Hỗ trợ khách hàng</h3>
+                    <p>Hotline: 0372746758</p>
+                    <p>Các câu hỏi thường gặp</p>
+                    <p>Hướng dẫn thuê phòng</p>
+                </div>
+                
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <h3>Về Resort Beach</h3>
+                    <p>Giới thiệu</p>
+                    <p>Chính sách bảo mật và thanh toán</p>
+                    <p>Chính sách bảo mật thông tin cá nhân</p>
+                    <p>Điều khoản sử dụng</p>
+                </div>
+                
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <h3>Liên kết mạng xã hội</h3>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                </div>
+            </div>
+            <div class="row mt-5">Copyright @2020</div>
+        </footer>
+    <script>
+        $(document).ready(function(){
+            $("#labelPrice").text( "$" + $("#inputPrice").val() );
+            $("#inputPrice").change(function(){
+                $("#labelPrice").text( "$" + $("#inputPrice").val() );
+            });
+        });
+    </script>
     </body>
 </html>

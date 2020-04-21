@@ -14,4 +14,4 @@ Trang web tham khảo:
 
     1.http://hoangngoc-resort.com/en/
     2.https://react-beach-resort-recording-youtube.netlify.com/
-    2.https://react-beach-resort-recording-youtube.netlify.com/
+    3.https://www.fivestaralliance.com/

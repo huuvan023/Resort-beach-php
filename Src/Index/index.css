@@ -129,13 +129,13 @@ header {
 }
 .overlay .overlay-header {
     font-weight: 800;
-    font-size: 64px;
+    font-size: 5vw;
     color: #FFFFFF;
     letter-spacing: 3px;
     margin: 0 0 32px;
 }
 .overlay .overlay-content {
-    font-size: 20px;
+    font-size: 1.5vw;
     letter-spacing: 1.5px;
     color: white;
     padding-bottom: 20px;
@@ -143,18 +143,20 @@ header {
 .overlay .overlay-button {
     padding: 10px 0;
 }
-.overlay .overlay-button button {
-    font-size: 14px;
+.overlay .overlay-button a {
+    font-size: 2vw;
     text-align: center;
     padding: 7px 15px;
     background-color: #af9a7d;
     text-transform: uppercase;
     transition: 0.5s;
     border: 3px solid #af9a7d;
+    color: black;
 }
-.overlay .overlay-button button:hover {
+.overlay .overlay-button a:hover {
     background-color: #af9a7d2f;
     color: #af9a7d;
+    text-decoration: none;
 }
 .line {
     height: 7px;

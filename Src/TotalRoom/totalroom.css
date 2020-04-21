@@ -207,6 +207,40 @@ header {
 
 
 
+
+
+
+
+
+/*Room-sort*/
+.room-sort{
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 0;
+}
+.room-sort .room-sort-body{
+    border-bottom: 2px solid #af9a7d;
+    padding-bottom: 1vw;
+}
+.room-sort .room-sort-body h4{
+    font-size: 14px;
+    margin: 0;
+}
+.room-sort .room-sort-body span{
+    font-size: 17px;
+    text-transform: uppercase;
+    margin: 5px;
+    color: rgb(119, 118, 118);
+}
+@media screen and (max-width :1300px ){
+    .room-sort .room-sort-body span{
+        font-size: 12px;
+    }
+}
+
+
+
 /*Section room-list-card*/
 .room-list {
     text-align: center;

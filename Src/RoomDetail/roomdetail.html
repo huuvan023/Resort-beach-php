@@ -14,6 +14,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" type="text/css" href="./../slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="./../slick/slick-theme.css"/>
         <link rel="stylesheet" type="text/css" href="roomdetail.css">
     </head>
     <body>
@@ -27,7 +29,7 @@
                     <li><a href="./totalroom.html">Phòng</a> <i class="fas fa-door-open" id="icon3"></i></li>
                 </ul>
                 <div class="login-btn">
-                    <button> Đăng Nhập</button>
+                    <a href="./../Form/LogIn/login.html"> Đăng Nhập</a>
                 </div>
             </div>
         </header>
@@ -77,7 +79,72 @@
                 </div>
             </section>
        
-                <!--Sẽ bổ sung sau-->
+            <section class="room-other">
+                <h1>Phòng khác</h1>
+                <div class="line"></div>
+                <div class="slick">
+                    <div class="slick-card col-xs-11 col-sm-11 col-md-11 col-lg-11 p-2 row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 card-item">  
+                            <img src="./../../Assets/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-4">
+                            <h2>Ocean View Suite</h2>
+                            <p>Loại phòng: <span>Phòng đơn</span></p>
+                            <p>Giá phòng: <span>$500</span></p>
+                            <a href="#">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    <div class="slick-card col-xs-11 col-sm-11 col-md-11 col-lg-11 p-2 row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 card-item">  
+                            <img src="./../../Assets/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-4">
+                            <h2>Ocean View Suite</h2>
+                            <p>Loại phòng: <span>Phòng đơn</span></p>
+                            <p>Giá phòng: <span>$500</span></p>
+                            <a href="#">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    <div class="slick-card col-xs-11 col-sm-11 col-md-11 col-lg-11 p-2 row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 card-item">  
+                            <img src="./../../Assets/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-4">
+                            <h2>Ocean View Suite</h2>
+                            <p>Loại phòng: <span>Phòng đơn</span></p>
+                            <p>Giá phòng: <span>$500</span></p>
+                            <a href="#">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    <div class="slick-card col-xs-11 col-sm-11 col-md-11 col-lg-11 p-2 row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 card-item">  
+                            <img src="./../../Assets/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-4">
+                            <h2>Ocean View Suite</h2>
+                            <p>Loại phòng: <span>Phòng đơn</span></p>
+                            <p>Giá phòng: <span>$500</span></p>
+                            <a href="#">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    <div class="slick-card col-xs-11 col-sm-11 col-md-11 col-lg-11 p-2 row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 card-item">  
+                            <img src="./../../Assets/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-4">
+                            <h2>Ocean View Suite</h2>
+                            <p>Loại phòng: <span>Phòng đơn</span></p>
+                            <p>Giá phòng: <span>$500</span></p>
+                            <a href="#">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </>
+            </section>
         </div>
         <footer class="wrap-footer">
             <!--Phần footer     Trân làm-->
@@ -111,11 +178,14 @@
         </footer>
     <script>
         $(document).ready(function(){
-            $("#labelPrice").text( "$" + $("#inputPrice").val() );
-            $("#inputPrice").change(function(){
-                $("#labelPrice").text( "$" + $("#inputPrice").val() );
+            $('.slick').slick({
+                    infinite: false,
+                    slidesToShow: 3,
+                    slidesToScroll: 1
             });
         });
     </script>
+    <script type="text/javascript" src="./../slick/slick.min.js"></script>
+    <script type="text/javascript" src="./../slick/slick.js"></script>
     </body>
 </html>

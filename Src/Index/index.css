@@ -57,7 +57,7 @@ header {
     margin-left: auto ;
      
 }
-.login-btn button {
+.login-btn a {
     border: 2px solid #af9a7d;
     background-color: white ;
     font-size: 14px;
@@ -67,9 +67,10 @@ header {
     color: black;
     transition: 0.5s;
 }
-.login-btn button:hover {
+.login-btn a:hover {
     background-color: #af9a7d;
     color: white;
+    text-decoration: none;
 }
 @media screen and (max-width: 960px){
 .nav-body li a {

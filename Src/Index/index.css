@@ -21,6 +21,7 @@ header {
     top: 0;
     background-color: white;
     z-index: 5;
+    box-shadow: 0px 6px 4px 0px rgba(0, 0, 0, 0.281);
 }
 .nav-center{
     padding-top: 5px;

@@ -16,8 +16,9 @@
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="stylesheet" type="text/css" href="totalroom.css">
     </head>
-    <body>
-        <header>
+    <body onload="loadFunction()">
+        <div id="loading"></div>
+        <header class="navigation-bar">
             <div class="nav-center">
                 <div class="nav-logo">
                     <a href="./../Index/index.html" class="logo"><img src="./../../Assets/logo.svg"></a>
@@ -305,7 +306,14 @@
             <div class="row mt-5">Copyright @2020</div>
         </footer>
     <script>
+        var preloader = document.getElementById("loading");
+        function loadFunction(){
+            preloader.style.display = 'none';
+        };
         $(document).ready(function(){
+            $(window).scroll( function(){
+                $('header').toggleClass('navigation-bar-scrolled', $(this).scrollTop() > $('.wrap-banner').height() )
+            });
             $("#labelPrice").text( "$" + $("#inputPrice").val() );
             $("#inputPrice").change(function(){
                 $("#labelPrice").text( "$" + $("#inputPrice").val() );

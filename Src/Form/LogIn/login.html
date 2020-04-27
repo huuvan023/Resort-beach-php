@@ -18,7 +18,8 @@
         <link rel="stylesheet" type="text/css" href="./../slick/slick-theme.css"/>
         <link rel="stylesheet" type="text/css" href="login.css">
     </head>
-    <body>
+    <body onload="loadFunction()">
+        <div id="loading"></div>
         <header>
             <div class="nav-center">
                 <div class="nav-logo">
@@ -113,5 +114,11 @@
             </div>
             <div class="row mt-5">Copyright @2020</div>
         </footer>
+        <script>
+            var preloader = document.getElementById("loading");
+            function loadFunction(){
+			    preloader.style.display = 'none';
+		    };
+        </script>
     </body>
 </html>

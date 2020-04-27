@@ -18,15 +18,16 @@
         <link rel="stylesheet" type="text/css" href="./../slick/slick-theme.css"/>
         <link rel="stylesheet" type="text/css" href="roomdetail.css">
     </head>
-    <body>
-        <header>
+    <body onload="loadFunction()">
+        <div id="loading"></div>
+        <header class="navigation-bar">
             <div class="nav-center">
                 <div class="nav-logo">
                     <a href="./../Index/index.html" class="logo"><img src="./../../Assets/logo.svg"></a>
                 </div>
                 <ul class="nav-body">
                     <li><a href="./../Index/index.html">Trang chủ</a> <i class="fas fa-home"></i> </li>
-                    <li><a href="./totalroom.html">Phòng</a> <i class="fas fa-door-open" id="icon3"></i></li>
+                    <li><a href="./../TotalRoom/totalroom.html">Phòng</a> <i class="fas fa-door-open" id="icon3"></i></li>
                 </ul>
                 <div class="login-btn">
                     <a href="./../Form/LogIn/login.html"> Đăng Nhập</a>
@@ -177,7 +178,14 @@
             <div class="row mt-5">Copyright @2020</div>
         </footer>
     <script>
+        var preloader = document.getElementById("loading");
+        function loadFunction(){
+            preloader.style.display = 'none';
+        };
         $(document).ready(function(){
+            $(window).scroll( function(){
+                $('header').toggleClass('navigation-bar-scrolled', $(this).scrollTop() > $('.wrap-banner').height() )
+            });
             $('.slick').slick({
                     infinite: false,
                     slidesToShow: 3,

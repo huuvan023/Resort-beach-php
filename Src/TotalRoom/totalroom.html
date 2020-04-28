@@ -14,6 +14,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="totalroom.css">
     </head>
     <body onload="loadFunction()">
@@ -35,7 +36,7 @@
 
         <div class="wrap">
 
-            <section class="wrap-banner row">
+            <section  class="wrap-banner row">
                 <div class="overlay">
                     <h1 class="overlay-header">
                         Phòng                    </h1>
@@ -46,7 +47,7 @@
                 </div>
             </section>
 
-            <section class="search-room row">
+            <section data-aos="fade-down" class="search-room row">
                 <div class="search-room-header">
                     <h1>Tìm phòng</h1>
                     <div class="line"></div>
@@ -100,7 +101,7 @@
                 </div>
             </section>
             
-            <section class="room-list row">
+            <section data-aos="fade-down" class="room-list row">
                 <div class="room-list-header">
                     <h1>Tất cả phòng</h1>
                     <div class="line"></div>
@@ -305,12 +306,16 @@
             </div>
             <div class="row mt-5">Copyright @2020</div>
         </footer>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         var preloader = document.getElementById("loading");
         function loadFunction(){
             preloader.style.display = 'none';
         };
         $(document).ready(function(){
+            AOS.init({
+            duration: 1200,
+            })
             $(window).scroll( function(){
                 $('header').toggleClass('navigation-bar-scrolled', $(this).scrollTop() > $('.wrap-banner').height() )
             });

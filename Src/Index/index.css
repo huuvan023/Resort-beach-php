@@ -466,18 +466,144 @@ body {
 
 
 
+/*
+Phần Modal
+*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 10;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    background: url('./../../Assets/modalbg.jpg') 50%/cover no-repeat;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.5s
+  }
+  
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  .close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #hot-icon {
+      position: absolute;
+      width: 100px;
+      top: 5%;
+      left: 2%;
+  }
+  .modal-header {
+    padding: 15px;
+    background-color: white;
+    color: black;
+    text-align: center;
 
+  }
+  .modal-header h2{
+      font-weight: 800;
+      padding-left: 30px;
+  }
+  
+  .modal-body {
+      padding: 2px 16px;
+      margin: 15px;
+      text-align: center;
+      color: white;
+  }
 
-
-/*Section 4 - video-preview */
-.video-preview{
-    
-}
+  .modal-body h3 {
+      font-size: 2rem;
+      color: white;
+      font-weight: bold;
+  }
+  .modal-body p {
+      margin: 0;
+  }
+  .modal form {
+      margin-top: 50px;
+  }
+  .modal .frm-gr {
+      margin: 10px;
+  }
+  .frm-gr label {
+      width: 30%;
+      text-align: left;
+  }
+  .frm-gr input,textarea {
+      width: 60%;
+  }
+  .modal form button {
+    color: black;
+    margin-top: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: 0.5s;
+    border: 1.5px solid black;
+  }
+  .modal form button:hover {
+      background-color: transparent;
+      color: white;
+      border: 1.5px solid white;
+  }
 
 
 
 
 /*Phần footer */
+ 
+.toTop-scrolled {
+    position: fixed;
+    right: 30px;
+    font-size: 50px;
+    bottom: 90px;
+    color: rgb(0, 0, 139);
+    border-radius: 60;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.messenger {
+    position: fixed;
+    right: 30px;
+    font-size: 50px;
+    bottom: 20px;
+    color: #0184FF;
+    border-radius: 60;
+    cursor: pointer;
+}
 .wrap-footer{
     padding: 5rem 15rem;
     width: 100%;

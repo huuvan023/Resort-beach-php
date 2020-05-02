@@ -150,7 +150,6 @@ body {
 }
 .wrap .user-info img{
   width: 60%;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
 .user-info .info{
   margin: 3rem 5rem;

@@ -15,101 +15,115 @@ body {
 	width: 100%;
 	height: 100vh;
 	background: #fff
-	url('./../../Assets/loading.gif')
+	url('./../../../Assets/loading.gif')
 	 no-repeat center center;	
 	z-index: 99999;
 }
 
 header {
-    text-align: center;
-    font-size: 18px;
-    padding: 15px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 5;
+  text-align: center;
+  font-size: 18px;
+  padding: 15px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.281);
+  background-color: white;
+  z-index: 5;
 }
 .nav-center{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 100%;
-    display: flex;
-    align-items: center;
+padding-top: 5px;
+padding-bottom: 5px;
+width: 100%;
+display: flex;
+align-items: center;
+}
+.nav-center .nav-logo {
+max-width: 30%;
+}
+.nav-center .nav-logo img {
+max-width: 100%;
 }
 .nav-body {
-    list-style-type: none;
-    margin: 0 0 0 70px;
-    padding: 0;
-    letter-spacing: 1.5px;
+list-style-type: none;
+margin: 0 0 0 70px;
+padding: 0;
+letter-spacing: 1.5px;
 }
 .nav-body li {
-    display: inline;
-    padding: 0 10px;
-    font-weight: 600;
+display: inline;
+padding: 0 10px;
+font-weight: 600;
 }
 .nav-body li a {
-    color: black;
-    transition: 0.5s;
+color: black;
+transition: 0.5s;
 }
 .nav-body li a:hover {
-    color: #af9a7d;
-    text-decoration: none;
+color: #af9a7d;
+text-decoration: none;
 }
 .nav-body li i {
-    display: none;
-    font-size: 30px;
-    margin: 10px;
+display: none;
+font-size: 3vw;
+margin: 10px;
 }
 .login-btn{
-    margin-left: auto ;
-     
+margin-left: auto ;
+ 
 }
 .login-btn a {
-    border: 2px solid #af9a7d;
-    background-color: white ;
-    font-size: 14px;
-    padding: 7px;
-    font-weight: 200px;
-    border-radius: 5px;
-    color: black;
-    transition: 0.5s;
+border: 2px solid #af9a7d;
+background-color: white ;
+font-size: 1vw;
+padding: 7px;
+font-weight: 200px;
+border-radius: 5px;
+color: black;
+transition: 0.5s;
 }
 .login-btn a:hover {
-    background-color: #af9a7d;
-    color: white;
-    text-decoration: none;
+background-color: #af9a7d;
+color: white;
+text-decoration: none;
 }
 @media screen and (max-width: 960px){
 .nav-body li a {
-    display: none;
+display: none;
 }
 .nav-body li i{
-    display: inline;
+display: inline;
 }
 }
 @media screen and (max-width: 790px){
 
-    .nav-body li i{
-        margin: 0;
-    }
+.nav-body li i{
+    margin: 0;
+}
 }
 @media screen and (max-width: 710px){
 
-    .nav-body li #icon1{
-        display: none;
-    }
-    .nav-body li #icon2{
-        display: none;
-    }
+.nav-body li #icon1{
+    display: none;
 }
-.line {
-    height: 7px;
-    width: 30%;
-    background-color: #af9a7d;
-    margin: 20px auto;
+.nav-body li #icon2{
+    display: none;
+}
+}
+@media screen and (max-width: 560px){
+
+.nav-body li #icon3{
+    display: none;
 }
 
+}
+
+.line {
+height: 0.5vw;
+width: 30%;
+background-color: #af9a7d;
+margin: 1.2vw auto;
+}
 
 
 
@@ -120,24 +134,23 @@ header {
 }
 
 input[type=text]:valid {
-    color: black;
+    color: back;
 }
 /* Unmatched */
 input[type=text]:invalid {
     color: red;
 }
 .wrapper{
-  max-width: 500px;
-  width: 100%;
+  max-width: 30%;
   background: #fff;
-  margin: 20px auto;
+  margin: 3vw auto;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.125);
-  padding: 6rem 4rem;
+  padding: 2.5vw;
   border: 1px solid #af9a7d;
 }
 
 .wrapper .title{
-  font-size: 4rem;
+  font-size: 3vw;
   font-weight: 700;
   margin-bottom: 0px;
   color: #202020;
@@ -150,49 +163,37 @@ input[type=text]:invalid {
 }
 
 .wrapper .form .inputfield{
-  margin: 3rem 0;
+  margin: 2vw 0;
   display: flex;
   align-items: center;
+  color: #555;
+  font-size: 15px;
 }
 
 .wrapper .form .inputfield label{
-   width: 200px;
+   width: 100%;
    color: #A9A9A9;
    margin-right: 10px;
-  font-size: 14px;
+   font-size: 1vw;
 }
 
 .wrapper .form .inputfield .input,
-.wrapper .form .inputfield .textarea{
+.wrapper .form .inputfield .textarea {
   width: 100%;
   outline: none;
   border: 1px solid #d5dbd9;
-  font-size: 15px;
-  padding: 8px 10px;
+  font-size: 1vw;
+  padding: 0.5vw 1vw;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
 
 .wrapper .form .inputfield .textarea{
   width: 100%;
-  height: 125px;
-  resize: none;
+  height: 4vw;
 }
-
-.wrapper .form .inputfield .custom_select{
-  position: relative;
+.wrapper .form .inputfield .custom_select {
   width: 100%;
-  height: 37px;
-}
-
-.wrapper .form .inputfield .custom_select:before{
-  content: "";
-  position: absolute;
-  top: 12px;
-  right: 10px;
-  border: 8px solid;
-  border-color: #d5dbd9 transparent transparent transparent;
-  pointer-events: none;
 }
 
 .wrapper .form .inputfield .custom_select select{
@@ -203,8 +204,8 @@ input[type=text]:invalid {
   width: 100%;
   height: 100%;
   border: 0px;
-  padding: 8px 10px;
-  font-size: 15px;
+  padding: 0.5vw 1vw;
+  font-size: 1vw;
   border: 1px solid #d5dbd9;
   border-radius: 3px;
 }
@@ -217,64 +218,81 @@ input[type=text]:invalid {
 }
 
 .wrapper .form .inputfield p{
-   font-size: 14px;
+   font-size: 1vw;
    color: #757575;
 }
-.wrapper .form .inputfield .check{
-  width: 15px;
-  height: 15px;
+.terms {
+  display: flex;
+  margin: 1.2vw auto 1vw auto;
+}
+.terms > p {
+  font-size: 1vw;
+  margin-left: 0.5vw;
+  margin-bottom: 0;
+}
+.haveAccount p {
+  font-size: 1vw;
+}
+.wrapper .form .terms .check{
+  width: 1vw;
+  height: 1vw;
   position: relative;
   display: block;
   cursor: pointer;
 }
-.wrapper .form .inputfield .check input[type="checkbox"]{
+.wrapper .form .terms .check input[type="checkbox"]{
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
-.wrapper .form .inputfield .check .checkmark{
-  width: 15px;
-  height: 15px;
-  border: 1px solid #202020;
+.wrapper .form .terms .check .checkmark{
+  width: 1vw;
+  height: 1vw;
+  border: 1px solid #856d4b ;
   display: block;
   position: relative;
 }
-.wrapper .form .inputfield .check .checkmark:before{
+.wrapper .form  .terms .checkmark:before{
   content: "";
   position: absolute;
-  top: 1px;
+  top: 3px;
   left: 2px;
-  width: 5px;
-  height: 2px;
+  width: 10px;
+  height: 4px;
   border: 2px solid;
   border-color: transparent transparent #fff #fff;
   transform: rotate(-45deg);
   display: none;
 }
-.wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark{
-  background: black;
+.wrapper .form .terms .check input[type="checkbox"]:checked ~ .checkmark{
+  background: #856d4b;
 }
 
-.wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark:before{
+.wrapper .form .terms .check input[type="checkbox"]:checked ~ .checkmark:before{
   display: block;
 }
 
-.wrapper .form .inputfield .btn{
-  width: 100%;
-   padding: 8px 10px;
-  font-size: 15px; 
-  border: 0px;
-  background: #484848;
-  color: white;
-  font-weight:bold;
-  cursor: pointer;
-  border-radius: 3px;
-  outline: none;
+.wrapper .form .submitField .btn{
+	display: block;
+	width: 100%;
+	height: 3vw;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-size: 200%;
+	background-image: linear-gradient(to right, #af9a7d ,  #856d4b, #c7a575);
+	font-size: 1.2vw;
+  color: #fff;
+  font-weight: 800;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
 }
 
 .wrapper .form .inputfield .btn:hover{
-  background: #A9A9A9;
+	background-position: right;
 }
 
 .wrapper .form .inputfield:last-child{
@@ -299,21 +317,26 @@ input[type=text]:invalid {
 
 
 
-/*Footer*/
+/*Footer*/  
 .wrap-footer{
-    padding: 5rem 15rem;
-    width: 100%;
-    background-color: black;
-    color: white;
-    height: auto;
-    text-align: center;
-    line-height: 40px;
+  padding: 2.5vw 5vw;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-size: 2.5vw;
+  height: auto;
+  text-align: center;
+}
+.wrap-footer p {
+  font-size: 1vw;
+  margin: 1vw;
+  padding: 0;
 }
 .wrap-footer h3 {
-    font-size: 3rem;
+  font-size: 2vw;
 }
 .wrap-footer i {
-    font-size: 3rem;
-    margin: 5px;
-    cursor: pointer;
+  font-size: 2vw;
+  margin: 5px;
+  cursor: pointer;
 }

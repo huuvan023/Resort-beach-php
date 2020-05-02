@@ -14,12 +14,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <link rel="stylesheet" type="text/css" href="./../slick/slick.css"/>
-        <link rel="stylesheet" type="text/css" href="./../slick/slick-theme.css"/>
         <link rel="stylesheet" type="text/css" href="login.css">
     </head>
-    <body onload="loadFunction()">
-        <div id="loading"></div>
+    <body >
         <header>
             <div class="nav-center">
                 <div class="nav-logo">
@@ -36,53 +33,48 @@
         </header>
 
         <div class="wrap">
-            <form id="login" method="post" enctype="multipart/form-data">
-                <div class="wrapper">
-                    <div class="title">
-                      Đăng nhập
-                    </div>
-                    <div class="line"></div>
-                    <div class="form">
-                       <div class="inputfield">
-                          <label>Tên đăng nhập: </label>
-                          <input type="text" required placeholder="Tên đăng nhập..."
-                          value="" 
-                          pattern="^[A-z_](\w|\.|_){5,32}$"
-                          name="userName" class="input" autofocus  required
-                          oninvalid="this.setCustomValidity('Vui lòng điền đúng tên đăng nhập!')"
-                          oninput="this.setCustomValidity('')" title="Tên đăng nhập"  />
-                       </div>  
-                        <div class="inputfield">
-                          <label>Mật khẩu: </label>
-                          <input type="password" name="userPass" placeholder="Mật khẩu..."
-                          value="" class="input"  autofocus required
-                          oninvalid="this.setCustomValidity('Vui lòng điền mật khẩu!')"
-                          oninput="this.setCustomValidity('')" title="Mật khẩu"  />
-                       </div>   
-                
-                    
-                
-                      <div class="inputfield terms">
-                          <label class="check">
-                            <input type="checkbox" checked="true" 
-                            name="remember" id="ckbx" value="false">
-                            <span class="checkmark" name="remember"></span>
-                          </label>
-                          <p>Nhớ mật khẩu</p>
-                       </div> 
-                       <div class="inputfield">
-                        <p >Bạn chưa có tài khoản? 
-                        <a href="./../Register/register.html">Đăng kí</a></p>
-                        <p style="margin-left: 20px" >
-                          <a href="./../PasswordRecover/PaswordRecover.html">Quên mật khẩu</a></p>
-                        </div>
-                      <div class="inputfield">
-                        <input type="submit" id="loginBtn" value="Đăng nhập" class="btn">
-                      </div>
-                    </div>
+            <h2 class="title">
+                Đăng nhập
+            </h2>
+            <div class="line"></div>
+             <form  enctype="multipart/form-data" >
+                 <div class="input-gr one">
+                     <div class="icon">
+                        <i class="fas fa-user"></i>
+                     </div>
+                     <div class="input-field">
+                         <h5>Tài khoản</h5>
+                         <input type="text" name="userName" class="input" />
+                     </div>
+                 </div>
+                <div  class="input-gr pass">
+                     <div class="icon">
+                        <i class="fas fa-lock"></i>
+                     </div>
+                     <div class="input-field">
+                         <h5>Mật khẩu</h5>
+                         <input type="password" name="userPassword" class="input" >
+                     </div>
+                 </div>
+                <div class="input-field terms">
+                    <label class="check">
+                    <input type="checkbox" checked="true"
+                    name="remember" id="ckbx">
+                    <span class="checkmark" name="remember"></span>
+                    </label>
+                    <p>Nhớ mật khẩu</p>
                 </div>
-                </form>
+                 <div class="login-control">
+                    <span id="registerNew">Chưa có tài khoản? <a href="./../Register/register.html">Đăng kí</a></span>
+                    <a id="forgetPassword" href="./../PasswordRecover/PaswordRecover.html">Quên mật khẩu?</a>
+                 </div>
+            	<input type="submit" class="btn" value="Đăng nhập"> 
+             </form>
         </div>
+
+
+
+
         <a href="./../../User/user.html">asda</a>
         <footer class="wrap-footer">
             <!--Phần footer     Trân làm-->
@@ -112,9 +104,30 @@
                     <i class="fab fa-instagram-square"></i>
                 </div>
             </div>
-            <div class="row mt-5">Copyright @2020</div>
+            <div style="font-size: 1vw;" class="row mt-5">Copyright @2020</div>
         </footer>
         <script>
+            const inputs = document.querySelectorAll(".input");
+
+
+            function addcl(){
+                let parent = this.parentNode.parentNode;
+                parent.classList.add("befocus");
+            }
+
+            function remcl(){
+                let parent = this.parentNode.parentNode;
+                if(this.value == ""){
+                    parent.classList.remove("befocus");
+                }
+            }
+
+
+            inputs.forEach(input => {
+                input.addEventListener("focus", addcl);
+                input.addEventListener("blur", remcl);
+            });
+
             var preloader = document.getElementById("loading");
             function loadFunction(){
 			    preloader.style.display = 'none';

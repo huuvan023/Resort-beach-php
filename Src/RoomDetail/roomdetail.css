@@ -74,7 +74,7 @@ body {
     color: #af9a7d;
     text-decoration: none;
 }
-.nav-body li i {
+.nav-body li .i {
     display: none;
     font-size: 3vw;
     margin: 10px;
@@ -84,10 +84,10 @@ body {
      
 }
 .login-btn a {
-    border: 2px solid #af9a7d;
+    border: 0.2vw solid #af9a7d;
     background-color: white ;
     font-size: 1vw;
-    padding: 7px;
+    padding: 0.5vw;
     font-weight: 200px;
     border-radius: 5px;
     color: black;
@@ -102,19 +102,19 @@ body {
 .nav-body li a {
     display: none;
 }
-.nav-body li i{
+.nav-body li .i{
     display: inline;
 }
 }
 @media screen and (max-width: 790px){
 
-    .nav-body li i{
+    .nav-body li .i{
         margin: 0;
     }
 }
 @media screen and (max-width: 710px){
 
-    .nav-body li i{
+    .nav-body li .i{
         display: inline;
     }
 }
@@ -253,6 +253,31 @@ body {
     padding: 0 2rem;
     margin: 5vw 0;
 }
+.room-detail-info .rent-now {
+    margin-top: 1vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.room-detail-info .rent-now button {
+    display: block;
+	border-radius: 25px;
+	outline: none;
+    border: none;
+    padding: 1vw;
+	background-size: 200%;
+	background-image: linear-gradient(to right, #a39175 ,  #806540, #dab47f);
+    font-size: 1.5vw;
+    border: 2px solid #856d4b;
+    color: #fff;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+    transition: .5s;
+}
+.room-detail-info .rent-now button:hover {
+    background-position: right;
+}
 .room-detail-info h2 {
     font-size: 4vw;
     font-weight: 800;
@@ -341,6 +366,15 @@ body {
 
 
 /*Footer*/
+.messenger {
+    position: fixed;
+    right: 3vw;
+    font-size: 5vw;
+    bottom: 2vw;
+    color: #0184FF;
+    border-radius: 60;
+    cursor: pointer;
+}
 .wrap-footer{
     padding: 2.5vw 5vw;
     width: 100%;

@@ -66,7 +66,7 @@ body {
     color: #af9a7d;
     text-decoration: none;
 }
-.nav-body li i {
+.nav-body li .i {
     display: none;
     font-size: 3vw;
     margin: 10px;
@@ -76,10 +76,10 @@ body {
      
 }
 .login-btn a {
-    border: 2px solid #af9a7d;
+    border: 0.2vw solid #af9a7d;
     background-color: white ;
     font-size: 1vw;
-    padding: 7px;
+    padding: 0.5vw;
     font-weight: 200px;
     border-radius: 5px;
     color: black;
@@ -94,19 +94,19 @@ body {
 .nav-body li a {
     display: none;
 }
-.nav-body li i{
+.nav-body li .i{
     display: inline;
 }
 }
 @media screen and (max-width: 790px){
 
-    .nav-body li i{
+    .nav-body li .i{
         margin: 0;
     }
 }
 @media screen and (max-width: 710px){
 
-    .nav-body li i{
+    .nav-body li .i{
         display: inline;
     }
 }
@@ -354,7 +354,7 @@ body {
 .type-body img {
     width: 100%;
     z-index: -1;
-    height: 200px;
+    max-height: 25vh;
     position: relative;
 }
 .type-body{     
@@ -366,7 +366,7 @@ body {
 .type-body .type-price-top {
     background-color: rgba(0,0,0,.8);
     top: 0;
-    width: 50%;
+    max-width: 50%;
     padding: 8px 15px 0px 8px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -374,10 +374,10 @@ body {
     color: white;
 }
 .type-price-top h6 {
-    font-size: 13px;
+    font-size: 1vw;
 }
 .type-price-top p {
-    font-size: 10px;
+    font-size: 0.8vw;
 }
 .type-body:hover .type-price-top {
     display: none;
@@ -398,10 +398,10 @@ body {
 }
 
 .type-body .type-overlay a {
-    font-size: 13px;
+    font-size: 1vw;
     background-color: #af9a7d;
-    border: 3px solid #af9a7d;
-    padding:7px;
+    border: 0.1vw solid #af9a7d;
+    padding:0.8vw;
     transition: 1s;
     color: black;
 }

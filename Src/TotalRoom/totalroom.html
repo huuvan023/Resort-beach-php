@@ -25,8 +25,8 @@
                     <a href="./../Index/index.html" class="logo"><img src="./../../Assets/logo.svg"></a>
                 </div>
                 <ul class="nav-body">
-                    <li><a href="./../Index/index.html">Trang chủ</a> <i class="fas fa-home"></i> </li>
-                    <li><a href="./totalroom.html">Phòng</a> <i class="fas fa-door-open" id="icon3"></i></li>
+                    <li><a href="./../Index/index.html">Trang chủ</a> <a class="i" href="./../Index/index.html"> <i class="fas fa-home"></i> </a> </li>
+                    <li><a href="./../TotalRoom/totalroom.html">Phòng</a> <a class="i" href="./../TotalRoom/totalroom.html"><i class="fas fa-door-open"></i></a></li>
                 </ul>
                 <div class="login-btn">
                     <a href="./../Form/LogIn/login.html"> Đăng Nhập</a>
@@ -275,6 +275,7 @@
                 </div>
             </section>
         </div>
+        <a target="_blank" href="https://www.facebook.com/huu.van.20x" class="messenger"><i  class="fab fa-facebook-messenger"></i></a>
         <footer class="wrap-footer">
             <!--Phần footer     Trân làm-->
             <!--Không cần làm giống 100%,bỏ cái logo instagram rồi bỏ cái hình fanpage cũng được-->
@@ -317,7 +318,7 @@
             once: true
             })
             $(window).scroll( function(){
-                $('header').toggleClass('navigation-bar-scrolled', $(this).scrollTop() > $('.wrap-banner').height() - 50 )
+                $('header').toggleClass('navigation-bar-scrolled', $(this).scrollTop() > $('.wrap-banner').height() - 50 );
             });
             $("#labelPrice").text( "$" + $("#inputPrice").val() );
             $("#inputPrice").change(function(){

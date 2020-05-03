@@ -28,7 +28,7 @@ body {
   position: sticky;
   top: 0;
   transition: 1s;
-  background-color:  rgba(255, 255, 255, 0.95);
+  background-color:  rgb(255, 255, 255);
   z-index: 5;
 }
 .navigation-bar-scrolled {
@@ -43,83 +43,86 @@ body {
   box-shadow: 0px 6px 5px 3px rgba(0, 0, 0, 0.281);
 }
 .nav-center{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 100%;
-    display: flex;
-    align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-center .nav-logo {
+  max-width: 30%;
+}
+.nav-center .nav-logo img {
+  max-width: 100%;
 }
 .nav-body {
-    list-style-type: none;
-    margin: 0 0 0 70px;
-    padding: 0;
-    letter-spacing: 1.5px;
+  list-style-type: none;
+  margin: 0 0 0 70px;
+  padding: 0;
+  letter-spacing: 1.5px;
 }
 .nav-body li {
-    display: inline;
-    padding: 0 10px;
-    font-weight: 600;
+  display: inline;
+  padding: 0 10px;
+  font-weight: 600;
 }
 .nav-body li a {
-    color: black;
-    transition: 0.5s;
+  color: black;
+  transition: 0.5s;
 }
 .nav-body li a:hover {
-    color: #af9a7d;
-    text-decoration: none;
+  color: #af9a7d;
+  text-decoration: none;
 }
-.nav-body li i {
-    display: none;
-    font-size: 30px;
-    margin: 10px;
+.nav-body li .i {
+  display: none;
+  font-size: 3vw;
+  margin: 10px;
 }
 .login-btn{
-    margin-left: auto ;
-     
+  margin-left: auto ;
+   
 }
 .login-btn a {
-    border: 2px solid #af9a7d;
-    background-color: white ;
-    font-size: 14px;
-    padding: 7px;
-    font-weight: 200px;
-    border-radius: 5px;
-    color: black;
-    transition: 0.5s;
+  border: 0.2vw solid #af9a7d;
+  background-color: white ;
+  font-size: 1vw;
+  padding: 0.5vw;
+  font-weight: 200px;
+  border-radius: 5px;
+  color: black;
+  transition: 0.5s;
 }
 .login-btn a:hover {
-    background-color: #af9a7d;
-    color: white;
-    text-decoration: none;
+  background-color: #af9a7d;
+  color: white;
+  text-decoration: none;
 }
 @media screen and (max-width: 960px){
 .nav-body li a {
-    display: none;
+  display: none;
 }
-.nav-body li i{
-    display: inline;
+.nav-body li .i{
+  display: inline;
 }
 }
 @media screen and (max-width: 790px){
 
-    .nav-body li i{
-        margin: 0;
-    }
+  .nav-body li .i{
+      margin: 0;
+  }
 }
 @media screen and (max-width: 710px){
 
-    .nav-body li #icon1{
-        display: none;
-    }
-    .nav-body li #icon2{
-        display: none;
-    }
+  .nav-body li .i{
+      display: inline;
+  }
 }
 .line {
-    height: 7px;
+    height: 0.5vw;
     width: 30%;
     background-color: #af9a7d;
-    margin: 20px auto;
+    margin: 1.2vw auto;
 }
 
 
@@ -128,34 +131,40 @@ body {
 /*Login*/
 
 .wrap{
-    margin: 5rem 2rem;
+    margin: 3vw 1.5vw;
     
 }
 .wrap .user-info {
-  padding: 2rem;
-  border: 2px solid #af9a7d;
+  padding: 1vw;
+  border: 0.15vw solid #af9a7d;
+  margin: 0.5vw;
 }
 .wrap h2 {
   text-align: center;
-  margin: 0.5rem 2rem 2rem 2rem;
-  font-size: 4rem;
+  margin: 0.2vw 1.2vw 1.2vw 1.2vw;
+  font-size: 3vw;
   letter-spacing: 2px;
   font-weight: 600;
 }
 .user-info .avatar {
-  width: 100%;
+  max-width: 30vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 .wrap .user-info img{
   width: 60%;
 }
 .user-info .info{
-  margin: 3rem 5rem;
+  margin: 2.2vw 3vw;
 }
 .user-info .info p{
-  margin: 5px 0rem;
+  margin: 3vw 0rem;
+  font-size: 1vw;
+}
+.user-info .info h3 {
+  font-size: 1.2vw;
 }
 .user-info .change-info {
   display: flex;
@@ -164,10 +173,11 @@ body {
 }
 .user-info .change-info button{
   background-color: #af9a7d;
-  border: 2px solid #af9a7d;
-  margin-right: 10px;
+  border: 0.1vw solid #af9a7d;
+  margin-right: 1vw;
+  font-size: 1vw;
   transition: 0.5s;
-  padding: 5px 10px;
+  padding: 0.5vw 1vw;
 }
 .user-info .change-info button:hover {
   background-color: #af9a7d52;
@@ -181,41 +191,51 @@ body {
 }
 .user-info .change-info a {
   background-color: #cc6a52;
-  border: 2px solid #cc6a52;
-  margin-right: 10px;
-  padding: 5px 10px;
+  border: 0.1vw solid #cc6a52;
+  margin-right: 1vw;
+  padding: 0.5vw 1vw;
+  font-size: 1vw;
   color: black;
   transition: 0.5s;
 }
 
 
 .wrap .cart {
-  padding: 2rem;
-  border: 2px solid #af9a7d;
-  min-height: 400px;
+  padding: 1vw;
+  border: 0.15vw solid #af9a7d;
+  margin: 0.5vw;
 }
 .cart .list-book {
-  margin: 2rem 1rem;
+  margin: 1.2vw 1vw;
+}
+.list-book > a {
+  color: inherit;
+}
+.list-book > a:hover {
+  color: #907f68;
+  text-decoration: none;
 }
 .list-book .card-book {
   border: 1px solid #af9a7d;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.4);
   display: flex;
   position: relative;
   transition: 0.5s;
-  width: 90%;
-  margin: 2rem 0;
+  width: 100%;
+  margin: 1.2vw 0;
 }
 .list-book .card-book h3 {
-  margin: 1rem 0 1rem 0 ;
+  margin: 2vw 0 1vw 0 ;
   font-weight: bold;
+  font-size: 1.5vw;
   letter-spacing: 2px;
 }
 .list-book .card-book-body {
-  margin-left: 2rem;
+  margin-left: 1.2vw;
 }
 .list-book .card-book-body p {
   font-weight: bold;
+  font-size: 1vw;
 }
 .list-book .card-book-body span {
   font-weight: 200;
@@ -226,11 +246,10 @@ body {
   margin: 5px;
 }
 .list-book .card-book:hover .card-book-overlay{
- 
   display: flex;
 }
 .list-book .card-book:hover{
-  box-shadow: 4px 4px 5px rgba(0,0,0,0.4);
+  box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.8);
 }
 
 .card-book .card-book-overlay{
@@ -270,28 +289,232 @@ body {
   text-decoration: none;
   background-color: #af9a7d81;
 }
+@media screen and ( max-width: 580px ) {
+    .card-book .card-book-body {
+      margin: 0 auto;
+    } 
+  .card-book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-book > img {
+    width: 35%;
+  }
+}
+/*Booking information*/
+.booking-information {
+  display: grid;
+  margin: 1.2vw 1vw;  
+  grid-template-columns: 50% 50%;
+}
+.booking-information .information {
+  padding: 1vw 0 ;
+}
+.booking-information .information > h5 {
+  font-size: 1vw;
+  letter-spacing: 1.5px;
+}
+.booking-information .information > h5 > span {
+  font-size: 1vw;
+  border: 1px solid black;
+  padding: 0.1vw 0.5vw;
+  background-color: #cfcfcf;
+}
+
+.booking-information .pay {
+  padding: 1vw 0 ;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.booking-information .pay #pay-online,#pay-to-check {
+  transition: .3s;
+  background-image: linear-gradient(to right, #1b611f ,  #218021, #87c876);
+  border: none;
+  color: black;
+  outline: none;
+  border: 2px solid rgb(4, 54, 6);
+  background-size: 200%;
+  margin: 0 0.3vw;
+  padding: 0.4vw 0.7vw;
+  border-radius: 25px;
+  font-size: 1vw;
+}
+.pay #pay-to-check {
+  background-image: linear-gradient(to right, #aa3829 ,  #d64a32, #c88976);
+  border: 2px solid rgb(141, 19, 19);
+}
+.booking-information .pay button:hover{
+    background-position: right;
+    color: white;
+}
 
 
+/*MODIFIED ACCOUNT OVELAY*/
+.modified-account-overlay{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  display: none;
+  left: 0;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.5s
+}
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
 
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.modified-account-overlay > .overlay {
+  width: 50%;
+  background-color: #af9a7d;
+  margin: 0 auto;
+  padding: 2vw 3vw;
+  margin-top: 5%;
+}
+.overlay h4 {
+  text-align: center;
+  font-size: 2vw;
+  margin-bottom: 2vw ;
+  font-weight: bold;
+}
+.overlay h4 > .close {
+  cursor: pointer;
+  font-size: 1vw ;
+  border: 1px solid black;
+  color: white;
+  padding: 0.1vw;
+  background-color: black;
+}
+.modified-form .input-gr {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 0.5vw;
+}
+.submitInfo {
+  justify-content: center;
+  display: flex;
+  font-size: 1vw;
+  margin-top: 1vw;
+}
+.submitInfo button {
+  transition: .3s;
+  padding: 0.5vw 1.2vw;
+  background-color: #80715c;
+  border: none;
+  border-radius: 1.2vw;
+}
+.submitInfo button:hover {
+  background-color: #685843;
+  color: white;
+}
+.modified-form .input-gr  label {
+  display: flex;
+  font-size: 1vw;
+  font-weight: 200;
+  align-items: center;
+  margin: 0;
+}
+.modified-form .input-gr input,textarea,select {
+  border: none ;
+  padding: 0.3vw;
+  font-size: 0.8vw;
+}
+#change {
+  display: flex;
+  align-items: center;
+}
+#change input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  margin: 0;
+}
+#change p {
+  display: inline;
+  margin: 0 0 0 1vw;
+  font-size: 1vw;
+}
+
+.check .checkmark{
+  width: 1.2vw;
+  background-color: white;
+  height: 1.2vw;
+  border: 1px solid white;
+  display: block;
+  position: relative;
+}
+.check .checkmark:before{
+  content: "";
+  position: absolute;
+  top: 0.2vw;
+  left: 0.1vw;
+  width: 1vw;
+  height: 0.4vw;
+  border: 0.2vw solid;
+  border-color: transparent transparent #fff #fff;
+  transform: rotate(-45deg);
+  display: none;
+}
+.check input[type="checkbox"]:checked ~ .checkmark{
+  background: #80715c;
+}
+
+.check input[type="checkbox"]:checked ~ .checkmark:before{
+  display: block;
+}
+#changePassword {
+  display: none;
+  -webkit-animation-name: changePWanime;
+  -webkit-animation-duration: 0.4s;
+  animation-name: changePWanime;
+  animation-duration: 1s;
+}
+@-webkit-keyframes changePWanime {
+  from {left:-20px; opacity:0} 
+  to {left:0; opacity:1}
+}
+
+@keyframes changePWanime {
+  from {left:-300px; opacity:0}
+  to {left:0; opacity:1}
+}
 
 
 
 
 /*Footer*/
 .wrap-footer{
-    padding: 5rem 15rem;
-    width: 100%;
-    background-color: black;
-    color: white;
-    height: auto;
-    text-align: center;
-    line-height: 40px;
+  padding: 2.5vw 5vw;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-size: 2.5vw;
+  height: auto;
+  text-align: center;
+}
+.wrap-footer p {
+  font-size: 1vw;
+  margin: 1vw;
+  padding: 0;
 }
 .wrap-footer h3 {
-    font-size: 3rem;
+  font-size: 2vw;
 }
 .wrap-footer i {
-    font-size: 3rem;
-    margin: 5px;
-    cursor: pointer;
+  font-size: 2vw;
+  margin: 5px;
+  cursor: pointer;
 }

@@ -4,7 +4,7 @@
 
 Danh sách thành viên: 
 
-    1.Ngô Hữu Văn - 44.01.104.242 
+    1.Ngô Hữu Văn - 44.01.104.242 (group leader)
     2.Trần Văn Việt - 44.01.104.244  
     3.Nguyễn Duy Trường - 44.01.104.239    
     4.Phan Thị Huyền Trân - 44.01.104.230

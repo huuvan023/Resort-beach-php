@@ -1,5 +1,4 @@
 const inputs = document.querySelectorAll(".input");
-
 function addcl(){
     let parent = this.parentNode.parentNode;
     parent.classList.add("befocus");
@@ -11,13 +10,7 @@ function remcl(){
         parent.classList.remove("befocus");
     }
 }
-
-
 inputs.forEach(input => {
     input.addEventListener("focus", addcl);
     input.addEventListener("blur", remcl);
 });
-var preloader = document.getElementById("loading");
-function loadFunction(){
-    preloader.style.display = 'none';
-};

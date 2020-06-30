@@ -1,10 +1,10 @@
 <header class="navigation-bar">
             <div class="nav-center">
                 <div class="nav-logo">
-                    <a href="./../Pages/index.php" class="logo"><img src="../../../public/logo.svg"></a>
+                    <a href="./index.php" class="logo"><img src="../../public/logo.svg"></a>
                 </div>
                 <ul class="nav-body">
-                    <li><a href="./../Pages/index.php">Trang chủ</a> <a class="i" href="./../Pages/index.php"> <i class="fas fa-home"></i> </a> </li>
+                    <li><a href="./index.php">Trang chủ</a> <a class="i" href="./../Pages/index.php"> <i class="fas fa-home"></i> </a> </li>
                     <li><a href="./../Pages/totalroom.php">Phòng</a> <a class="i" href="./../Pages/totalroom.php"><i class="fas fa-door-open"></i></a></li>
                 </ul>
                 <div class="login-btn">
@@ -150,7 +150,7 @@
                 </div>
                 <div class="profile">
                     <div class="icon_wrap">
-                    <img src="../../../public/index-layout.png" alt="profile_pic">
+                    <img src="../../public/index-layout.png" alt="profile_pic">
                     <span class="name">John Alex</span>
                     <i class="fas fa-chevron-down"></i>
                     </div>
@@ -163,7 +163,7 @@
                     </ul>
                     </div>
                 </div>
-                    <a class="loginUserBtn" href="./../Pages/login.php"> Đăng Nhập</a>
+                    <a class="loginUserBtn" href="./mvc/view/Pages/login.php"> Đăng Nhập</a>
                 </div>
             </div>
 </header>

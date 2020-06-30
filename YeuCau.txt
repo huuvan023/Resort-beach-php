@@ -10,7 +10,7 @@ Yêu cầu làm layout:
 
 .Hạn chế tối đa sử dụng absolute position ( position: absolute ) vì khi sử dụng sẽ làm trang web rất khó để căn chỉnh
 
-.Để căn chỉnh element ở giữa thì t gợi ý các cách làm như sau:
+ element ở giữa thì t gợi ý các cách làm như sau:
     +Sử dụng { margin: 0 auto; } để căn chỉnh một block con nằm trong một block cha có chiều dài width xác định
     +Sử dụng { text-align: center } để căn chỉnh text
     +Sử dụng { display: flex } ở thẻ parent và { align-item: center; justyfi-item: center; } để căn chỉnh nhiều block element mà những block element đó nằm trong một block element cha

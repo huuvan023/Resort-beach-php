@@ -492,6 +492,7 @@ Phần Modal
 .toTop-scrolled {
     position: fixed;
     right: 8vw;
+    z-index: 100;
     font-size:5vw;
     bottom: 2vw;
     color: rgb(0, 0, 139);

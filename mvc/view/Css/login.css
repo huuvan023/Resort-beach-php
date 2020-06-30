@@ -111,7 +111,6 @@
 }
 .wrap  form > .login-control #forgetPassword {
 	display: inline;
-  float: right;
 	color: #af9a7d;
   font-size: 0.7vw;
   margin-left: auto;

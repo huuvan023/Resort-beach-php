@@ -1,7 +1,4 @@
 <footer class="wrap-footer">
-    <!--Phần footer     Trân làm-->
-    <!--Không cần làm giống 100%,bỏ cái logo instagram rồi bỏ cái hình fanpage cũng được-->
-    <!--Mấy cái icon ở dưới chỗ  book now là dùng icon awesome-->
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <h3>Hỗ trợ khách hàng</h3>

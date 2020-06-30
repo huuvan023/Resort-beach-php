@@ -2,7 +2,7 @@
     class SinhVienModel extends DB{
         public function getSinhVien(){
             //connect database
-            return "Nguuyen Van A";
+            return;
         }
         public function Show($a,$b){
             return $a + $b;

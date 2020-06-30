@@ -1,7 +1,3 @@
-var preloader = document.getElementById("loading");
-function loadFunction(){
-    preloader.style.display = 'none';
-};
 var ovlayChange = document.getElementById("ckbx");
 function changeChecked() {
     ovlayChange.classList.add("checked");
@@ -18,24 +14,6 @@ function onClose(){
 function onOpen() {
     document.getElementById("ovlClose").style.display = " block ";
 }
-$(document).ready(function(){
-    $("#accBtn").click(function(){
-        $(".login-btn > div ").toggleClass("accOptionNone");
-    });
-    $("#bell").click(function(){
-        $(".notification_dd").toggleClass("active");
-        //Handle allow 1 pop up appear in screen
-        $(".profile_dd").addClass("active2");
-
-        
-    });
-    $(".profile").click(function(){
-        $(".profile_dd").toggleClass("active2");
-        //Handle allow 1 pop up appear in screen
-        $(".notification_dd").removeClass("active");
-       
-    });
-}); 
 
 
 //Handle toggle Collapse

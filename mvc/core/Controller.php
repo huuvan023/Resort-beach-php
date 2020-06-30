@@ -1,6 +1,6 @@
 <?php
     class Controller {
-        protected $dashboard = "WebProject-2020-master";
+        protected $dashboard = "WebProject-2020";
         
         public function model( $model ) {
             require_once "./mvc/models/". $model .".php";
@@ -10,6 +10,5 @@
         public function view( $view, $data=[] ) {
             require_once "./mvc/view/". $view .".php";
         }
-
     }   
 ?>

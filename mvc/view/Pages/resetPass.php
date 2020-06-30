@@ -26,5 +26,5 @@ require_once "./mvc/view/Blocks/Loading.php";
 require_once "./mvc/view/Blocks/Footer.php";
 ?>
 
-<script type="text/javascript" src=<?php echo ( "/" . $data["Dashboard"] . "/mvc/view/Js/login.js");?>></script>
-<script type="text/javascript" src=<?php echo ( "/" . $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>
+<script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/login.js");?>></script>
+<script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>

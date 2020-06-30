@@ -371,5 +371,5 @@
 require_once "./mvc/view/Blocks/Footer.php";
 ?>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script type="text/javascript" src=<?php echo ( "/" . $data["Dashboard"] . "/mvc/view/Js/room.js");?>></script>
-<script type="text/javascript" src=<?php echo ( "/" . $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>
+<script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/room.js");?>></script>
+<script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>

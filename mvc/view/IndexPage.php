@@ -15,10 +15,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href= <?php echo ( "/" . $data["Dashboard"] . "/mvc/view/slick/slick.css");?>>
-        <link rel="stylesheet" type="text/css" href= <?php echo ( "/" . $data["Dashboard"] . "/mvc/view/slick/slick-theme.css");?>>
-        <link rel="stylesheet" type="text/css" href= <?php echo ( "/" . $data["Dashboard"] . "/mvc/view/Css/Master.css");?>>
-        <link rel="stylesheet" type="text/css" href= <?php echo ( "/" . $data["Dashboard"] . "/mvc/view/Css/index.css");?>>
+        <link rel="stylesheet" type="text/css" href= <?php echo ( $data["Dashboard"] . "/mvc/view/slick/slick.css");?>>
+        <link rel="stylesheet" type="text/css" href= <?php echo ( $data["Dashboard"] . "/mvc/view/slick/slick-theme.css");?>>
+        <link rel="stylesheet" type="text/css" href= <?php echo ( $data["Dashboard"] . "/mvc/view/Css/Master.css");?>>
+        <link rel="stylesheet" type="text/css" href= <?php echo ( $data["Dashboard"] . "/mvc/view/Css/index.css");?>>
     </head>
         <body class="container-fluid">
             <?php

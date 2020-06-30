@@ -203,7 +203,7 @@
 <?php
 require_once "./mvc/view/Blocks/Footer.php";
 ?>
-<script type="text/javascript" src=<?php echo ( "/" . $data["Dashboard"] . "/mvc/view/slick/slick.min.js");?>></script>
-<script type="text/javascript" src=<?php echo ( "/" . $data["Dashboard"] . "/mvc/view/slick/slick.js");?>></script>
-<script type="text/javascript" src=<?php echo ( "/" . $data["Dashboard"] . "/mvc/view/Js/room.js");?>></script>
-<script type="text/javascript" src=<?php echo ( "/" . $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>
+<script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/slick/slick.min.js");?>></script>
+<script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/slick/slick.js");?>></script>
+<script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/room.js");?>></script>
+<script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>

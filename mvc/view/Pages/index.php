@@ -7,7 +7,7 @@ require_once "./mvc/view/Blocks/Header.php";
     <!--Phần body-->            
     <section class="wrap-banner">
         <video style="width:100%;" autoplay loop muted >
-            <source  src="/WebProject-2020-master/public/videobg.mp4" type="video/mp4">
+            <source  src="<?php echo $data["Dashboard"] ?>/public/videobg.mp4" type="video/mp4">
         </video>
         <div class="overlay">
             <h1 class="overlay-header">

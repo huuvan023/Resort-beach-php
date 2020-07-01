@@ -7,7 +7,7 @@
         function construct(){
             $arr = $this->URLProcess();
             unset($arr[0]); 
-            //http://localhost/WebProject-2020-master/index.php?url=Home/SayHi/1/2/3
+            //http://localhost/WebProject-2020-master/Home/SayHi/1/2/3
             //Handle controller
             if ( $arr != NULL ) {
                 if ( file_exists( "./mvc/controllers/".$arr[1].".php") == true  ) {

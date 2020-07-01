@@ -9,7 +9,7 @@
             var_dump($arr);
             //http://localhost/WebProject-2020-master/index.php?url=Home/SayHi/1/2/3
             //Handle controller
-            if ( $arr != NULL ) {
+            if ( $arr != NULL || $arr[0] != "") {
                 if ( file_exists( "./mvc/controllers/".$arr[0].".php") == true  ) {
                     $this-> controller = $arr[0];
                     unset($arr[0]);
@@ -19,7 +19,7 @@
             $this -> controller = new $this->controller;
             //Handle action
             if ( $arr != NULL) {
-                if ( isset($arr[2]) ) {
+                if ( isset($arr[1]) || $arr[1] != "" ) {
                     if( method_exists( $this-> controller , $arr[1] ) ) {
                         $this->action = $arr[1];
                     }

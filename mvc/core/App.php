@@ -6,6 +6,7 @@
  
         function construct(){
             $arr = $this->URLProcess();
+            var_dump($arr);
             //http://localhost/WebProject-2020-master/index.php?url=Home/SayHi/1/2/3
             //Handle controller
             if ( $arr != NULL ) {

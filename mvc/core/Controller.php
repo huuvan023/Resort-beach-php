@@ -1,6 +1,6 @@
 <?php
     class Controller {
-        protected $dashboard = "/WebProject-2020";
+        protected $dashboard = "";
         
         public function model( $model ) {
             require_once "./mvc/models/". $model .".php";

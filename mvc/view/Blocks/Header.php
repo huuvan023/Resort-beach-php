@@ -1,11 +1,11 @@
 <header id="h" class="navigation-bar">
             <div class="nav-center">
                 <div class="nav-logo">
-                    <a href="./index.php" class="logo"><img src="<?php echo $data["Dashboard"] ?>/public/logo.svg"></a>
+                    <a href="<?php echo ( $data["Dashboard"] );?>" class="logo"><img src="<?php echo $data["Dashboard"] ?>/public/logo.svg"></a>
                 </div>
                 <ul class="nav-body">
-                    <li><a href="./index.php">Trang chủ</a> <a class="i" href="./../Pages/index.php"> <i class="fas fa-home"></i> </a> </li>
-                    <li><a href="./../Pages/totalroom.php">Phòng</a> <a class="i" href="./../Pages/totalroom.php"><i class="fas fa-door-open"></i></a></li>
+                    <li><a href="<?php echo ( $data["Dashboard"] );?>">Trang chủ</a> <a class="i" href="<?php echo ( $data["Dashboard"] );?> "> <i class="fas fa-home"></i> </a> </li>
+                    <li><a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/totalroom">Phòng</a> <a class="i" href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/totalroom"><i class="fas fa-door-open"></i></a></li>
                 </ul>
                 <div class="login-btn">
                 <div class="notifications">
@@ -163,8 +163,8 @@
                     </ul>
                     </div>
                 </div>
-                    <a class="loginUserBtn" href="./mvc/view/Pages/login.php"> Đăng Nhập</a>
-                    <a class="loginUserBtn" href="./mvc/view/Pages/login.php"> Đăng ký</a>
+                    <a class="loginUserBtn" href="<?php echo ( $data["Dashboard"] );?>/Login/LoginPage/login"> Đăng Nhập</a>
+                    <a class="loginUserBtn" href="<?php echo ( $data["Dashboard"] );?>/Login/LoginPage/register"> Đăng ký</a>
                 </div>
             </div>
 </header>

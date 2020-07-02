@@ -12,7 +12,7 @@
             </h1>
             <div class="line"></div>
             <div class="overlay-button">
-                <a href="./../Pages/index.php">Trang chủ</a>
+                <a href="<?php echo ( $data["Dashboard"] );?>">Trang chủ</a>
             </div>
         </div>
     </section>

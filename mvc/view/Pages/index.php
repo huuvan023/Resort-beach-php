@@ -21,7 +21,7 @@ require_once "./mvc/view/Blocks/Header.php";
             </div>
 
             <div class="overlay-button">
-                <a href="./mvc/view/Pages/totalroom.php">Tất cả phòng</a>
+                <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/totalroom">Tất cả phòng</a>
             </div>
 
         </div>

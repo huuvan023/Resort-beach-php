@@ -15,7 +15,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                   <label>Họ và tên: </label>
                   <input type="text" name="userFullName" placeholder="Nguyễn Văn A"
                   value="" class="input"
-                  pattern="^[a-zA-Z ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+$" autofocus required
+                  autofocus required
                   oninvalid="this.setCustomValidity('Định dạng họ tên không đúng!')"
                   oninput="this.setCustomValidity('')" title="Họ tên của bạn"  />
                 </div>  
@@ -23,7 +23,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                   <label>Tên đăng nhập: </label>
                   <input type="text" name="userName" placeholder="Tên đăng nhập..."
                   value="" class="input"
-                  pattern="^[A-z_](\w|\.|_){5,32}$" autofocus required
+                  autofocus required
                   oninvalid="this.setCustomValidity('Định dạng tên đăng nhập không đúng! (Tên đăng nhập từ 5-32 kí tự, và không có kí tự đặt biệt )')"
                   oninput="this.setCustomValidity('')" title="Tên đăng nhập từ 5-32 kí tự, bao gồm chữ, số, dấu gạch dưới.."  />
                 </div>  
@@ -31,11 +31,11 @@ require_once "./mvc/view/Blocks/Loading.php";
                   <label>Mật khẩu: </label>
                   <input id="userPass" type="password" name="userPass" placeholder="Mật khẩu..."
                   value="" class="input" required
-                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,20}$" autofocus 
+                  autofocus 
                   oninvalid="this.setCustomValidity('Định dạng mật khẩu không đúng! (Mật khẩu từ 6-20 kí tự, bao gồm kí tự latin chữ thường, chữ hoa, kí tự đặt biệt và số )')"
                   oninput="this.setCustomValidity('')" title="Mật khẩu bao gồm kí tự, số, kí tự đặt biệt"  />
                 </div>
-                <div id="passwordStrength" style="margin-bottom: 20px;display: none;">
+                <div id="passwordStrength" style="margin-bottom: 0px;display: none;">
                   <small>Độ mạnh mật khẩu: </small>
                   <progress value="0" max="100" id="strength" style="max-width: 100%;"></progress>
                 </div>
@@ -43,7 +43,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                   <label>Xác nhận mật khẩu: </label>
                   <input  type="password" name="userConfirm" placeholder="Nhập lại mật khẩu"
                   value="" class="input" required
-                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,20}$" autofocus 
+                  autofocus 
                   oninvalid="this.setCustomValidity('Mật khẩu không giống nhau!')"
                   oninput="this.setCustomValidity('')"  />
                 </div> 
@@ -51,7 +51,6 @@ require_once "./mvc/view/Blocks/Loading.php";
                   <label>Email: </label>
                   <input  type="text" name="userEmail" placeholder="example@gmail.com"
                   value=" " class="input" required
-                  pattern="^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$" autofocus 
                   oninvalid="this.setCustomValidity('Email không hợp lệ!')"
                   oninput="this.setCustomValidity('')" />
                 </div> 
@@ -67,7 +66,7 @@ require_once "./mvc/view/Blocks/Loading.php";
               <div class="inputfield">
                   <label>Số điện thoại: </label>
                   <input name="userPhoneNumber" value="" type="text" class="input"placeholder="0372746xxx..."
-                  pattern="([0-9]{10})\b" 
+                   
                   autofocus 
                   oninvalid="this.setCustomValidity('Số điện thoại không hợp lệ!')"
                   oninput="this.setCustomValidity('')" />
@@ -83,9 +82,12 @@ require_once "./mvc/view/Blocks/Loading.php";
                   </label>
                   <p >Đồng ý với điều khoản sử dụng của chúng tôi</p>
                 </div> 
+                <div class="inputfield">
+                    <div class="g-recaptcha" data-sitekey="6Lf6ct8UAAAAABJRga8nO5nHJntry4wTCOLOFF_K"></div>
+                </div>
                 <div  class="haveAccount">
                     <p>Đã có tài khoản? 
-                    <a href="./../Pages/login.php">Đăng nhập</a></p>  
+                    <a href="<?php echo ( $data["Dashboard"] );?>/Login/LoginPage/login">Đăng nhập</a></p>  
                 </div>
               <div class="submitField">
                 <input type="submit" id="registerBtn" value="Đăng kí" class="btn">
@@ -101,3 +103,4 @@ require_once "./mvc/view/Blocks/Footer.php";
 
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/login.js");?>></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

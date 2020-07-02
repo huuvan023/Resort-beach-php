@@ -36,13 +36,12 @@ require_once "./mvc/view/Blocks/Loading.php";
             <p>Nhớ mật khẩu</p>
         </div>
             <div class="login-control">
-            <span id="registerNew">Chưa có tài khoản? <a href="./../Pages/register.php">Đăng kí</a></span>
-            <a id="forgetPassword" href="./../Pages/PaswordRecover.php">Quên mật khẩu?</a>
+            <span id="registerNew">Chưa có tài khoản? <a href="<?php echo ( $data["Dashboard"] );?>/Login/LoginPage/register">Đăng kí</a></span>
+            <a id="forgetPassword" href="<?php echo ( $data["Dashboard"] );?>/Login/LoginPage/resetPass">Quên mật khẩu?</a>
             </div>
         <input type="submit" class="btn" value="Đăng nhập"> 
         </form>
 </div>
-<a href="./../../view/Pages/user.php">asda</a>
 <?php
 require_once "./mvc/view/Blocks/Footer.php";
 ?>

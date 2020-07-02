@@ -10,7 +10,7 @@ require_once "./mvc/view/Blocks/Loading.php";
         <div class="wrap-content-profile">
             <h2>Thông tin phòng đã đặt</h2>
             <div id="booking-alert">
-                <p>Bạn chưa đặt phòng nào ! Bạn có thể click <a href="/WebProject-2020-master/mvc/view/Pages/totalroom.php"> vào đây </a>
+                <p>Bạn chưa đặt phòng nào ! Bạn có thể click <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/totalroom"> vào đây </a>
                     để xem thêm phòng<span onclick="closeRoomAlert()">x</span></p>
             </div>
             <div class="booking-con-wrap">

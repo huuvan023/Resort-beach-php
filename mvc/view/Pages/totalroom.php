@@ -3,14 +3,14 @@
     require_once "./mvc/view/Blocks/Header.php";
 ?>
 
-<div onscroll="asda()" class="wrap">
+<div  class="wrap">
 
     <section id="navnavnav" class="wrap-banner row">
         <div class="overlay">
             <h1 class="overlay-header">Phòng</h1>
             <div class="line"></div>
             <div class="overlay-button">
-                <a href="./../Pages/index.php">Trang chủ</a>
+                <a href="<?php echo ( $data["Dashboard"] );?>">Trang chủ</a>
             </div>
         </div>
     </section>
@@ -128,7 +128,29 @@
                             </div>
                         </div>
                         <div class="room-list-overlay">
-                            <a href="./../Pages/roomdetail.php" >Xem chi tiết</a>
+                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail" >Xem chi tiết</a>
+                        </div>
+                    </div>
+                    <div class="room-list-foot">
+                        <span>Phòng đơn</span>Triple Basic
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
+                <div class="room-list-card">
+                    <div class="room-list-card-body">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                        <div class="room-list-top">
+                            <div class="room-list-price-top">
+                                <h6>$500</h6>
+                                <p>mỗi đêm</p>
+                            </div>
+                            <div class="room-list-rate-top">
+                                6.3 <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="room-list-overlay">
+                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">Xem chi tiết</a>
                         </div>
                     </div>
                     <div class="room-list-foot">
@@ -172,7 +194,7 @@
                             </div>
                         </div>
                         <div class="room-list-overlay">
-                            <a href="./../Pages/roomdetail.php" >Xem chi tiết</a>
+                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail" >Xem chi tiết</a>
                         </div>
                     </div>
                     <div class="room-list-foot">
@@ -194,7 +216,7 @@
                             </div>
                         </div>
                         <div class="room-list-overlay">
-                            <a href="./../Pages/roomdetail.php" >Xem chi tiết</a>
+                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">Xem chi tiết</a>
                         </div>
                     </div>
                     <div class="room-list-foot">
@@ -216,29 +238,7 @@
                             </div>
                         </div>
                         <div class="room-list-overlay">
-                            <a href="./../Pages/roomdetail.php" >Xem chi tiết</a>
-                        </div>
-                    </div>
-                    <div class="room-list-foot">
-                        <span>Phòng đơn</span>Triple Basic
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
-                <div class="room-list-card">
-                    <div class="room-list-card-body">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
-                        <div class="room-list-top">
-                            <div class="room-list-price-top">
-                                <h6>$500</h6>
-                                <p>mỗi đêm</p>
-                            </div>
-                            <div class="room-list-rate-top">
-                                6.3 <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="room-list-overlay">
-                            <a href="./../Pages/roomdetail.php" >Xem chi tiết</a>
+                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail" >Xem chi tiết</a>
                         </div>
                     </div>
                     <div class="room-list-foot">
@@ -253,7 +253,7 @@
 
         </div>
         <div id="listView" class="nonedisplay">
-            <a href="./../Pages/roomdetail.php">
+            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
                 <div class="room-list-body-listview">
                     <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">
@@ -280,7 +280,7 @@
                 </div>
             </a>
 
-            <a href="./../Pages/roomdetail.php">
+            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
                 <div class="room-list-body-listview">
                     <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">
@@ -307,7 +307,7 @@
                 </div>
             </a>
 
-            <a href="./../Pages/roomdetail.php">
+            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
                 <div class="room-list-body-listview">
                     <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">
@@ -334,7 +334,7 @@
                 </div>
             </a>
 
-            <a href="./../Pages/roomdetail.php">
+            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
                 <div class="room-list-body-listview">
                     <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">

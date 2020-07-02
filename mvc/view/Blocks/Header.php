@@ -1,7 +1,7 @@
-<header class="navigation-bar">
+<header id="h" class="navigation-bar">
             <div class="nav-center">
                 <div class="nav-logo">
-                    <a href="./index.php" class="logo"><img src="../../public/logo.svg"></a>
+                    <a href="./index.php" class="logo"><img src="<?php echo $data["Dashboard"] ?>/public/logo.svg"></a>
                 </div>
                 <ul class="nav-body">
                     <li><a href="./index.php">Trang chủ</a> <a class="i" href="./../Pages/index.php"> <i class="fas fa-home"></i> </a> </li>
@@ -150,7 +150,7 @@
                 </div>
                 <div class="profile">
                     <div class="icon_wrap">
-                    <img src="../../public/index-layout.png" alt="profile_pic">
+                    <img src="<?php echo $data["Dashboard"] ?>/public/index-layout.png" alt="profile_pic">
                     <span class="name">John Alex</span>
                     <i class="fas fa-chevron-down"></i>
                     </div>

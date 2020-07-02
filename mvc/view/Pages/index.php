@@ -6,7 +6,7 @@ require_once "./mvc/view/Blocks/Header.php";
 <div class="wrap">
     <!--Phần body-->            
     <section class="wrap-banner">
-        <video style="width:100%;" autoplay loop muted >
+        <video id="vid" style="width:100%;" autoplay loop muted >
             <source  src="<?php echo $data["Dashboard"] ?>/public/videobg.mp4" type="video/mp4">
         </video>
         <div class="overlay">
@@ -47,23 +47,23 @@ require_once "./mvc/view/Blocks/Header.php";
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                            <img src="../../public/gallery/073a5b73-z-cr-800x450.jpg" alt="a" style="width:100%;">
+                            <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="a" style="width:100%;">
                             </div>
                     
                             <div class="item">
-                            <img src="../../public/gallery/0b7ef7f4-z-cr-800x450.jpg" alt="b" style="width:100%;">
+                            <img src="<?php echo $data["Dashboard"] ?>/public/gallery/0b7ef7f4-z-cr-800x450.jpg" alt="b" style="width:100%;">
                             </div>
                             <div class="item">
-                            <img src="../../public/gallery/0fde4ea6-z-cr-800x450.jpg" alt="c" style="width:100%;">
+                            <img src="<?php echo $data["Dashboard"] ?>/public/gallery/0fde4ea6-z-cr-800x450.jpg" alt="c" style="width:100%;">
                             </div>
                             <div class="item">
-                            <img src="../../public/gallery/1a36e6e5-z-cr-800x450.jpg" alt="c" style="width:100%;">
+                            <img src="<?php echo $data["Dashboard"] ?>/public/gallery/1a36e6e5-z-cr-800x450.jpg" alt="c" style="width:100%;">
                             </div>
                             <div class="item">
-                            <img src="../../public/gallery/2a000495-z-cr-800x450.jpg" alt="c" style="width:100%;">
+                            <img src="<?php echo $data["Dashboard"] ?>/public/gallery/2a000495-z-cr-800x450.jpg" alt="c" style="width:100%;">
                             </div>
                             <div class="item">
-                            <img src="../../public/gallery/2cb2535e-z-cr-800x450.jpg" alt="c" style="width:100%;">
+                            <img src="<?php echo $data["Dashboard"] ?>/public/gallery/2cb2535e-z-cr-800x450.jpg" alt="c" style="width:100%;">
                             </div>
                         </div>
                     
@@ -87,7 +87,7 @@ require_once "./mvc/view/Blocks/Header.php";
             <div class="slick">
                 <div class="slick-card row">
                     <div style="padding: 0;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 card-item">  
-                        <img src="../../public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
                     </div>
 
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 slick-card-content">
@@ -99,7 +99,7 @@ require_once "./mvc/view/Blocks/Header.php";
                 </div>
                 <div class="slick-card row">
                     <div style="padding: 0;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 card-item">  
-                        <img src="../../public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
                     </div>
 
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 slick-card-content">
@@ -111,7 +111,7 @@ require_once "./mvc/view/Blocks/Header.php";
                 </div>
                 <div class="slick-card row">
                     <div style="padding: 0;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 card-item">  
-                        <img src="../../public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
                     </div>
 
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 slick-card-content">
@@ -123,7 +123,7 @@ require_once "./mvc/view/Blocks/Header.php";
                 </div>
                 <div class="slick-card row">
                     <div style="padding: 0;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 card-item">  
-                        <img src="../../public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
                     </div>
 
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 slick-card-content">
@@ -135,7 +135,7 @@ require_once "./mvc/view/Blocks/Header.php";
                 </div>
                 <div class="slick-card row">
                     <div style="padding: 0;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 card-item">  
-                        <img src="../../public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
                     </div>
 
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 slick-card-content">
@@ -155,7 +155,7 @@ require_once "./mvc/view/Blocks/Header.php";
             <div class="new-room">
                 <div class="room-card row">
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 imgmid">
-                        <img src="../../public/gallery/s-20-the-anam-lobby-cr-800x450.jpg">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg">
                     </div>
                     <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
                         <div class="room-card-content">
@@ -168,7 +168,7 @@ require_once "./mvc/view/Blocks/Header.php";
                 </div>
                 <div class="room-card row">
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 imgmid">
-                        <img src="../../public/gallery/s-20-the-anam-lobby-cr-800x450.jpg">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg">
                     </div>
                     <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
                         <div class="room-card-content">
@@ -191,7 +191,7 @@ require_once "./mvc/view/Blocks/Header.php";
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-3">
                 <div class="type-card">
                     <div class="type-body">
-                        <img src="../../public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
                         <div class="type-price-top">
                             <h6>$500 - $700</h6>
                             <p>mỗi đêm</p>
@@ -208,7 +208,7 @@ require_once "./mvc/view/Blocks/Header.php";
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-3">
                 <div class="type-card">
                     <div class="type-body">
-                        <img src="../../public/gallery/0b7ef7f4-z-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/0b7ef7f4-z-cr-800x450.jpg" alt="">
                         <div class="type-price-top">
                             <h6>$300 - $500</h6>
                             <p>mỗi đêm</p>
@@ -225,7 +225,7 @@ require_once "./mvc/view/Blocks/Header.php";
             <div   class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-3">
                 <div class="type-card">
                     <div class="type-body">
-                        <img src="../../public/gallery/0fde4ea6-z-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/0fde4ea6-z-cr-800x450.jpg" alt="">
                         <div class="type-price-top">
                             <h6>$100 - $300</h6>
                             <p>mỗi đêm</p>
@@ -305,7 +305,7 @@ require_once "./mvc/view/Blocks/Header.php";
             <span class="close">&times;</span>
         </div>
         <div class="modal-body">
-            <h3>NHẬN NGAY ƯU ĐÃI GIỚI HẠN</h3><img id="hot-icon" src="../../public/hot-icon.gif">
+            <h3>NHẬN NGAY ƯU ĐÃI GIỚI HẠN</h3><img id="hot-icon" src="<?php echo $data["Dashboard"] ?>/public/hot-icon.gif">
             <p>> Chỉ 1 triệu đồng/ người</p>
             <p>> Phòng ở và các bữa ăn</p>
             <p>> Đầy đủ các dịch vụ tiện ích</p>
@@ -335,7 +335,7 @@ require_once "./mvc/view/Blocks/Header.php";
     </div>
 
     </div>
-<div class="scrollToTop"><i id="toTop" class="fas fa-arrow-alt-circle-up"></i></div>
+<div class="scrollToTop toTop-scrolled"><i id="toTop" class="fas fa-arrow-alt-circle-up"></i></div>
 <a target="_blank" href="https://www.facebook.com/huu.van.20x" class="messenger"><i  class="fab fa-facebook-messenger"></i></a>
 
 <?php

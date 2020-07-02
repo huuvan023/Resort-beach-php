@@ -3,12 +3,11 @@
     require_once "./mvc/view/Blocks/Header.php";
 ?>
 
-<div class="wrap">
+<div onscroll="asda()" class="wrap">
 
-    <section  class="wrap-banner row">
+    <section id="navnavnav" class="wrap-banner row">
         <div class="overlay">
-            <h1 class="overlay-header">
-                Phòng                    </h1>
+            <h1 class="overlay-header">Phòng</h1>
             <div class="line"></div>
             <div class="overlay-button">
                 <a href="./../Pages/index.php">Trang chủ</a>
@@ -118,7 +117,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
                 <div class="room-list-card">
                     <div class="room-list-card-body">
-                        <img src="../../public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
                         <div class="room-list-top">
                             <div class="room-list-price-top">
                                 <h6>$500</h6>
@@ -140,7 +139,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
                 <div class="room-list-card">
                     <div class="room-list-card-body">
-                        <img src="../../public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
                         <div class="room-list-top">
                             <div class="room-list-price-top">
                                 <h6>$500</h6>
@@ -162,7 +161,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
                 <div class="room-list-card">
                     <div class="room-list-card-body">
-                        <img src="../../public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
                         <div class="room-list-top">
                             <div class="room-list-price-top">
                                 <h6>$500</h6>
@@ -184,7 +183,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
                 <div class="room-list-card">
                     <div class="room-list-card-body">
-                        <img src="../../public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
                         <div class="room-list-top">
                             <div class="room-list-price-top">
                                 <h6>$500</h6>
@@ -206,7 +205,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
                 <div class="room-list-card">
                     <div class="room-list-card-body">
-                        <img src="../../public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
                         <div class="room-list-top">
                             <div class="room-list-price-top">
                                 <h6>$500</h6>
@@ -228,7 +227,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
                 <div class="room-list-card">
                     <div class="room-list-card-body">
-                        <img src="../../public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
                         <div class="room-list-top">
                             <div class="room-list-price-top">
                                 <h6>$500</h6>
@@ -256,7 +255,7 @@
         <div id="listView" class="nonedisplay">
             <a href="./../Pages/roomdetail.php">
                 <div class="room-list-body-listview">
-                    <img class="room-img" src="../../public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">
                         <h3><span>Phòng đơn</span>Triple Basic</h3>
                         <div class="room-card-option">
@@ -283,7 +282,7 @@
 
             <a href="./../Pages/roomdetail.php">
                 <div class="room-list-body-listview">
-                    <img class="room-img" src="../../public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">
                         <h3><span>Phòng đơn</span>Triple Basic</h3>
                         <div class="room-card-option">
@@ -310,7 +309,7 @@
 
             <a href="./../Pages/roomdetail.php">
                 <div class="room-list-body-listview">
-                    <img class="room-img" src="../../public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">
                         <h3><span>Phòng đơn</span>Triple Basic</h3>
                         <div class="room-card-option">
@@ -337,7 +336,7 @@
 
             <a href="./../Pages/roomdetail.php">
                 <div class="room-list-body-listview">
-                    <img class="room-img" src="../../public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">
                         <h3><span>Phòng đơn</span>Triple Basic</h3>
                         <div class="room-card-option">

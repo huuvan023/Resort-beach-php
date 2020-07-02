@@ -5,7 +5,7 @@
 
 <div class="wrap">
 
-    <section class="wrap-banner row">
+    <section id="navnavnav" class="wrap-banner row">
         <div class="overlay">
             <h1 class="overlay-header">
                 Ocean View Suite 
@@ -17,7 +17,7 @@
         </div>
     </section>
     
-    <section class="room-detail-gallery row">
+    <section data-aos="fade-down"  class="room-detail-gallery row">
         
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-2 room-detail-gallery-img">
             <img src="../../public/gallery/s-13-the-anam-the-indochine-restaurant-vii-cr-800x450.jpg" alt="a">
@@ -31,7 +31,7 @@
 
     </section>
 
-    <section class="room-detail-info row">
+    <section  class="room-detail-info row">
 
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                 <h2>Mô tả</h2>
@@ -81,118 +81,70 @@
         </div>
     </section>
 
-    <section class="room-other">
-        <h1>Phòng khác</h1>
+    <section    class="room-other">
+        <h1>Phòng cùng loại</h1>
         <div class="line"></div>
         <div class="slick">
-            <div class="slick-card col-xs-11 col-sm-11 col-md-11 col-lg-11 p-2 row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 card-item">  
-                    <img src="../../public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2">
-                    <h2>Ocean View Suite</h2>
-                    <div class="slcard-body">
-                        <div>
-                            <p>Đánh giá: <span>6.3</span></p>
-                            <p>Loại phòng: <span>Phòng đơn</span></p>
-                            <p class="pr">Giá phòng: <span>$.500</span></p>
-                        </div>
-                        <a href="#">Chi tiết</a>
+            <div class="slick-card">
+                <div class="sl-body">
+                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                    <div class="sl-content">
+                        <h2>Ocean View Suite</h2>
+                        <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
+                        <p class="r-rate">Đánh giá: 6.4 <i class="fas fa-star"></i></p>
+                        <p class="r-pr">Giá phòng: <span>$500</span></p>
+                        <a href="#">Xem chi tiết</a>
                     </div>
-                    
                 </div>
             </div>
-            <div class="slick-card col-xs-11 col-sm-11 col-md-11 col-lg-11 p-2 row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 card-item">  
-                    <img src="../../public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2">
-                    <h2>Ocean View Suite</h2>
-                    <div class="slcard-body">
-                        <div>
-                            <p>Đánh giá: <span>6.3</span></p>
-                            <p>Loại phòng: <span>Phòng đơn</span></p>
-                            <p class="pr">Giá phòng: <span>$.500</span></p>
-                        </div>
-                        <a href="#">Chi tiết</a>
+            <div class="slick-card">
+                <div class="sl-body">
+                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                    <div class="sl-content">
+                        <h2>Ocean View Suite</h2>
+                        <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
+                        <p class="r-rate">Đánh giá: 6.4 <i class="fas fa-star"></i></p>
+                        <p class="r-pr">Giá phòng: <span>$500</span></p>
+                        <a href="#">Xem chi tiết</a>
                     </div>
-                    
                 </div>
             </div>
-            <div class="slick-card col-xs-11 col-sm-11 col-md-11 col-lg-11 p-2 row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 card-item">  
-                    <img src="../../public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2">
-                    <h2>Ocean View Suite</h2>
-                    <div class="slcard-body">
-                        <div>
-                            <p>Đánh giá: <span>6.3</span></p>
-                            <p>Loại phòng: <span>Phòng đơn</span></p>
-                            <p class="pr">Giá phòng: <span>$.500</span></p>
-                        </div>
-                        <a href="#">Chi tiết</a>
+            <div class="slick-card">
+                <div class="sl-body">
+                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                    <div class="sl-content">
+                        <h2>Ocean View Suite</h2>
+                        <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
+                        <p class="r-rate">Đánh giá: 6.4 <i class="fas fa-star"></i></p>
+                        <p class="r-pr">Giá phòng: <span>$500</span></p>
+                        <a href="#">Xem chi tiết</a>
                     </div>
-                    
                 </div>
             </div>
-            <div class="slick-card col-xs-11 col-sm-11 col-md-11 col-lg-11 p-2 row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 card-item">  
-                    <img src="../../public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2">
-                    <h2>Ocean View Suite</h2>
-                    <div class="slcard-body">
-                        <div>
-                            <p>Đánh giá: <span>6.3</span></p>
-                            <p>Loại phòng: <span>Phòng đơn</span></p>
-                            <p class="pr">Giá phòng: <span>$.500</span></p>
-                        </div>
-                        <a href="#">Chi tiết</a>
+            <div class="slick-card">
+                <div class="sl-body">
+                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                    <div class="sl-content">
+                        <h2>Ocean View Suite</h2>
+                        <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
+                        <p class="r-rate">Đánh giá: 6.4 <i class="fas fa-star"></i></p>
+                        <p class="r-pr">Giá phòng: <span>$500</span></p>
+                        <a href="#">Xem chi tiết</a>
                     </div>
-                    
                 </div>
             </div>
-            <div class="slick-card col-xs-11 col-sm-11 col-md-11 col-lg-11 p-2 row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 card-item">  
-                    <img src="../../public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2">
-                    <h2>Ocean View Suite</h2>
-                    <div class="slcard-body">
-                        <div>
-                            <p>Đánh giá: <span>6.3</span></p>
-                            <p>Loại phòng: <span>Phòng đơn</span></p>
-                            <p class="pr">Giá phòng: <span>$.500</span></p>
-                        </div>
-                        <a href="#">Chi tiết</a>
+            <div class="slick-card">
+                <div class="sl-body">
+                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                    <div class="sl-content">
+                        <h2>Ocean View Suite</h2>
+                        <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
+                        <p class="r-rate">Đánh giá: 6.4 <i class="fas fa-star"></i></p>
+                        <p class="r-pr">Giá phòng: <span>$500</span></p>
+                        <a href="#">Xem chi tiết</a>
                     </div>
-                    
                 </div>
             </div>
-            <div class="slick-card col-xs-11 col-sm-11 col-md-11 col-lg-11 p-2 row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 card-item">  
-                    <img src="../../public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2">
-                    <h2>Ocean View Suite</h2>
-                    <div class="slcard-body">
-                        <div>
-                            <p>Đánh giá: <span>6.3</span></p>
-                            <p>Loại phòng: <span>Phòng đơn</span></p>
-                            <p class="pr">Giá phòng: <span>$.500</span></p>
-                        </div>
-                        <a href="#">Chi tiết</a>
-                    </div>
-                    
-                </div>
-            </div>  
 
             
         </div>
@@ -203,6 +155,7 @@
 <?php
 require_once "./mvc/view/Blocks/Footer.php";
 ?>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/slick/slick.min.js");?>></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/slick/slick.js");?>></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/room.js");?>></script>

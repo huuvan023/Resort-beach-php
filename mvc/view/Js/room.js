@@ -1,3 +1,19 @@
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  // window.alert("test")
+var height2 = document.getElementById("navnavnav").style.height;
+if ( document.body.scrollTop > height2 || document.documentElement.scrollTop > height2) {
+    document.getElementById("h").style.padding = "10px";
+    document.getElementById("h").style.backgroundColor = " rgb(133, 133, 133) ";
+    document.getElementById("h").style.boxShadow = "0px 6px 5px 3px rgba(0, 0, 0, 0.281);";
+} else { 
+    document.getElementById("h").style.padding = "25px";
+    document.getElementById("h").style.backgroundColor = "rgb(255, 255, 255)";
+    document.getElementById("h").style.boxShadow = "none";
+    }
+}
+
 $(document).ready(function(){
     AOS.init({
     duration: 1200,
@@ -25,7 +41,7 @@ $(document).ready(function(){
     $('.slick').slick({
         infinite: false,
         slidesToShow: 3,
-        slidesToScroll: 1
+        slidesToScroll: 2
     });
 });
 /*Modal booking room */
@@ -49,3 +65,6 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+//Handle nav
+
+ 

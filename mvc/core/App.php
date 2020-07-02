@@ -6,16 +6,10 @@
  
         function construct(){
             $arr = $this->URLProcess();
-            //http://localhost/WebProject-2020-master/index.php?url=Home/SayHi/1/2/3
+            unset($arr[0]); 
+            //http://localhost/WebProject-2020-master/Home/SayHi/1/2/3
             //Handle controller
-            unset($arr[0]);
-            $bool = true;
-            if ( isset($arr[1]) ) {
-                if ( $arr[1] != "" ) {
-                    $bool = false;
-                }
-            }
-            if ( $arr != NULL && !$bool ) {
+            if ( $arr != NULL ) {
                 if ( file_exists( "./mvc/controllers/".$arr[1].".php") == true  ) {
                     $this-> controller = $arr[1];
                     unset($arr[1]);

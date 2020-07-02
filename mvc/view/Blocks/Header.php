@@ -164,6 +164,7 @@
                     </div>
                 </div>
                     <a class="loginUserBtn" href="./mvc/view/Pages/login.php"> Đăng Nhập</a>
+                    <a class="loginUserBtn" href="./mvc/view/Pages/login.php"> Đăng ký</a>
                 </div>
             </div>
 </header>

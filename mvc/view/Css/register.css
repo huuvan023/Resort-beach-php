@@ -155,12 +155,18 @@ input[type=text]:invalid {
 	background-size: 200%;
 	background-image: linear-gradient(to right, #af9a7d ,  #856d4b, #c7a575);
 	font-size: 1.2vw;
-  color: #fff;
-  font-weight: 800;
+    color: white;
+    font-weight: 800;
 	text-transform: uppercase;
 	margin: 1rem 0;
 	cursor: pointer;
 	transition: .5s;
+     
+}
+#registerBtn img {
+    display: none;
+    width: 20px;
+    height: 20px;
 }
 
 .wrapper .form .inputfield .btn:hover{

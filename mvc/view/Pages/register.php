@@ -4,7 +4,7 @@ require_once "./mvc/view/Blocks/Loading.php";
 ?>
 
 <div class="wrap">
-    <form method="post" id="register" enctype="multipart/form-data">
+    <form method="post"  id="register" enctype="multipart/form-data">
         <div class="wrapper">
             <div class="title">
               Đăng kí tài khoản
@@ -82,15 +82,13 @@ require_once "./mvc/view/Blocks/Loading.php";
                   </label>
                   <p >Đồng ý với điều khoản sử dụng của chúng tôi</p>
                 </div> 
-                <div class="inputfield">
-                    <div class="g-recaptcha" data-sitekey="6Lf6ct8UAAAAABJRga8nO5nHJntry4wTCOLOFF_K"></div>
-                </div>
+                <input name="g-captcha" id="ct" style="display:none;"/>
                 <div  class="haveAccount">
                     <p>Đã có tài khoản? 
                     <a href="<?php echo ( $data["Dashboard"] );?>/Login/LoginPage/login">Đăng nhập</a></p>  
                 </div>
               <div class="submitField">
-                <input type="submit" id="registerBtn" value="Đăng kí" class="btn">
+                <button type="submit" id="registerBtn" class="btn">Đăng kí <img src="<?php echo $data["Dashboard"] ?>/public/unnamed.gif" alt="loading"/> </button>
               </div>
             </div>
         </div> 
@@ -100,7 +98,13 @@ require_once "./mvc/view/Blocks/Loading.php";
 <?php
 require_once "./mvc/view/Blocks/Footer.php";
 ?>
-
+<script>
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LeXwKwZAAAAAAY04oITvhQKl7ui7bpYYv95binH', {action: 'submit'}).then(function(token) {
+        document.getElementById("ct").value = token;
+    });
+  });
+</script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/login.js");?>></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

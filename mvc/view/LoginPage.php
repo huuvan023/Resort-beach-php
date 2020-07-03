@@ -16,7 +16,7 @@
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
         <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+         <script src="https://www.google.com/recaptcha/api.js?render=6LeXwKwZAAAAAAY04oITvhQKl7ui7bpYYv95binH"></script>
         <link rel="stylesheet" type="text/css" href= <?php echo ( $data["Dashboard"] . "/mvc/view/Css/Master.css");?>>
         <link rel="stylesheet" type="text/css" href= <?php echo ( $data["Dashboard"] . "/mvc/view/Css/". $data["Page"] .".css");?>>
     </head>

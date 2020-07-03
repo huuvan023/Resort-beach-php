@@ -20,13 +20,13 @@
     <section data-aos="fade-down"  class="room-detail-gallery row">
         
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-2 room-detail-gallery-img">
-            <img src="../../public/gallery/s-13-the-anam-the-indochine-restaurant-vii-cr-800x450.jpg" alt="a">
+            <img src="../../public/gallery/4056cbae-z-cr-800x450.jpg" alt="a">
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-2 room-detail-gallery-img">
-            <img src="../../public/gallery/s-15-the-anam-beach-ocean-cr-800x450.jpg" alt="">
+            <img src="../../public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-2 room-detail-gallery-img">
-            <img src="../../public/gallery/khu-nghi-duong-the-anam-nha-trang-128-800x450.jpg" alt="b">
+            <img src="../../public/gallery/4056cbae-z-cr-800x450.jpg" alt="b">
         </div>
 
     </section>
@@ -87,7 +87,7 @@
         <div class="slick">
             <div class="slick-card">
                 <div class="sl-body">
-                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
                     <div class="sl-content">
                         <h2>Ocean View Suite</h2>
                         <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
@@ -99,7 +99,7 @@
             </div>
             <div class="slick-card">
                 <div class="sl-body">
-                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
                     <div class="sl-content">
                         <h2>Ocean View Suite</h2>
                         <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
@@ -111,7 +111,7 @@
             </div>
             <div class="slick-card">
                 <div class="sl-body">
-                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
                     <div class="sl-content">
                         <h2>Ocean View Suite</h2>
                         <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
@@ -123,7 +123,7 @@
             </div>
             <div class="slick-card">
                 <div class="sl-body">
-                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
                     <div class="sl-content">
                         <h2>Ocean View Suite</h2>
                         <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
@@ -135,7 +135,7 @@
             </div>
             <div class="slick-card">
                 <div class="sl-body">
-                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/s-30-the-anam-lang-viet-restaurant-cr-800x450.jpg" alt="">
+                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
                     <div class="sl-content">
                         <h2>Ocean View Suite</h2>
                         <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>

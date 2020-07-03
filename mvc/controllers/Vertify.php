@@ -12,7 +12,7 @@ class Vertify extends Controller {
         if($update){
           echo "Tài khoản của bạn đã được xác nhận! <br> Chuyển hướng sau 5s...";
     
-          header( "refresh:5;url=/Login/LoginPage/login" );
+          header( "refresh:5;url=/WebProject-2020/Login/LoginPage/login" );
         }
         else{
           echo "Có lỗi xảy ra";

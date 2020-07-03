@@ -1,12 +1,18 @@
 <?php
     class DB {
         //DB infor
+        /*
+        public $con; //connection
+        protected $servername = "sql302.epizy.com";
+        protected $username = "epiz_26165405";
+        protected $password = "cdqfwqjLnzon9"; 
+        protected $dbname = "epiz_26165405_resortbeach";
+        */
         public $con; //connection
         protected $servername = "localhost";
         protected $username = "root";
         protected $password = ""; 
         protected $dbname = "resortproject";
-
         function __construct()
         {
             /*try {

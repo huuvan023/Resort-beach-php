@@ -117,7 +117,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
                 <div class="room-list-card">
                     <div class="room-list-card-body">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
+                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
                         <div class="room-list-top">
                             <div class="room-list-price-top">
                                 <h6>$500</h6>
@@ -255,7 +255,7 @@
         <div id="listView" class="nonedisplay">
             <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
                 <div class="room-list-body-listview">
-                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">
                         <h3><span>Phòng đơn</span>Triple Basic</h3>
                         <div class="room-card-option">
@@ -282,7 +282,7 @@
 
             <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
                 <div class="room-list-body-listview">
-                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">
                         <h3><span>Phòng đơn</span>Triple Basic</h3>
                         <div class="room-card-option">
@@ -309,7 +309,7 @@
 
             <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
                 <div class="room-list-body-listview">
-                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">
                         <h3><span>Phòng đơn</span>Triple Basic</h3>
                         <div class="room-card-option">
@@ -336,7 +336,7 @@
 
             <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
                 <div class="room-list-body-listview">
-                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
                     <div class="room-card-content">
                         <h3><span>Phòng đơn</span>Triple Basic</h3>
                         <div class="room-card-option">

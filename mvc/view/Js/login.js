@@ -20,11 +20,12 @@ $("#userPass").focus(function(){
 $("#userPass").blur(function(){
     $("#passwordStrength").css("display","none");
 });
+
 //Handle register form
 $('#register').on('submit', function(event){
   event.preventDefault();
   $.ajax({
-   url:"/Login/HandleRegister/1",
+   url:"/WebProject-2020/Login/HandleRegister/",
    method:"POST",
    //hàm serialize lấy ra các thành phần trong form và mã hóa thành giá chuỗi
    data:$(this).serialize(),
@@ -32,13 +33,14 @@ $('#register').on('submit', function(event){
    beforeSend:function()
    {
     $('#registerBtn').attr('disabled','disabled');
+    $('#registerBtn img').css("display","inline-block");
    },
    success:function(data)
    {
     $('#registerBtn').attr('disabled', false);
     if(data.success)
     {
-     grecaptcha.reset();
+     //grecaptcha.reset();
      //sử dụng sweetAlert
      swal({
         title: "Đăng kí thành công!",
@@ -50,7 +52,7 @@ $('#register').on('submit', function(event){
         //closeOnCancel: false
       },
       function(){
-        window.location.href = "/Login/LoginPage/login";  
+        window.location.href = "/WebProject-2020/Login/LoginPage/login";  
       });
     }
     if(data.fail)
@@ -59,7 +61,7 @@ $('#register').on('submit', function(event){
         title: "Đăng kí thất bại!",
         text: data.fail,
         confirmButtonColor: '#DF013A',
-        imageUrl: '/public/success.gif'
+        imageUrl: '/WebProject-2020/public/success.gif'
       });
     }
    }

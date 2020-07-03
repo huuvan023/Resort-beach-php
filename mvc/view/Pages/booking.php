@@ -22,7 +22,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                     </div>
                     <div class="booking-room-detail">
                         <div class="booking-room-card">
-                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
                             <div class="booking-room-card-content">
                                 <h3><span>Phòng đơn</span>Triple Basic</h3>
                                 <div class="room-card-option">
@@ -47,7 +47,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                         </div>
 
                         <div class="booking-room-card">
-                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
                             <div class="booking-room-card-content">
                                 <h3><span>Phòng đơn</span>Triple Basic</h3>
                                 <div class="room-card-option">
@@ -72,7 +72,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                         </div>
 
                         <div class="booking-room-card">
-                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
                             <div class="booking-room-card-content">
                                 <h3><span>Phòng đơn</span>Triple Basic</h3>
                                 <div class="room-card-option">
@@ -97,7 +97,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                         </div>
 
                         <div class="booking-room-card">
-                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/s-20-the-anam-lobby-cr-800x450.jpg" alt=""/>
+                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
                             <div class="booking-room-card-content">
                                 <h3><span>Phòng đơn</span>Triple Basic</h3>
                                 <div class="room-card-option">

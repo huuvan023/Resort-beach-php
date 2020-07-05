@@ -1,15 +1,20 @@
-    //modal
-    var modal = document.getElementById("myModal");
-    var span = document.getElementsByClassName("close")[0];
-    setTimeout(function(){ 
-        modal.style.display = "block";
-    }, 300);
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-        if (event.target == modal) {
+    //modal, element only load 1 times
+    var isExists = sessionStorage.getItem("pageloadcount");
+    console.log(isExists);
+    if (isExists == null ) {
+        sessionStorage.setItem("pageloadcount", 1);
+        var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
+        setTimeout(function(){ 
+            modal.style.display = "block";
+        }, 300);
+        span.onclick = function() {
             modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     }
     //end modal
@@ -29,7 +34,6 @@
         }
     }
     $(document).ready(function(){
-
         $("#toTop").click(function(){
             $("html").scrollTop(0);
         });

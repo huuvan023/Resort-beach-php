@@ -3,9 +3,9 @@
     require_once "./mvc/view/Blocks/Header.php";
 ?>
 
-<div class="wrap">
+<div id="body-d" class="wrap">
 
-    <section id="navnavnav" class="wrap-banner row">
+    <section style="background: url('../../public/bg1.jpg') 50%/cover no-repeat;" id="navnavnav" class="wrap-banner row">
         <div class="overlay">
             <h1 class="overlay-header">
                 Ocean View Suite 

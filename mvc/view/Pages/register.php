@@ -4,7 +4,7 @@ require_once "./mvc/view/Blocks/Loading.php";
 ?>
 
 <div class="wrap">
-    <form method="post"  id="register" enctype="multipart/form-data">
+    <form method="post" id="register" enctype="multipart/form-data">
         <div class="wrapper">
             <div class="title">
               Đăng kí tài khoản
@@ -15,6 +15,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                   <label>Họ và tên: </label>
                   <input type="text" name="userFullName" placeholder="Nguyễn Văn A"
                   value="" class="input"
+                  pattern="^[a-zA-Z ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+$"
                   autofocus required
                   oninvalid="this.setCustomValidity('Định dạng họ tên không đúng!')"
                   oninput="this.setCustomValidity('')" title="Họ tên của bạn"  />
@@ -24,6 +25,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                   <input type="text" name="userName" placeholder="Tên đăng nhập..."
                   value="" class="input"
                   autofocus required
+                  pattern="^[A-z_](\w|\.|_){5,32}$"
                   oninvalid="this.setCustomValidity('Định dạng tên đăng nhập không đúng! (Tên đăng nhập từ 5-32 kí tự, và không có kí tự đặt biệt )')"
                   oninput="this.setCustomValidity('')" title="Tên đăng nhập từ 5-32 kí tự, bao gồm chữ, số, dấu gạch dưới.."  />
                 </div>  
@@ -31,9 +33,9 @@ require_once "./mvc/view/Blocks/Loading.php";
                   <label>Mật khẩu: </label>
                   <input id="userPass" type="password" name="userPass" placeholder="Mật khẩu..."
                   value="" class="input" required
-                  autofocus 
-                  oninvalid="this.setCustomValidity('Định dạng mật khẩu không đúng! (Mật khẩu từ 6-20 kí tự, bao gồm kí tự latin chữ thường, chữ hoa, kí tự đặt biệt và số )')"
-                  oninput="this.setCustomValidity('')" title="Mật khẩu bao gồm kí tự, số, kí tự đặt biệt"  />
+                  autofocus pattern="^(?=.*[a-z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,20}$"
+                  oninvalid="this.setCustomValidity('Định dạng mật khẩu không đúng! (Mật khẩu từ 6-20 kí tự, bao gồm kí tự latin, kí tự đặt biệt và số )')"
+                  oninput="this.setCustomValidity('')" title="Mật khẩu từ 6-20 kí tự bao gồm kí tự, số, kí tự đặt biệt"  />
                 </div>
                 <div id="passwordStrength" style="margin-bottom: 0px;display: none;">
                   <small>Độ mạnh mật khẩu: </small>
@@ -41,16 +43,16 @@ require_once "./mvc/view/Blocks/Loading.php";
                 </div>
               <div class="inputfield">
                   <label>Xác nhận mật khẩu: </label>
-                  <input  type="password" name="userConfirm" placeholder="Nhập lại mật khẩu"
+                  <input id="userConfirm" type="password" name="userConfirm" placeholder="Nhập lại mật khẩu"
                   value="" class="input" required
-                  autofocus 
+                  autofocus pattern="^(?=.*[a-z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,20}$"
                   oninvalid="this.setCustomValidity('Mật khẩu không giống nhau!')"
                   oninput="this.setCustomValidity('')"  />
                 </div> 
                 <div class="inputfield">
                   <label>Email: </label>
                   <input  type="text" name="userEmail" placeholder="example@gmail.com"
-                  value=" " class="input" required
+                  class="input" required pattern="(.|\s)*\S(.|\s)*" 
                   oninvalid="this.setCustomValidity('Email không hợp lệ!')"
                   oninput="this.setCustomValidity('')" />
                 </div> 
@@ -58,22 +60,22 @@ require_once "./mvc/view/Blocks/Loading.php";
                   <label>Giới tính: </label>
                   <div class="custom_select">
                     <select name="userGender">
-                      <option value="nam">Nam</option>
-                      <option value="nu">Nữ</option>
+                      <option value="Nam">Nam</option>
+                      <option value="Nữ">Nữ</option>
                     </select>
                   </div>
                 </div> 
               <div class="inputfield">
                   <label>Số điện thoại: </label>
-                  <input name="userPhoneNumber" value="" type="text" class="input"placeholder="0372746xxx..."
-                   
+                  <input  name="userPhoneNumber" value="" type="text" class="input"placeholder="0372746xxx..."
+                  pattern="([0-9]{10})\b" required
                   autofocus 
                   oninvalid="this.setCustomValidity('Số điện thoại không hợp lệ!')"
                   oninput="this.setCustomValidity('')" />
                 </div> 
               <div class="inputfield">
                   <label>Địa chỉ: </label>
-                  <textarea name="userAddress" value=""  class="textarea"></textarea>
+                  <textarea required name="userAddress" value=""  class="textarea"></textarea>
                 </div> 
               <div class="terms">
                   <label class="check">

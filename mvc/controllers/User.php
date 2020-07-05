@@ -5,6 +5,8 @@
             $teo = $this -> model("SinhVienModel");
             $this -> view("UserPage",["Dashboard" => $this->dashboard,"Page" => $page]);
         }
-        
+        public function Logout(){
+            echo "Asd";
+        }
     }
 ?>

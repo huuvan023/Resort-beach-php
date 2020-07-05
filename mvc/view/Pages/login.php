@@ -8,23 +8,25 @@ require_once "./mvc/view/Blocks/Loading.php";
         Đăng nhập
     </h2>
     <div class="line"></div>
-        <form  enctype="multipart/form-data" >
-            <div class="input-gr one">
+        <form method="post" id="login" enctype="multipart/form-data" >
+            <div id="wr-name" class="input-gr one">
                 <div class="icon">
                 <i class="fas fa-user"></i>
                 </div>
                 <div class="input-field">
                     <h5>Tài khoản</h5>
-                    <input type="text" name="userName" class="input" />
+                    <input type="text" id="tk" value="<?php echo ( $data["Name"] );?>"
+                     name="userName" class="input" />
                 </div>
             </div>
-        <div  class="input-gr pass">
+        <div id="wr-pas" class="input-gr pass">
                 <div class="icon">
                 <i class="fas fa-lock"></i>
                 </div>
                 <div class="input-field">
                     <h5>Mật khẩu</h5>
-                    <input type="password" name="userPassword" class="input" >
+                    <input type="password" value="<?php echo ( $data["Pass"] );?>"
+                    id="ps" name="userPass" class="input" >
                 </div>
             </div>
         <div class="input-field terms">

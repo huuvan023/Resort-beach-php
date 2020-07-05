@@ -3,7 +3,7 @@
     require_once "./mvc/view/Blocks/Header.php";
 ?>
 
-<div  class="wrap">
+<div id="body-d" class="wrap">
 
     <section id="navnavnav" class="wrap-banner row">
         <div class="overlay">

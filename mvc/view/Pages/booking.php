@@ -2,7 +2,7 @@
 require_once "./mvc/view/Blocks/Header.php";
 require_once "./mvc/view/Blocks/Loading.php";
 ?>
-<div class="wrap row">
+<div id="body-d" class="wrap row">
 <?php
     include_once "./mvc/view/Blocks/TabUser.php";
 ?>

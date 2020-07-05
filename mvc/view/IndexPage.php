@@ -20,7 +20,7 @@
         <link rel="stylesheet" type="text/css" href= <?php echo ( $data["Dashboard"] . "/mvc/view/Css/Master.css");?>>
         <link rel="stylesheet" type="text/css" href= <?php echo ( $data["Dashboard"] . "/mvc/view/Css/index.css");?>>
     </head>
-        <body >
+        <body class="container-fluid">
             <?php
                 include_once "Pages/". $data["Page"] .".php";
             ?>

@@ -21,6 +21,10 @@ $(document).ready(function(){
         $(".notification_dd").removeClass("active");
        
     });
+    document.getElementById("body-d").onclick = function(event) {
+        $(".profile_dd").addClass("active2");
+        $(".notification_dd").removeClass("active");
+    }
     //*end handle header
 }); 
 

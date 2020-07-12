@@ -3,6 +3,7 @@ var preloader = document.getElementById("loading");
 function loadFunction(){
     preloader.style.display = 'none';
 };
+
 $(document).ready(function(){
     //handle header
     $("#accBtn").click(function(){
@@ -26,6 +27,18 @@ $(document).ready(function(){
         $(".notification_dd").removeClass("active");
     }
     //*end handle header
+    //Jbox
+    new jBox('Confirm', {
+        confirmButton: 'Đồng ý!',
+        cancelButton: 'Hủy bỏ'
+    });
+    new jBox('Modal', {
+        width: 300,
+        height: 100,
+        attach: '.Nofication',
+        title: 'My Modal Window',
+        content: '<i>Hello there!</i>'
+    });
 }); 
 
  

@@ -130,6 +130,7 @@ use PHPMailer\PHPMailer\Exception;
                         $_SESSION["user"]=$userName;
                         $_SESSION["password"] = $userPass;
                         $_SESSION["userid"] = $user ["userid"];
+                        $_SESSION["userfullname"] = $user["fullname"];
                         $data = array(
                             'success'  => true
                         );

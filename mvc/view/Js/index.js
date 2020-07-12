@@ -1,6 +1,5 @@
     //modal, element only load 1 times
     var isExists = sessionStorage.getItem("pageloadcount");
-    console.log(isExists);
     if (isExists == null ) {
         sessionStorage.setItem("pageloadcount", 1);
         var modal = document.getElementById("myModal");

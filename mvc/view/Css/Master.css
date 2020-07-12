@@ -299,18 +299,20 @@ body {
     padding: 10px;
 }
 .icon_wrap{
+    justify-content: center;
     display: flex;
     align-items: center;
 }
-.icon_wrap img {
-    width: 30px;
-    user-select: none;
-    height: 30px;
-    border-radius: 50%;
+.icon_wrap i {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 .icon_wrap span{
+    display: flex;
+    align-items: center;
     user-select: none;
-    font-size: 1.5vw;
+    font-size: 20px;
 }
 .profile_dd:before{
     content: "";
@@ -380,4 +382,70 @@ body {
     margin: 0;
     padding: 0;
     max-height: 30px ;
+}
+/*CSS room type*/
+.PhongVIPCSS {
+    background-color: rgb(136, 12, 12);
+    letter-spacing: normal;
+    color: white;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 0.8vw;
+    padding: 5px;
+    font-weight: 500;
+}
+.PhongThuongCSS {
+    background-color: rgb(36, 36, 75);
+    letter-spacing: normal;
+    color: white;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 0.8vw;
+    padding: 5px;
+    font-weight: 500;
+}
+.PhongGiaDinhCSS {
+    background-color: green;
+    letter-spacing: normal;
+    color: white;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 0.8vw;
+    padding: 5px;
+    font-weight: 500;
+}
+/*Responsive*/
+@media screen and ( max-width: 1040px) {
+    /*CSS room type*/
+.PhongVIPCSS,.PhongThuongCSS,.PhongGiaDinhCSS {
+    margin-right: 5px;
+    font-size: 0.8vw;
+    padding: 2px;
+}
+.wrap-footer p {
+    font-size: 1.4rem;
+}
+.login-btn .loginUserBtn {
+    font-size: 1.5rem;
+}
+}
+@media screen and ( max-width: 860px) {
+    .PhongVIPCSS,.PhongThuongCSS,.PhongGiaDinhCSS {
+        margin-right: 1px;
+        font-size: 0.4rem;
+        padding: 2px;
+    }
+    .wrap-footer p {
+        font-size: 1rem;
+    }
+
+
+}
+@media screen and ( max-width: 769px) {
+    .PhongVIPCSS,.PhongThuongCSS,.PhongGiaDinhCSS {
+        margin-right: 2px;
+        font-size: 0.5rem;
+        font-weight: normal;
+        padding: 4px;
+    }
 }

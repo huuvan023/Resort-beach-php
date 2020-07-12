@@ -95,13 +95,13 @@ $('#login').on('submit', function(event){
          title: "Đăng nhập thành công!",
          text: "Chúc mừng. Bạn đã đăng nhập tài khoản thành công!",
          confirmButtonColor: '#04B404',
-         confirmButtonText: 'Trang chủ',
+         confirmButtonText: "Trở lại",
          closeOnConfirm: false,
          imageUrl: '/WebProject-2020/public/success.gif',
          //closeOnCancel: false
        },
        function(){
-         window.location.href = "/WebProject-2020/";  
+        window.history.go(-1);
        });
      }
      if(data.fail)
@@ -120,66 +120,3 @@ $('#login').on('submit', function(event){
     }
    })
 });
-//Input animation
-const inputs = document.querySelectorAll(".input");
-function addcl(){
-    let parent = this.parentNode.parentNode;
-    parent.classList.add("befocus");
-}
-var tk = document.getElementById("tk");
-var pass = document.getElementById("ps");
-if ( tk.value != "" ) {  
-  document.getElementById("wr-name").classList.add("befocus")
-}
-if ( pass.value != "" ) { 
-  document.getElementById("wr-pas").classList.add("befocus")
-}
-function remcl(){
-    let parent = this.parentNode.parentNode;
-    if(this.value == ""){
-        parent.classList.remove("befocus");
-    }
-}
-inputs.forEach(input => {
-    input.addEventListener("focus", addcl);
-    input.addEventListener("blur", remcl);
-});
-//Check password strength
-var pass = document.getElementById("userPass")
-  pass.addEventListener('keyup',function(){
-      checkPassword(pass.value);
-  })
-  function checkPassword(password){
-    var strengthBar = document.getElementById("strength");
-    var strength = 0;
-    if(password.match(/[a-z]+/)){
-      strength += 1;
-    }
-    if(password.match(/[A-Z]+/)){
-      strength += 1;
-    }
-    if(password.match(/[#$^+=!*()@%&]+/)){
-      strength += 1;
-    }
-    if(password.length > 5){
-      strength += 1;
-    }
-    switch(strength){
-      case 0 :
-      strengthBar.value = 20;   
-      break;
-      case 1 :
-      strengthBar.value = 40;
-      break;
-      case 2 :
-      strengthBar.value = 60;
-      break;
-      case 3 :
-      strengthBar.value = 80;
-      break;
-      case 4 :
-      strengthBar.value = 100;
-      break;
-    }
-
-  }

@@ -240,7 +240,7 @@
 .type-body img {
     width: 100%;
     z-index: -1;
-    max-height: 25vh;
+    height: 200px;
     position: relative;
 }
 .type-body{     
@@ -508,4 +508,110 @@ Phần Modal
     color: #0184FF;
     border-radius: 60;
     cursor: pointer;
+}
+
+/*Responsive*/
+@media screen and ( max-width: 1025px) {
+    .hot-room .slick {
+        height: 200px;
+    }
+    .room-card .room-card-content {
+        text-align: left;
+    }
+    .room-card .room-card-content h2{
+        letter-spacing: 1px;
+        margin: 0 0 5px 0;
+        font-size: 1.5rem;
+    }
+    .room-card .room-card-content p {
+        font-weight: 800;
+        margin: 0.3vw 0;
+        font-size: 1rem;
+    }
+    .room-card .room-card-content p span {
+        font-weight: 200;
+        color: green;
+    }
+    .room-card .room-card-content a {
+        border: 1px solid #af9a7d;
+        padding: 1px 4px;
+        background-color: #af9a7d;
+        color: black;
+        transition: 0.5s;
+        font-size: 1rem;
+    }
+    .slick .slick-card h2 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+        margin-left: 0;
+    }
+    .slick .slick-card p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+    .slick .slick-card a {
+        border: 2px solid #af9a7d;
+        padding: 5px 10px;
+        margin-top: 20px;
+        background-color: #af9a7d;
+        color: black;
+        font-size: 0.8vw;
+        transition: 0.5s;
+    }
+    .slick-card img {
+        max-width: 90%;
+        max-height: 90%;
+        box-shadow: 3px 6px 4px 2px rgba(0,0,0,.5);
+        border-radius: 5px;
+    }
+    .service-card .service-card-body p {
+        font-size: 1.5rem;
+    }
+    .service-card .service-card-body h4 {
+        font-size: 2rem;
+    }
+}
+@media screen and ( max-width: 860px) {
+    .hot-room .slick {
+        height: 150px;
+    }
+    .room-card .room-card-content {
+        text-align: left;
+    }
+    .room-card .room-card-content h2{
+        letter-spacing: 1px;
+        margin: 0 0 5px 0;
+        font-size: 1.5rem;
+    }
+    .slick .slick-card h2 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+        margin-left: 0;
+    }
+    .slick .slick-card p {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+    .slick .slick-card a {
+        border: 2px solid #af9a7d;
+        padding: 3px 0.5vw;
+        background-color: #af9a7d;
+        color: black;
+        font-size: 0.8vw;
+        transition: 0.5s;
+    }
+    .slick-card img {
+        max-width: 100%;
+        max-height: 100%;
+        box-shadow: 3px 6px 4px 2px rgba(0,0,0,.5);
+        border-radius: 5px;
+    }
+    .service-card .service-card-body h4 {
+        font-size: 1.7rem;
+    }
+    .service-card .service-card-body p {
+        font-size: 1.2rem;
+    }
 }

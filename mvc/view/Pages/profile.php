@@ -11,24 +11,29 @@ require_once "./mvc/view/Blocks/Loading.php";
             <h2>Thông tin người dùng</h2>
             <div class="cardWrap">
                 <div class="cardProfile first">
-                    <span id="logoName">V</span>
+                    <span id="logoName">
+                        <?php
+                            $pieces = explode(" ", $data["User"]["fullname"]);
+                            echo $pieces[count($pieces) - 1][0];
+                        ?>
+                    </span>
                     <div class="profileDetail">
                         <h3>Họ & Tên: </h3>
-                        <span>Hữu Văn</span>
+                        <span id="filed1"><?php echo $data["User"]["fullname"] ?></span>
                     </div>
                     <span id="modifyProfile">Chỉnh sửa</span>
                 </div>
                 <div id="content1" class="content">
-                    <form action="/mvc/core/Controller.php" method="post" enctype="multipart/form-data" >
+                    <form method="post" enctype="multipart/form-data" >
                         <div class="form-group">
-                            <label>Tên</label>
-                            <input type="text" placeholder="Văn" autofocus="true" name="profileName"/>
+                            <label>Họ tên mới:</label>
+                            <input id="nameMod" 
+                            pattern="^[a-zA-Z ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+$"
+                            type="text" placeholder="Nhập họ tên mới"
+                            require
+                            autofocus="true" name="profileName"/>
                         </div>
-                        <div class="form-group">
-                            <label>Họ</label>
-                            <input type="text" placeholder="Ngô" name="profileFirstName"/>
-                        </div>
-                        <button type="submit">Lưu</button>
+                        <button class="modifiedUser" type="submit">Lưu</button>
                         <a href="#" onclick="handleToggle('content1')">Hủy</a>
                     </form>
                 </div>
@@ -37,17 +42,19 @@ require_once "./mvc/view/Blocks/Loading.php";
                 <div class="cardProfile">
                     <div class="profileDetail">
                         <h3>Email: </h3>
-                        <span>vancuteo@gmail.com</span>
+                        <span id="filed2"><?php echo $data["User"]["email"] ?></span>
                     </div>
                     <span id="modifyProfile">Chỉnh sửa</span>
                 </div>
                 <div id="content2" class="content">
-                    <form action="" method="post" enctype="multipart/form-data" >
+                    <form  method="post" enctype="multipart/form-data" >
                         <div class="form-group">
                             <label>Nhập Email mới</label>
-                            <input type="email" name="profileName"/>
+                            <input id="mailMod"
+                            required pattern="(.|\s)*\S(.|\s)*" 
+                            type="email" name="profileMail"/>
                         </div>
-                        <button type="submit">Lưu</button>
+                        <button class="modifiedUser" type="submit">Lưu</button>
                         <a href="#" onclick="handleToggle('content2')">Hủy</a>
                     </form>
                 </div>
@@ -56,12 +63,12 @@ require_once "./mvc/view/Blocks/Loading.php";
                 <div class="cardProfile">
                     <div class="profileDetail">
                         <h3>Mật khẩu: </h3>
-                        <span>*********</span>
+                        <span id="filed3"><?php echo $data["User"]["password"] ?></span>
                     </div>
                     <span id="modifyProfile">Chỉnh sửa</span>
                 </div>
                 <div id="content3" class="content">
-                    <form action="" method="post" enctype="multipart/form-data" >
+                    <form   method="post" enctype="multipart/form-data" >
                         <div class="form-group">
                             <label>Nhập mật khẩu mới</label>
                             <input id="userPass" type="password" name="profilePass" placeholder="Mật khẩu..."
@@ -76,9 +83,12 @@ require_once "./mvc/view/Blocks/Loading.php";
                         </div>
                         <div class="form-group">
                             <label>Nhập lại mật khẩu</label>
-                            <input type="password" name="profileName"/>
+                            <input type="password"
+                            require
+                            pattern="^(?=.*[a-z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,20}$"
+                            name="profilePassConfirm"/>
                         </div>
-                        <button type="submit">Lưu</button>
+                        <button class="modifiedUser" type="submit">Lưu</button>
                         <a href="#" onclick="handleToggle('content3')">Hủy</a>
                     </form>
                 </div>
@@ -87,20 +97,20 @@ require_once "./mvc/view/Blocks/Loading.php";
                 <div class="cardProfile">
                     <div class="profileDetail">
                         <h3>Giới tính: </h3>
-                        <span>Nam</span>
+                        <span id="filed4"><?php if(isset($data["User"]["gender"])) echo $data["User"]["gender"] ?></span>
                     </div>
                     <span id="modifyProfile">Chỉnh sửa</span>
                 </div>
                 <div id="content4" class="content">
-                    <form action="" method="post" enctype="multipart/form-data" >
+                    <form method="post" enctype="multipart/form-data" >
                         <div class="form-group">
                             <label>Giới tính</label>
-                            <select>
-                                <option>Nam</option>
-                                <option>Nữ</option>
+                            <select require id="selectGen" name="profileGender">
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
                             </select>
                         </div>
-                        <button type="submit">Lưu</button>
+                        <button class="modifiedUser" type="submit">Lưu</button>
                         <a href="#" onclick="handleToggle('content4')">Hủy</a>
                     </form>
                 </div>
@@ -109,17 +119,17 @@ require_once "./mvc/view/Blocks/Loading.php";
                 <div class="cardProfile">
                     <div class="profileDetail">
                         <h3>Số điện thoại: </h3>
-                        <span>012345678</span>
+                        <span id="filed5"><?php if(isset($data["User"]["phonenumber"])) echo $data["User"]["phonenumber"] ?></span>
                     </div>
                     <span id="modifyProfile">Chỉnh sửa</span>
                 </div>
                 <div id="content5" class="content">
-                    <form action="" method="post" enctype="multipart/form-data" >
+                    <form  method="post" enctype="multipart/form-data" >
                         <div class="form-group">
                             <label>Số điện thoại</label>
-                            <input type="text" name="profileName"/>
+                            <input require pattern="([0-9]{10})\b" id="numUser" type="text" name="profilePhoneNum"/>
                         </div>
-                        <button type="submit">Lưu</button>
+                        <button class="modifiedUser" type="submit">Lưu</button>
                         <a href="#" onclick="handleToggle('content5')">Hủy</a>
                     </form>
                 </div>
@@ -128,17 +138,17 @@ require_once "./mvc/view/Blocks/Loading.php";
                 <div class="cardProfile">
                     <div class="profileDetail">
                         <h3>Địa chỉ: </h3>
-                        <span>ahihi</span>
+                        <span id="filed6"><?php if(isset($data["User"]["address"])) echo $data["User"]["address"] ?></span>
                     </div>
                     <span id="modifyProfile">Chỉnh sửa</span>
                 </div>
                 <div id="content6" class="content">
-                    <form action="" method="post" enctype="multipart/form-data" >
+                    <form  method="post" enctype="multipart/form-data" >
                         <div class="form-group">
                             <label>Địa chỉ</label>
-                            <textarea rows="2"></textarea>
+                            <textarea require id="addUs" name="profileAddress" rows="2"></textarea>
                         </div>
-                        <button type="submit">Lưu</button>
+                        <button class="modifiedUser" type="submit">Lưu</button>
                         <a href="#" onclick="handleToggle('content6')">Hủy</a>
                     </form>
                 </div>
@@ -150,6 +160,12 @@ require_once "./mvc/view/Blocks/Loading.php";
 <?php
 require_once "./mvc/view/Blocks/Footer.php";
 ?>
-
+<script>
+    //password strength
+    var pass = document.getElementById("userPass")
+    pass.addEventListener('keyup',function(){
+        checkPassword(pass.value);
+    })
+</script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/profile.js");?>></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>

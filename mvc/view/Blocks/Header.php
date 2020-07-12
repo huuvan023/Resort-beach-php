@@ -10,7 +10,6 @@
                 <div class="login-btn">
                 <?php
                     if( isset($_SESSION["user"]) ) {
-                        include_once "Nofication.php";
                         include_once "Logined.php";
                     }
                     else {

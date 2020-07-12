@@ -189,3 +189,36 @@ input[type=text]:invalid {
     flex-direction: row;
   }
 }
+/*Responsive*/
+@media only screen and (max-width: 1040px) {
+  .wrapper .form .inputfield label {
+    font-size: 1.6rem;
+  }
+  .wrapper .form .inputfield .input, .wrapper .form .inputfield .textarea {
+    font-size: 1.5rem;
+    padding: 0.2rem;
+  }
+  .wrapper .form .inputfield .custom_select select {
+    font-size: 1.5rem;
+    padding: 0.2rem;
+  }
+  .terms p {
+    font-size: 1rem;
+  }
+  .wrapper .form .terms .check .checkmark {
+    width: 10px;
+    height: 10px;
+    margin-right: 20px;
+  }
+  .wrapper .form .terms .check .checkmark:before{
+    top: 1px;
+    left: 1px;
+  }
+  .haveAccount p {
+    font-size: 1.2rem;
+  }
+  .wrapper .form .submitField .btn {
+    font-size: 1.2rem;
+    height: 2.4rem;
+  }
+}

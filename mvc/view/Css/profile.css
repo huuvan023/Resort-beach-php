@@ -382,6 +382,41 @@
   color: white;
   background-color: #94bdfd;
 }
+@media only screen and (max-width: 800px) {
+  .booking-room-card-content .room-card-checking > div > span {
+    display: block  ;
+  }
+  .room-card-discription > p {
+    margin-bottom: 0;
+  }
+  .booking-room-card-content > .room-card-option {
+    margin: 0;
+  }
+  .booking-room-card-price .booking-card-rate > span {
+    font-size: 1.2rem;
+  }
+  .booking-cash > button {
+    font-size: 1.5rem;
+  }
+  .booking-cash > h3 {
+    font-size: 1.7rem;
+    margin: 0;
+  }.booking-cash > span {font-size: 2.5rem;}
+  #bk-title {
+    font-size: 1.5rem;
+  }
+  .booking-room-card-price .booking-card-price p {
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+  }
+  .room-card-discription > p {
+    line-height: normal;
+    letter-spacing: normal;
+  }
+  .booking-room-card .booking-img {
+    height: 70%;
+  }
+}
 @media only screen and (max-width: 1040px) {
   .cardProfile h3 {
     font-size: 2rem;
@@ -425,5 +460,77 @@
   }
   .booking-room-card-content > a {
     font-size: 2rem;
+  }
+}
+@media screen and ( max-width: 430px) {
+  .wrap-content-profile > h2 {
+    font-size: 2.5rem;
+  }
+  .booking-room-detail > .booking-room-card {
+    height: 150px;
+    
+  }
+  .booking-card-rate >p {
+    font-size: 0.7rem;
+  }
+  .booking-room-card-content > .room-card-option {
+    margin: 5px;
+    font-size: 1rem;
+  }
+  #bk-title {
+    font-size: 1.4rem;
+  }
+  .booking-room-card-price .booking-card-price p {
+    font-size: 2.5rem;
+  }
+  .booking-room-card-content > a {
+    font-size: 1.5rem;
+  }
+  .fa-users:before {
+    font-size: 1rem;
+  }
+  .room-card-discription > p {
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+  }
+  .booking-room-card-content .room-card-checking {
+    font-size: 1rem !important;
+    margin-top: 0;
+  }
+  .booking-room-card-content .room-card-checking > div > span {
+    font-size: 0.8rem;
+    display: block;
+  }
+  .room-card-checking > div {
+    font-size: 1rem;
+  }
+  .booking-room-card .booking-img {
+    height: 80%;
+  }
+  .booking-cash > h3 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+  .booking-cash > span {
+    font-size: 2rem;
+  }
+  .booking-cash > button {
+    font-size: 1.2rem;
+  }
+  .cardProfile h3 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  .cardProfile .profileDetail > span{
+    font-size: 1.5rem;
+  }
+ 
+  #modifyProfile {
+    font-size: 1.5rem;
+  }
+  #logoName {
+    width: 50px;
+    font-size: 2rem;
+    height: 50px;
   }
 }

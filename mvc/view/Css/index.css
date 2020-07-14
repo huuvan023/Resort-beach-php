@@ -8,10 +8,13 @@
     height: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;  
 }
-.wrap-banner video {
-    position: relative;
+.bgIndex {
+    background: #fff url('./../../../public/bgindex.jpg') no-repeat 50%/cover;
+    height: 500px;
+    width: 100%;
+    position: relative
 }
 .wrap-banner .overlay {
     z-index: 1;
@@ -38,6 +41,7 @@
 .overlay .overlay-button {
     padding: 1vw 0;
 }
+ 
 .overlay .overlay-button a {
     font-size: 1vw;
     text-align: center;
@@ -99,7 +103,7 @@
 }
 .hot-room .slick {
     margin: 20px;
-    height: 250px;
+    height: 180px;
 }
 .slick .slick-card {
     display: flex;
@@ -128,7 +132,7 @@
 }
 .slick .slick-card a {
     border: 2px solid #af9a7d;
-    padding: 3px 0.5vw;
+    padding: 5px 10px;
     background-color: #af9a7d;
     color: black;
     font-size: 0.8vw;
@@ -140,8 +144,8 @@
     color: #685843;
 }
 .slick-card img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 120px;
     box-shadow: 3px 6px 4px 2px rgba(0,0,0,.5);
     border-radius: 5px;
 }
@@ -488,7 +492,7 @@ Phần Modal
 
 
 /*Phần footer */
- 
+
 .toTop-scrolled {
     position: fixed;
     right: 8vw;
@@ -513,7 +517,7 @@ Phần Modal
 /*Responsive*/
 @media screen and ( max-width: 1025px) {
     .hot-room .slick {
-        height: 200px;
+        height: 220px;
     }
     .room-card .room-card-content {
         text-align: left;
@@ -574,7 +578,7 @@ Phần Modal
 }
 @media screen and ( max-width: 860px) {
     .hot-room .slick {
-        height: 150px;
+        height: 170px;
     }
     .room-card .room-card-content {
         text-align: left;
@@ -613,5 +617,95 @@ Phần Modal
     }
     .service-card .service-card-body p {
         font-size: 1.2rem;
+    }
+}
+@media screen and ( max-width: 430px) {
+
+    .hot-room h1 {
+        font-size: 2.2rem;
+    }
+    .hot-room .slick {
+        height: 250px;
+    }
+    .line {
+        margin: 15px auto;
+    }
+    .slick .slick-card {
+        height: 250px;
+        padding: 10px 20px;
+        width: 250px !important;
+    }
+    .slick-card img {
+         height: 100px;
+    }
+    .slick .slick-card span {
+        font-size: 0.7rem;
+    }
+    .slick .slick-card p {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 14px;
+    }
+    .slick .slick-card span {
+        font-size: 1rem;
+        
+    }
+    .slick .slick-card a {
+        font-size: 1.5rem;
+        margin-left: 20%;
+        padding: 2px 5px;
+    }
+    .slick-prev:before, .slick-next:before {
+        font-size: 30px;
+    }
+    .new-room .room-card img {
+        width: 80%;
+    }
+    .room-card .room-card-content h2{
+        text-align: center;
+    }
+    .room-card .room-card-content p {
+        text-align: center;
+    }
+    .room-card .room-card-content a {
+        margin-left: 35%;
+        font-size: 1.2rem;
+
+    }
+    .new-room .room-card{
+        width: 90%;
+        margin: 10px auto;
+    }
+    .type-body .type-price-top {
+        width: 40%;
+    }
+    .type-price-top h6 {
+        font-size: 1.5rem;
+    }
+    .type-price-top p {
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+    }
+    .type-foot {
+        font-size: 1.7rem;
+        padding: 13px 0;
+    }
+    .room-type .room-type-header h1 {
+        font-size: 2.5rem;
+    }
+    .service-card .service-card-body p {
+        line-height: 2rem;
+        font-size: 1rem;
+    }
+    .service-card .service-card-body h4 {
+        margin-bottom: 5px;
+    }
+    .toTop-scrolled    {
+        font-size: 5rem;
+        bottom: 0.8rem;
+        right: 7rem !important;
+    }
+    .type-body img {
+        height: 150px;
     }
 }

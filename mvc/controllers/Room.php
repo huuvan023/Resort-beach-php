@@ -65,6 +65,7 @@ class Room extends Controller {
     protected function RoomPerType($id){
         try {
             $model = $this -> model("RoomsModel");
+            $roomTypeModel = $this -> model("RoomTypeModel");
             $room = $model -> getRoomsPerType($id);
             $rooms = array();
             while($row = $room->fetch_assoc())  {
@@ -72,7 +73,9 @@ class Room extends Controller {
             }
             $tmp = array_column($rooms, 'roomame');
             array_multisort($tmp, SORT_DESC, $rooms);
-            $this -> view("RoomPage",["Dashboard" => $this->dashboard,"Page" => "totalroom", "Rooms" => $rooms,"PageType" => $id]);
+            $TypeImage = $roomTypeModel -> getRoomType($id);
+            $RoomTypeIMG = $TypeImage -> fetch_assoc(); 
+            $this -> view("RoomPage",["Dashboard" => $this->dashboard,"Page" => "totalroom", "Rooms" => $rooms,"PageType" => $id, "RoomType" => $RoomTypeIMG]);
         }
         catch( Exception $e ) {
             echo "Some thing was wrong:".$e;
@@ -225,7 +228,7 @@ class Room extends Controller {
                 echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
                 <div class="room-list-card">
                     <div class="room-list-card-body">
-                    <img alt="'.$arr[$i]['roomame'].'"
+                    <img class="imgV" alt="'.$arr[$i]['roomame'].'"
                     src="data:image/jpg;charset=utf8;base64,'.base64_encode($arr[$i]['mainimage']).'" /> 
                         <div class="room-list-top">
                             <div class="room-list-price-top">
@@ -259,7 +262,7 @@ class Room extends Controller {
                         </div>
                         <div class="room-card-discription">
                             <p>
-                            '.substr($arr[$i]['discription'], 0, 1000).'
+                            '.substr($arr[$i]['discription'], 0, 300).'
                             </p>
                         </div>
                     </div>

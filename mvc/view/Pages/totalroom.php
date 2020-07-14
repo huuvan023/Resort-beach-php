@@ -7,9 +7,31 @@
 ?>
 <div id="body-d" class="wrap">
 
-    <section id="navnavnav" class="wrap-banner row">
+    <section id="navnavnav"
+    style="background: url('<?php
+        if(isset($data["RoomType"])){
+            echo 'data:image/jpg;charset=utf8;base64,'.base64_encode($data["RoomType"]["roomtypeimg"]).'';
+        } else echo $data["Dashboard"] ."/public/bg1.jpg"; ?>') 50%/cover no-repeat;"
+    class="wrap-banner row">
         <div class="overlay">
-            <h1 class="overlay-header">Phòng</h1>
+            <h1 class="overlay-header"><?php
+                if( $data["PageType"] != "all" ) {
+                    switch($data["PageType"]){
+                        case "PHONGTHUONG" :
+                            echo "Phòng Thường";
+                        break;
+                        case "PHONGVIP" :
+                            echo "Phòng V.I.P";
+                        break;
+                        case "PHONGGIADINH" :
+                            echo "Phòng Gia Đình";
+                        break;
+                    }
+                }
+                else {
+                    echo "Tất Cả Phòng";
+                }
+            ?></h1>
             <div class="line"></div>
             <div class="overlay-button">
                 <a href="<?php echo ( $data["Dashboard"] );?>">Trang chủ</a>
@@ -125,7 +147,7 @@
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
                 <div class="room-list-card">
                     <div class="room-list-card-body">
-                    <img alt="<?php echo $row[$i]['roomame'] ?>"
+                    <img class="imgV" alt="<?php echo $row[$i]['roomame'] ?>"
                     src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row[$i]['mainimage']); ?>" /> 
                         <div class="room-list-top">
                             <div class="room-list-price-top">

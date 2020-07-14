@@ -2,6 +2,7 @@
     class BookingModel extends DB {
         public function insertBooking($dateArrive, $dateLeave, $userID, $roomID, $price) {
             $conn = $this -> __construct();
+            $conn->set_charset("utf8");
             $hours = (string)date("h");
             $dateTime = date("Y-m-d")."  ".$hours[0].(int)($hours[1] + 5).":".date("i:s") ;
             $sql = "INSERT INTO `booking`(`userid`, `roomid`, `datearrive`, `dateleave`, `price`,`bookingdetail`) VALUES ($userID,$roomID,'$dateArrive','$dateLeave',$price,'$dateTime')";
@@ -22,6 +23,7 @@
         //get all room's date was booked by user
         private function getAllRoomBooking($roomID) {
             $conn = $this -> __construct();
+            $conn->set_charset("utf8");
             $sql = "SELECT datearrive, dateleave FROM booking WHERE roomid = $roomID";
             try {
                 if ( $result = mysqli_query($conn, $sql) ){
@@ -82,6 +84,7 @@
         //Delete Booking Room
         public function DeleteBooking($roomID,$dateArr,$dateLea) {
             $conn = $this -> __construct();
+            $conn->set_charset("utf8");
             $sql = "DELETE FROM booking WHERE roomid = $roomID AND datearrive = '$dateArr' AND dateleave = '$dateLea' LIMIT 1";
             try {
                 if ( $result = mysqli_query($conn, $sql) ){

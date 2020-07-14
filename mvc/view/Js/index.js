@@ -38,7 +38,7 @@
         });
 
         $(window).scroll( function(){
-            $('.scrollToTop').toggleClass('toTop-scrolled', $(this).scrollTop() > $('video').height()-100 );
+            $('.scrollToTop').toggleClass('toTop-scrolled', $(this).scrollTop() > $('#vid').height()-100 );
         });
         $('.slick').slick({
             dots: true,

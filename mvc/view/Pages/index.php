@@ -5,15 +5,11 @@ require_once "./mvc/view/Blocks/Header.php";
 ?>
 <div id="body-d" class="wrap">
     <!--Phần body-->            
-    <section class="wrap-banner">
-        <video id="vid" style="width:100%;" autoplay loop muted >
-            <source  src="<?php echo $data["Dashboard"] ?>/public/videobg.mp4" type="video/mp4">
-        </video>
+    <section id="vid" class="bgIndex wrap-banner">
         <div class="overlay">
             <h1 class="overlay-header">
                 Beach Resort
             </h1>
-
             <div class="line"></div>
 
             <div class="overlay-content">
@@ -270,6 +266,9 @@ require_once "./mvc/view/Blocks/Header.php";
 <?php
 require_once "./mvc/view/Blocks/Footer.php";
 ?>
+<script>
+ 
+</script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/slick/slick.min.js");?>></script>

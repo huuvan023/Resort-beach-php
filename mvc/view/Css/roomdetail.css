@@ -378,6 +378,7 @@
 }
 .sl-content > .r-pr {
     margin-bottom: 20px;
+
 }
 .sl-content > .r-pr span {
     font-weight: bold;
@@ -486,5 +487,74 @@
     }
     .sl-content a {
         padding: 5px 13px;
+    }
+}
+@media only screen and (max-width: 420px) { 
+    .wrap-banner{
+        height: 200px;
+    }
+    .overlay .overlay-button a {
+        font-size: 1rem;
+    }
+    .overlay .overlay-header {
+        font-size: 2.5rem;
+    }
+    .room-detail-gallery img {
+        height: 150px;
+    }
+    .room-detail-info p {
+        letter-spacing: normal;
+        line-height: normal;
+        font-size: 1rem;
+    }
+    .room-detail-info h2 {
+        font-size: 2.5rem !important;
+    }
+    .room-detail-info .rent-now > button {
+        font-size: 1.5rem;
+        padding: 5px 10px;
+    }
+    .room-other > h1 {
+        font-size: 3rem;
+    }
+    .slick-card .sl-body > img {
+        height: 100px;
+        margin-bottom: 1rem;
+    }
+    .sl-content > h2 {
+        font-size: 1.5rem;
+    }
+    .slick-prev:before, .slick-next:before {
+        font-size: 2.5rem;
+    }
+    .sl-content > .r-type, .sl-content > .r-rate {
+        font-size: 1.2rem;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+    .sl-content{
+        padding: 10px 10px;
+    }
+    .slick-card .sl-body {
+        padding-top: 10px;
+    }
+    .sl-content > .r-pr {
+        font-size: 1rem;
+    }
+    .sl-content > .r-pr {
+        margin-bottom: 7px;
+    }
+    .sl-content a {
+        padding: 5px 5px;
+        font-size: 0.8rem;
+    }
+    .slick-card .sl-body,.slick .slick-card {
+        height: 270px;
+    }
+    .room-other {
+        height: 400px;
+    }
+    .slick {
+        margin: 20px 50px;
     }
 }

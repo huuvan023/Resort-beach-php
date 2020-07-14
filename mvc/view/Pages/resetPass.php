@@ -8,7 +8,7 @@ require_once "./mvc/view/Blocks/Loading.php";
         Lấy lại mật khẩu
     </h2>
     <div class="line"></div>
-    <form method="post" id="login" enctype="multipart/form-data" >
+    <form id="rsPass" method="post" id="login" enctype="multipart/form-data" >
             <div id="wr-name" class="input-gr one">
                 <div class="icon">
                 <i class="fas fa-envelope-open-text"></i>
@@ -16,7 +16,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                 <div class="input-field">
                     <h5>Nhập email của bạn</h5>
                     <input type="text" id="tk" value=""
-                     name="userName" class="input" />
+                     name="rsUserEmail" class="input" />
                 </div>
             </div>
         <input type="submit" class="btn" value="Gửi mã xác nhận"> 

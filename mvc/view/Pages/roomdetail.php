@@ -173,7 +173,7 @@ require_once "./mvc/view/Blocks/Footer.php";
         //Slick
         $('.slick').slick({
         infinite: false,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 2
     });
 });

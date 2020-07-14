@@ -414,6 +414,9 @@ body {
     padding: 5px;
     font-weight: 500;
 }
+.ft-Row {
+    font-size: 1.2vw;
+}
 /*Responsive*/
 @media screen and ( max-width: 1040px) {
     /*CSS room type*/
@@ -438,7 +441,9 @@ body {
     .wrap-footer p {
         font-size: 1rem;
     }
-
+    .messenger {
+        font-size: 7rem !important;
+    }
 
 }
 @media screen and ( max-width: 769px) {
@@ -447,5 +452,50 @@ body {
         font-size: 0.5rem;
         font-weight: normal;
         padding: 4px;
+    }
+}
+@media screen and ( max-width: 430px) {
+    .wrap-footer h3 {
+        font-size: 2rem;
+        margin: 10px 0 5px 0;
+    }
+    .wrap-footer p {
+        height: 2.5rem;
+    }
+    .ft-Row {
+        font-size: 1.1rem;
+        margin: 0 auto;
+    }
+    .messenger {
+        font-size: 5rem !important;
+    }
+    .login-btn .loginUserBtn {
+        font-size: 1rem;
+        padding: 5px 8px    ;
+    }
+    .nav-body {
+        margin-left: 30px;
+    }
+    .navigation-bar {
+        padding: 20px 10px 15px 10px !important;
+    }
+    .bgIndex {
+        height: 200px;
+    }
+    .overlay .overlay-button a {
+        font-size: 0.6rem;
+    }
+    .carousel-inner>.item>a>img, .carousel-inner>.item>img {
+        height: 150px;
+    }
+    .PhongVIPCSS, .PhongThuongCSS, .PhongGiaDinhCSS {
+        padding: 2px;
+        font-size: 0.6rem;
+    }
+    #headerAccOption {
+        font-size: 1.5rem;
+    }
+    .profile_dd > .profile_ul {
+        width: 200px;
     }
 }

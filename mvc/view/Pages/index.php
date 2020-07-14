@@ -5,15 +5,11 @@ require_once "./mvc/view/Blocks/Header.php";
 ?>
 <div id="body-d" class="wrap">
     <!--Phần body-->            
-    <section class="wrap-banner">
-        <video id="vid" style="width:100%;" autoplay loop muted >
-            <source  src="<?php echo $data["Dashboard"] ?>/public/videobg.mp4" type="video/mp4">
-        </video>
+    <section id="vid" class="bgIndex wrap-banner">
         <div class="overlay">
             <h1 class="overlay-header">
                 Beach Resort
             </h1>
-
             <div class="line"></div>
 
             <div class="overlay-content">
@@ -84,68 +80,49 @@ require_once "./mvc/view/Blocks/Header.php";
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <h1>Thuê nhiều nhất</h1>
             <div class="line"></div>
-            <div class="slick">
+            <div class="slickThue slick">
+                <?php
+                    if( isset($data["RoomPopular"]) ) {
+                        for ( $i = 0 ; $i < 4 ; $i++ ) {
+                            $dt = $data["RoomPopular"][$i];
+                ?>
                 <div class="slick-card row">
                     <div style="padding: 0;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 card-item">  
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
+                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($dt["mainimage"]); ?>" alt="<?php echo ($dt["roomame"]); ?>">
                     </div>
 
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 slick-card-content">
-                        <h2>Ocean View Suite</h2>
-                        <p>Loại phòng: <span>Phòng đơn</span></p>
-                        <p>Giá phòng: <span>$500</span></p>
-                        <a href="#">Xem chi tiết</a>
+                        <h2><?php echo $dt["roomame"] ?></h2>
+                        <p>Loại phòng: <span class="
+                        <?php
+                            if( $dt["roomtypeid"] =="PHONGGIADINH" ) {
+                                echo "PhongGiaDinhCSS";
+                            }
+                            if( $dt["roomtypeid"] =="PHONGVIP" ) {
+                                echo "PhongVIPCSS";
+                            }
+                            if( $dt["roomtypeid"] =="PHONGTHUONG" ) {
+                                echo "PhongThuongCSS";
+                            }
+                        ?>" style="color:white" ><?php 
+                            if( $dt["roomtypeid"] =="PHONGGIADINH" ) {
+                                echo "Phòng Gia Đình";
+                            }
+                            if( $dt["roomtypeid"] =="PHONGVIP" ) {
+                                echo "Phòng V.I.P";
+                            }
+                            if( $dt["roomtypeid"] =="PHONGTHUONG" ) {
+                                echo "Phòng Thường";
+                            }
+                        ?></span></p>
+                        <p>Giá phòng: <span>$<?php echo $dt["roomprice"] ?></span></p>
+                        <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail/<?php echo $dt["roomid"]  ?>">Xem chi tiết</a>
                     </div>
                 </div>
-                <div class="slick-card row">
-                    <div style="padding: 0;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 card-item">  
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                    </div>
-
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 slick-card-content">
-                        <h2>Ocean View Suite</h2>
-                        <p>Loại phòng: <span>Phòng đơn</span></p>
-                        <p>Giá phòng: <span>$500</span></p>
-                        <a href="#">Xem chi tiết</a>
-                    </div>
-                </div>
-                <div class="slick-card row">
-                    <div style="padding: 0;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 card-item">  
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                    </div>
-
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 slick-card-content">
-                        <h2>Ocean View Suite</h2>
-                        <p>Loại phòng: <span>Phòng đơn</span></p>
-                        <p>Giá phòng: <span>$500</span></p>
-                        <a href="#">Xem chi tiết</a>
-                    </div>
-                </div>
-                <div class="slick-card row">
-                    <div style="padding: 0;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 card-item">  
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                    </div>
-
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 slick-card-content">
-                        <h2>Ocean View Suite</h2>
-                        <p>Loại phòng: <span>Phòng đơn</span></p>
-                        <p>Giá phòng: <span>$500</span></p>
-                        <a href="#">Xem chi tiết</a>
-                    </div>
-                </div>
-                <div class="slick-card row">
-                    <div style="padding: 0;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 card-item">  
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                    </div>
-
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 slick-card-content">
-                        <h2>Ocean View Suite</h2>
-                        <p>Loại phòng: <span>Phòng đơn</span></p>
-                        <p>Giá phòng: <span>$500</span></p>
-                        <a href="#">Xem chi tiết</a>
-                    </div>
-                </div>
-
+                <?php
+                    }
+                }
+                ?>
             </div>
         </div>
         
@@ -188,57 +165,38 @@ require_once "./mvc/view/Blocks/Header.php";
             <div class="line"></div>
         </div>
         <div  class="type-wrap">
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-3">
-                <div class="type-card">
-                    <div class="type-body">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                        <div class="type-price-top">
-                            <h6>$500 - $700</h6>
-                            <p>mỗi đêm</p>
+            <?php
+                if( $data["RoomTypes"] != NULL ) {
+                    for ( $i = 0 ; $i < count($data["RoomTypes"]) ; $i ++ ) {
+                        $row = $data["RoomTypes"];
+            ?>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-3">
+                    <div class="type-card">
+                        <div class="type-body">
+                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row[$i]["roomtypeimg"]); ?>" alt="<?php echo ($row[$i]["roomtypename"]); ?>">
+                            <div class="type-price-top">
+                                <h6>
+                                    <?php echo $row[$i]["roomprice_range"]; ?>
+                                </h6>
+                                <p>mỗi đêm</p>
+                            </div>
+                            <div class="type-overlay">
+                                <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/totalroom/<?php echo $row[$i]['roomtypeid'] ?>" >Xem chi tiết</a>
+                            </div>
                         </div>
-                        <div class="type-overlay">
-                            <a href="#" >Xem chi tiết</a>
+                        <div class="type-foot">
+                            <?php echo $row[$i]["roomtypename"]; 
+                                if( $row[$i]["roomtypeid"] == "PHONGVIP" ) {
+                                    echo '<i style="color: red;" class="far fa-gem"></i>';
+                                }
+                            ?>
                         </div>
-                    </div>
-                    <div class="type-foot">
-                        Phòng VIP <i style="color: red;" class="far fa-gem"></i>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-3">
-                <div class="type-card">
-                    <div class="type-body">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                        <div class="type-price-top">
-                            <h6>$300 - $500</h6>
-                            <p>mỗi đêm</p>
-                        </div>
-                        <div class="type-overlay">
-                            <a href="#" >Xem chi tiết</a>
-                        </div>
-                    </div>
-                    <div class="type-foot">
-                        Phòng gia đình
-                    </div>
-                </div>
-            </div>
-            <div   class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-3">
-                <div class="type-card">
-                    <div class="type-body">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                        <div class="type-price-top">
-                            <h6>$100 - $300</h6>
-                            <p>mỗi đêm</p>
-                        </div>
-                        <div class="type-overlay">
-                            <a href="#">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    <div class="type-foot">
-                        Phòng đơn
-                    </div>
-                </div>
-            </div>
+            <?php
+                    }
+                }
+            ?>
         </div>
     </section>
     <section data-aos="zoom-in-up" class="service">
@@ -308,6 +266,9 @@ require_once "./mvc/view/Blocks/Header.php";
 <?php
 require_once "./mvc/view/Blocks/Footer.php";
 ?>
+<script>
+ 
+</script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/slick/slick.min.js");?>></script>

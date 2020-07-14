@@ -1,5 +1,5 @@
 .wrap{
-  max-width: 30%;
+  width: 30%;
   margin: 3vw auto;
   padding: 2.5vw;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.125);
@@ -181,4 +181,44 @@ background: #80715c;
 
 .check input[type="checkbox"]:checked ~ .checkmark:before{
 display: block;
+}
+/*Responsive*/
+@media only screen and (max-width: 1040px) {
+  .wrap form .btn {
+    font-size: 1.2rem;
+    height: 2.4rem;
+  }
+  .input-gr > div > input {
+    font-size: 1.4rem;
+  }
+  .input-gr > div >h5 {
+    font-size: 1.2rem;
+  }
+  .icon >i {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .wrap form .btn {
+    font-size: 1rem;
+  }
+  .befocus .input-field h5 {
+      font-size: 1.2rem;
+  }
+  .input-gr > div > input {
+    margin-left: 10px;
+  }
+  .wrap .title {
+    font-size: 1.5rem;
+  }
+  .wrap {
+    width: 50%;
+  }
+  .line {
+    margin: 1.5rem  auto;
+  }
+  .fa-envelope-open-text:before {
+    font-size: 2rem;
+    margin-left: 10px;
+  }
 }

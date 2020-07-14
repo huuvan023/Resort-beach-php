@@ -2,12 +2,36 @@
     require_once "./mvc/view/Blocks/Loading.php";
     require_once "./mvc/view/Blocks/Header.php";
 ?>
-
+<?php   
+    $result = $data["Rooms"];
+?>
 <div id="body-d" class="wrap">
 
-    <section id="navnavnav" class="wrap-banner row">
+    <section id="navnavnav"
+    style="background: url('<?php
+        if(isset($data["RoomType"])){
+            echo 'data:image/jpg;charset=utf8;base64,'.base64_encode($data["RoomType"]["roomtypeimg"]).'';
+        } else echo $data["Dashboard"] ."/public/bg1.jpg"; ?>') 50%/cover no-repeat;"
+    class="wrap-banner row">
         <div class="overlay">
-            <h1 class="overlay-header">Phòng</h1>
+            <h1 class="overlay-header"><?php
+                if( $data["PageType"] != "all" ) {
+                    switch($data["PageType"]){
+                        case "PHONGTHUONG" :
+                            echo "Phòng Thường";
+                        break;
+                        case "PHONGVIP" :
+                            echo "Phòng V.I.P";
+                        break;
+                        case "PHONGGIADINH" :
+                            echo "Phòng Gia Đình";
+                        break;
+                    }
+                }
+                else {
+                    echo "Tất Cả Phòng";
+                }
+            ?></h1>
             <div class="line"></div>
             <div class="overlay-button">
                 <a href="<?php echo ( $data["Dashboard"] );?>">Trang chủ</a>
@@ -20,24 +44,33 @@
             <h1>Tìm phòng</h1>
             <div class="line"></div>
         </div>
-        
         <div class="search-room-body">
-            <form>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="frm-group">
                         <label for = "name">Tìm theo tên: </label>
-                        <input name = "name" type="text">
+                        <input id = "filterName" type="text" placeholder="Tên phòng...">
                     </div>
                 </div>
                 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="frm-group">
                         <label for = "type">Tìm theo loại: </label>
-                        <select>
-                            <option>Tất cả</option>
-                            <option>Phòng V.I.P</option>
-                            <option>Phòng gia đình</option>
-                            <option>Phòng đơn</option>
+                        <select 
+                        <?php
+                            if($data["PageType"] == "PHONGVIP" || $data["PageType"] == "PHONGTHUONG" || $data["PageType"] == "PHONGGIADINH")
+                            echo "disabled"; 
+                        ?> 
+                        class="common_selector" id="filterType">
+                            <?php
+                                $vip = $gd = $thuong = "";
+                                if($data["PageType"] == "PHONGVIP") $vip = "selected";
+                                if($data["PageType"] == "PHONGTHUONG") $thuong = "selected";
+                                if($data["PageType"] == "PHONGGIADINH") $gd = "selected";
+                            ?>
+                            <option value="all">Tất cả</option>
+                            <option <?php echo $vip; ?> value="PHONGVIP">Phòng V.I.P</option>
+                            <option <?php echo $gd; ?> value="PHONGGIADINH">Phòng gia đình</option>
+                            <option <?php echo $thuong; ?> value="PHONGTHUONG">Phòng thường</option>
                         </select>
                     </div>
                 </div>
@@ -45,27 +78,22 @@
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="frm-group">
                         <label for = "name">Tìm theo giá: <span id="labelPrice"></span></label>
-                        <input id="inputPrice" name = "price" value="0" type="range" max="2000" min="100">
+                        <input class="common_selector" id="inputPrice" name = "price" value="2000" type="range" max="2000" min="0">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="frm-group">
-                        <label for = "rating">Số người tối đa: </label>
-                        <select>
-                            <option>Tất cả</option>
-                            <option>1 người</option>
-                            <option>2 người</option>
-                            <option>5 người</option>
-                            <option>10 người</option>
-                            <option>20 người</option>
+                        <label for ="rating">Số người tối đa: </label>
+                        <select class="common_selector" id="filterMaxNum">
+                            <option value="all">Tất cả</option>
+                            <option value="1">1 người</option>
+                            <option value="2">2 người</option>
+                            <option value="5">5 người</option>
+                            <option value="10">10 người</option>
+                            <option value="20">20 người</option>
                         </select>
                     </div>
                 </div>
-                <div style="display: flex;justify-content: center;align-items: center;" 
-                class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-3 mb-2"> 
-                    <button type="submit" name ="submit">Tìm kiếm</button>
-                </div>
-            </form>
         </div>
     </section>
     
@@ -80,24 +108,21 @@
                 <div class="room-sort">
                     <h4>Sắp xếp: </h4>
                     <span>
-                    <select>
-                        <option>
+                    <select id="Rsort">
+                        <option value="AZ">
                             Theo tên A-Z
                         </option>
-                        <option>
+                        <option  value="ZA">
                             Theo tên Z-A
                         </option>
-                        <option>
+                        <option value="priceDownUp">
                             Theo giá thấp lên cao
                         </option>
-                        <option>
+                        <option value="priceUpDown">
                             Theo giá cao xuống thấp
                         </option>
-                        <option>
+                        <option value="rate">
                             Theo đánh giá
-                        </option>
-                        <option>
-                            Theo phòng mới nhất
                         </option>
                         </select>
                     </span>
@@ -106,261 +131,66 @@
                     <h4>Xem: </h4>
                     <span>
                     <i id="listViewbtn" class="fas fa-th-list"></i>
-                    <i id="gridViewbtn" class="fas fa-th-large"></i>
+                    <i id="gridViewbtn" class="viewActive  fas fa-th-large"></i>
                     </span>
                 </div>
         </div>
 
-        <div id="gridView" class="room-list-body">
+        <div id="view" class=" room-list-body">
+            <?php  
+                if( $data["Rooms"] != NULL ) {
+                    for ( $i = 0 ; $i < count($data["Rooms"]) ; $i ++ ) {
+                        $row = $data["Rooms"];
+                         
+            ?>
             
-
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
                 <div class="room-list-card">
                     <div class="room-list-card-body">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
+                    <img class="imgV" alt="<?php echo $row[$i]['roomame'] ?>"
+                    src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row[$i]['mainimage']); ?>" /> 
                         <div class="room-list-top">
                             <div class="room-list-price-top">
-                                <h6>$500</h6>
+                                <h6>$<?php echo $row[$i]["roomprice"] ?></h6>
                                 <p>mỗi đêm</p>
                             </div>
                             <div class="room-list-rate-top">
-                                6.3 <i class="fas fa-star"></i>
+                               <?php echo $row[$i]["roomrate"]; ?>  <i class="fas fa-star"></i>
                             </div>
                         </div>
                         <div class="room-list-overlay">
-                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail" >Xem chi tiết</a>
+                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail/<?php echo $row[$i]['roomid'] ?>" >Xem chi tiết</a>
                         </div>
                     </div>
                     <div class="room-list-foot">
-                        <span>Phòng đơn</span>Triple Basic
+                        <span class="<?php
+                            if( $row[$i]["roomtypeid"] == "PHONGTHUONG" ) {
+                                echo "PhongThuongCSS";
+                            }
+                            if( $row[$i]["roomtypeid"] == "PHONGVIP"  ) {
+                                echo "PhongVIPCSS";
+                            }
+                            if( $row[$i]["roomtypeid"] == "PHONGGIADINH"  ) {
+                                echo "PhongGiaDinhCSS";
+                            }
+                        ?>">
+                            <?php 
+                                if( $row[$i]["roomtypeid"]  == "PHONGVIP") echo "Phòng V.I.P";
+                                if( $row[$i]["roomtypeid"]  == "PHONGTHUONG") echo "Phòng Thường";
+                                if( $row[$i]["roomtypeid"]  == "PHONGGIADINH") echo "Phòng Gia Đình"; 
+                            ?>
+                        </span><?php echo $row[$i]["roomame"] ?>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
-                <div class="room-list-card">
-                    <div class="room-list-card-body">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
-                        <div class="room-list-top">
-                            <div class="room-list-price-top">
-                                <h6>$500</h6>
-                                <p>mỗi đêm</p>
-                            </div>
-                            <div class="room-list-rate-top">
-                                6.3 <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="room-list-overlay">
-                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    <div class="room-list-foot">
-                        <span>Phòng đơn</span>Triple Basic
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
-                <div class="room-list-card">
-                    <div class="room-list-card-body">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
-                        <div class="room-list-top">
-                            <div class="room-list-price-top">
-                                <h6>$500</h6>
-                                <p>mỗi đêm</p>
-                            </div>
-                            <div class="room-list-rate-top">
-                                6.3 <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="room-list-overlay">
-                            <a href="./../Pages/roomdetail.php" >Xem chi tiết</a>
-                        </div>
-                    </div>
-                    <div class="room-list-foot">
-                        <span>Phòng đơn</span>Triple Basic
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
-                <div class="room-list-card">
-                    <div class="room-list-card-body">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
-                        <div class="room-list-top">
-                            <div class="room-list-price-top">
-                                <h6>$500</h6>
-                                <p>mỗi đêm</p>
-                            </div>
-                            <div class="room-list-rate-top">
-                                6.3 <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="room-list-overlay">
-                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail" >Xem chi tiết</a>
-                        </div>
-                    </div>
-                    <div class="room-list-foot">
-                        <span>Phòng đơn</span>Triple Basic
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
-                <div class="room-list-card">
-                    <div class="room-list-card-body">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
-                        <div class="room-list-top">
-                            <div class="room-list-price-top">
-                                <h6>$500</h6>
-                                <p>mỗi đêm</p>
-                            </div>
-                            <div class="room-list-rate-top">
-                                6.3 <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="room-list-overlay">
-                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    <div class="room-list-foot">
-                        <span>Phòng đơn</span>Triple Basic
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-4">
-                <div class="room-list-card">
-                    <div class="room-list-card-body">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/073a5b73-z-cr-800x450.jpg" alt="">
-                        <div class="room-list-top">
-                            <div class="room-list-price-top">
-                                <h6>$500</h6>
-                                <p>mỗi đêm</p>
-                            </div>
-                            <div class="room-list-rate-top">
-                                6.3 <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="room-list-overlay">
-                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail" >Xem chi tiết</a>
-                        </div>
-                    </div>
-                    <div class="room-list-foot">
-                        <span>Phòng đơn</span>Triple Basic
-                    </div>
-                </div>
-            </div>
-
+            <?php     
+                    }
+                }
+            ?>
 
     
 
 
-        </div>
-        <div id="listView" class="nonedisplay">
-            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
-                <div class="room-list-body-listview">
-                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
-                    <div class="room-card-content">
-                        <h3><span>Phòng đơn</span>Triple Basic</h3>
-                        <div class="room-card-option">
-                            <i class="fas fa-users"></i>
-                            Số người: <span>10</span>
-                        </div>
-                        <div class="room-card-discription">
-                            <p>
-                            Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo
-                            </p>
-                        </div>
-                    </div>
-                    <div class="room-card-price">
-                        <div class="room-card-rate">
-                            <p>Đánh giá:</p> <span>6.3</span>
-                        </div>
-                        <div class="room-card-price">
-                            <p id="bk-title">Giá: </p>
-                            <p>$.500</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
-                <div class="room-list-body-listview">
-                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
-                    <div class="room-card-content">
-                        <h3><span>Phòng đơn</span>Triple Basic</h3>
-                        <div class="room-card-option">
-                            <i class="fas fa-users"></i>
-                            Số người: <span>10</span>
-                        </div>
-                        <div class="room-card-discription">
-                            <p>
-                            Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo
-                            </p>
-                        </div>
-                    </div>
-                    <div class="room-card-price">
-                        <div class="room-card-rate">
-                            <p>Đánh giá:</p> <span>6.3</span>
-                        </div>
-                        <div class="room-card-price">
-                            <p id="bk-title">Giá: </p>
-                            <p>$.500</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
-                <div class="room-list-body-listview">
-                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
-                    <div class="room-card-content">
-                        <h3><span>Phòng đơn</span>Triple Basic</h3>
-                        <div class="room-card-option">
-                            <i class="fas fa-users"></i>
-                            Số người: <span>10</span>
-                        </div>
-                        <div class="room-card-discription">
-                            <p>
-                            Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo
-                            </p>
-                        </div>
-                    </div>
-                    <div class="room-card-price">
-                        <div class="room-card-rate">
-                            <p>Đánh giá:</p> <span>6.3</span>
-                        </div>
-                        <div class="room-card-price">
-                            <p id="bk-title">Giá: </p>
-                            <p>$.500</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail">
-                <div class="room-list-body-listview">
-                    <img class="room-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
-                    <div class="room-card-content">
-                        <h3><span>Phòng đơn</span>Triple Basic</h3>
-                        <div class="room-card-option">
-                            <i class="fas fa-users"></i>
-                            Số người: <span>10</span>
-                        </div>
-                        <div class="room-card-discription">
-                            <p>
-                            Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo
-                            </p>
-                        </div>
-                    </div>
-                    <div class="room-card-price">
-                        <div class="room-card-rate">
-                            <p>Đánh giá:</p> <span>6.3</span>
-                        </div>
-                        <div class="room-card-price">
-                            <p id="bk-title">Giá: </p>
-                            <p>$.500</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-                
         </div>
         
     </section>
@@ -369,6 +199,9 @@
 <?php
 require_once "./mvc/view/Blocks/Footer.php";
 ?>
+<script>
+    typeTotal = '<?php echo $data["PageType"] ?>';
+</script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/room.js");?>></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>

@@ -21,9 +21,6 @@
     align-items: center;
     justify-content: center;
 }
-.wrap-banner video {
-    position: relative;
-}
 .wrap-banner .overlay {
     z-index: 1;
     position: absolute;
@@ -75,7 +72,6 @@
 /*Section Wrapbanner*/
 
 .wrap-banner {
-    background: url('../../../public/bg1.jpg') 50%/cover no-repeat;
     width: 100%;
     display: flex;
     align-items: center;
@@ -147,11 +143,20 @@
     font-size: 15px;
     width: 90%;
 }
-.search-room-body input,select {
+.search-room-body input[type="text"],select {
     margin: 1.5vw 0;
     background-color: white;
     width: 100%;
+    padding: 10px;
     font-size: 1vw;
+    border-radius: 25px;
+}
+.search-room-body input[type="range"] {
+    margin: 4rem 0 0 0 ;
+    background-color: white;
+    width: 100%;
+    font-size: 1vw;
+    border-radius: 25px;
 }
 .search-room-body select:focus {
     background-color: #cfcfcf;
@@ -282,8 +287,8 @@
     margin: 0 7%;
 }
 .room-list-body img{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 200px;
     position: relative;
     z-index: -1;
 }
@@ -372,15 +377,9 @@
     justify-content: center;
     font-size: 100%;
 }
-.room-list .room-list-foot span {
-    background-color: green;
-    letter-spacing: normal;
-    color: white;
-    margin-right: .5vw;
-    border-radius: 5px;
-    font-size: .5vw;
-    padding: 5px;
-    font-weight: 500;
+.room-list .room-list-foot p {
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -399,11 +398,31 @@
 /*
     Display list items
 */
-#listView > a {
+ 
+#loadingroom
+{
+    text-align:center; 
+    margin-top: 20px;
+    background: url('load.gif') no-repeat center; 
+    width: 300px;
+	height: 300px;
+}
+#nodtaa {
+    text-align:center; 
+    margin-top: 20px;
+    background: url('nodata.gif') no-repeat center; 
+    width: 300px;
+	height: 300px;
+}
+.viewActive {
+    color: #af9a7d;
+}
+.btnListV {
     color: black;
 }
-#listView > a:hover {
+.btnListV:hover {
     text-decoration: none;
+    color: black;
 }
 .room-list-body-listview {
     display: grid;
@@ -437,16 +456,6 @@
     font-weight: bold;
     font-size: 2vw;
 }
-.room-card-content h3 > span {
-    background-color: green;
-    letter-spacing: normal;
-    color: white;
-    margin-right: 1vw;
-    border-radius: 5px;
-    font-size: 1vw;
-    padding: 5px;
-    font-weight: 500;
-}
 .room-card-discription {
     font-size: 80%;
     font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
@@ -454,6 +463,7 @@
 }
 .room-card-discription > p {
     font-size: 0.8vw;
+    letter-spacing: normal;
 }
 .room-card-option {
     margin: 10px 0;
@@ -506,4 +516,227 @@
     margin-bottom: 0.5vw;
     color: black;
     font-weight: normal;
+}
+/*Responsive*/
+@media screen and ( max-width: 860px) {
+    .frm-group label{
+        font-size: 1.4rem;
+    }
+    .wrap-banner {
+        height: 280px;
+    }
+    .wrap-footer p {
+        line-height: 18px;
+    }
+    .room-list .room-list-header h1,.search-room h1 {
+        font-size: 3rem;
+    }
+    .imgV {
+        height: 120px !important;
+    }
+    #labelPrice {
+        font-size: 0.9rem;
+    }
+    .search-room-body input[type="text"],select {
+        padding: 2px;
+        font-size: 1.2rem;
+    }
+    .search-room-body input[type="range"] {
+        font-size: 1.2rem;
+    }
+    .overlay .overlay-button a{
+        font-size: 1rem;
+    }
+    #nodtaa {
+        width: 250px;
+        height: 250px;
+    }
+    .room-list-body .room-list-rate-top {
+        height: 30px;
+        font-size: 1rem;
+    }
+    .room-card-rate p {
+        font-size: 1.5rem;
+    }.room-card-price .room-card-rate > span{font-size: 1rem;height: 30px;}#bk-title {
+        font-size: 1.2re;
+    }.room-card-price .room-card-price p{
+        margin-bottom: 2px;font-size: 2.5rem;
+    }
+    .room-list .room-list-foot {
+        font-size: 1rem;
+    }
+    .room-list-body .room-list-rate-top {
+        height: 30px;
+        font-size: 1.3rem;
+    }
+    .room-list-body-listview {
+        height: 150px;
+    }
+    .room-list-body img {
+        height: 100%;
+    }
+    .room-card-content h3 {
+        font-size: 2rem;
+    }
+    .fa-users:before {
+        font-size: 1.2rem;
+    }
+    .room-card-discription > p {
+        font-size: 1rem;
+    }
+    .room-card-option span {
+        font-size: 2rem;
+    }
+    .room-card-option {
+        font-size: 1.5rem;
+    }
+    .room-list-body .room-list-price-top p{
+        margin-bottom: 2px;
+        padding-right: 5px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    .room-list-body .room-list-overlay a {
+        font-size: 0.8rem;
+        padding: 0 0px;
+    }
+}
+@media screen and ( max-width: 1040px) {
+    .frm-group label{
+        font-size: 1.7rem;
+    }.room-list-body img{height: 100%;}.room-card-discription > p{font-size: 1.2rem;}.room-card-option{font-size: 1.2rem;}.fa-users:before{font-size: 1.5rem;}.room-card-option span{font-size: 1.5rem;}.room-card-rate p{font-size: 1.2rem;}.room-card-price .room-card-rate > span{height: 30px;font-size: 1.1rem;}
+    .imgV {
+        height: 120px !important;
+    }
+    #bk-title{
+        font-size: 1.5rem !important;
+    }.room-card-price .room-card-price p {margin-bottom: 0;font-size: 3rem;}
+    #labelPrice {
+        font-size: 1.2rem;
+    }.room-list-body-listview {
+        height: 150px;
+    }
+    .search-room-body input[type="text"],select {
+        padding: 5px;
+        font-size: 1.5rem;
+    }
+    .search-room-body input[type="range"] {
+        margin-top: 2.3rem;
+        font-size: 1.5rem;
+    }
+    .overlay .overlay-button a{
+        font-size: 1.3rem;
+    }
+    .room-view > h4,.room-sort-view .room-sort h4 {
+        font-size: 1.5rem;
+    }
+    .fa-th-large:before,.fa-th-list:before {
+        font-size: 2rem;
+    }
+    .room-list .room-list-foot {
+        font-size: 1.5rem;
+    }
+    .room-list-body .room-list-price-top  {
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    .room-list-body .room-list-rate-top {
+        height: 30px;
+        font-size: 1.3rem;
+    }
+    .room-list-body .room-list-price-top {
+        padding-right: 5px;
+    }
+    .room-list-body .room-list-price-top p{
+        margin-bottom: 2px;
+    }
+    .room-list-body .room-list-overlay a {
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .wrap-banner {
+        height: 200px;
+    }
+    .overlay .overlay-button a {
+        font-size: 1rem ;
+    }
+    .search-room-body {
+        margin: 2rem auto;
+    }
+    .search-room h1,.room-list .room-list-header h1 {
+        font-size: 2rem;
+        width: 100%;
+    }
+    .room-view > h4, .room-sort-view .room-sort h4 {
+        margin-bottom: 0;
+    }
+    .room-sort-view .room-sort {
+        width: 60%;
+    }
+    .room-list-body img {
+        height: 150px;
+    }
+    .room-list-body .room-list-price-top{
+        width: 100px;
+        height: 60px;
+    }.room-list-body .room-list-price-top h6 {
+        font-size: 2rem;
+    }
+    .room-list-body .room-list-rate-top {
+        width: 60px;
+        height: 40px;
+    }.room-list .room-list-foot{
+        font-size: 2rem;
+        padding: 10px 0;
+    }.room-list-body .room-list-overlay a{
+        font-size: 1.5rem;
+        padding: 6px 10px;
+    }
+    .fa-th-large:before, .fa-th-list:before {
+        font-size: 2.5rem;
+    }
+    .room-card-discription > p {
+        font-size: 0.7rem;
+    }
+    .room-list-body-listview {
+        height: auto;padding: 5px 10px 5px 5px;
+    }
+    .imgV {
+        height: 120px !important;
+    }
+    .room-list-body img {
+        height: 80%;
+    }
+    .room-card-content h3 {
+        font-size: 2rem;
+    }
+    .room-card-option {
+        margin: 3px 0;
+        font-size: 1.4rem;
+    }
+    .room-card-content h3 {
+        font-size: 1.2rem;
+    }
+    .fa, .fas {
+        font-size: 1.2rem;
+    }
+    .room-card-option span {
+        font-size: 1.5rem;
+    }
+    .room-card-price .room-card-rate > span {
+        font-size: 1rem;
+        padding: 0 3px;
+        height: 25px;
+    }
+    .room-card-rate p {
+        margin-right: 4px;
+        font-size: 1rem;
+    }
+    #bk-title {
+        font-size: 1rem;
+    }
+    .room-card-price .room-card-price p {
+        font-size: 1.4rem;
+    }
 }

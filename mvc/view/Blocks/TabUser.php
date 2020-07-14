@@ -17,7 +17,7 @@
             ?>><i class="far fa-check-square"></i>Đặt phòng</a>
         </li>
         <li>
-            <a href="<?php echo ( $data["Dashboard"] );?>/User/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a>
+            <a data-confirm="Bạn có thực sự muốn đăng xuất?" href="<?php echo ( $data["Dashboard"] );?>/User/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a>
         </li>
     </ul>
 </section>

@@ -1,7 +1,7 @@
 /*Login*/
 
 .wrap{
-    max-width: 30%;
+    width: 30%;
     margin: 3vw auto;
     padding: 2.5vw;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.125);
@@ -71,7 +71,7 @@
 }
 .befocus .input-field h5 {
   top: -5px;
-  font-size: 0.8vw ;
+  font-size: 1vw ;
 }
 .befocus > .icon > i {
   color: #af9a7d;
@@ -99,20 +99,20 @@
 }
 .wrap  form > .login-control #registerNew {
 	display: inline;
-  font-size: 0.7vw;
+  font-size: 1vw;
 	color: black ;
 }
 .wrap  form > .login-control #registerNew a {
 	display: inline;
 	text-align: left;
 	color: #af9a7d;
-  font-size: 0.7vw;
+  font-size: 1vw;
 	transition: .3s;
 }
 .wrap  form > .login-control #forgetPassword {
 	display: inline;
 	color: #af9a7d;
-  font-size: 0.7vw;
+  font-size: 1vw;
   margin-left: auto;
 	transition: .3s;
 }
@@ -182,4 +182,76 @@
 
 .check input[type="checkbox"]:checked ~ .checkmark:before{
   display: block;
+}
+ 
+/*Responsive*/
+@media only screen and (max-width: 1040px) {
+  .wrap form > .login-control #registerNew {
+    font-size: 1.2rem;
+  }
+  .wrap form > .login-control #registerNew a {
+    font-size: 1.1rem;
+  }
+  .wrap form > .login-control #forgetPassword {
+    font-size: 1.1rem;
+  }
+  .terms p {
+    font-size: 1rem;
+  }
+  .check .checkmark {
+    width: 10px;
+    height: 10px;
+  }
+  .check .checkmark:before{
+    top: 1px;
+    left: 1px;
+  }
+  .input-gr .icon i{
+    font-size: 1.2rem;
+  }
+  .input-gr > div > input {
+    font-size: 1.4rem;
+  }
+  .befocus .input-field h5 {
+    font-size: 1.5rem;
+  }
+  .wrap .input-gr {
+    margin-top: 4rem;
+  }
+  .wrap form .btn {
+    font-size: 1.2rem;
+    height: 2.4rem;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .wrap {
+    width: 50%;
+  }
+  .wrap .title {
+    font-size: 2.5rem;
+  }
+  .fa-user:before,.fa-lock:before {
+    font-size: 2rem;
+  }
+  .input-gr > div >h5 {
+    font-size: 1.8rem;
+    margin-left: 2rem;
+  }
+  .input-gr > div > input {
+    font-size: 1.2rem;
+    margin-left: 2rem;
+  }
+  .input-gr .one {
+    font-size: 2rem;
+  } 
+  .input-gr .icon i {
+    margin-left: 20px !important;
+  }
+  .terms {
+    margin: 10px auto 5px auto;
+  }
+  .terms p {
+    font-size: 1.2rem;
+    margin-bottom: 0 !important;
+  }
 }

@@ -23,5 +23,5 @@
             <i class="fab fa-instagram-square"></i>
         </div>
     </div>
-    <div style="font-size: 1vw;" class="row ">Copyright @2020</div>
+    <div class="row ft-Row ">Copyright @2020</div>
 </footer>

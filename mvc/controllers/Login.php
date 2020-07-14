@@ -130,6 +130,7 @@ use PHPMailer\PHPMailer\Exception;
                         $_SESSION["user"]=$userName;
                         $_SESSION["password"] = $userPass;
                         $_SESSION["userid"] = $user ["userid"];
+                        $_SESSION["userfullname"] = $user["fullname"];
                         $data = array(
                             'success'  => true
                         );
@@ -144,6 +145,88 @@ use PHPMailer\PHPMailer\Exception;
                 }
                 echo json_encode($data);
             }
-        }    
+        }   
+        //ramdom password
+        private function randomPassword() {
+            $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+            $pass = array(); //remember to declare $pass as an array
+            $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+            for ($i = 0; $i < 8; $i++) {
+                $n = rand(0, $alphaLength);
+                $pass[] = $alphabet[$n];
+            }
+            return implode($pass); //turn the array into a string
+        }
+        //Reset Password
+        public function resetPass(){
+            $rsUserEmail = "";
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                
+                    if( isset($_POST["rsUserEmail"]) ){
+                        $rsUserEmail = $this -> test_input($_POST["rsUserEmail"]);
+                        $userModel = new UserModel();
+                        $checkMail = $userModel -> checkExitsEmail( $rsUserEmail );
+                        //Check exits email, each account have only 1 mail
+                        if( !$checkMail ){
+                                $rsPass = $userModel -> resetPass($rsUserEmail,$this->randomPassword());
+                                if( $rsPass ) {
+                                    include_once './mvc/core/library.php';                     // include the library file
+                                    require './mvc/core/vendor/autoload.php';
+                                    $mail = new PHPMailer(true);     
+                                    $randomP = $this->randomPassword();                         // Passing `true` enables exceptions
+                                    try {
+                                        //Server settings
+                                        $mail->CharSet = "UTF-8";
+                                        $mail->SMTPDebug = 0;                                  // Enable verbose debug output
+                                        $mail->isSMTP();                                      // Set mailer to use SMTP
+                                        $mail->Host = SMTP_HOST;                                // Specify main and backup SMTP servers
+                                        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                                        $mail->Username = SMTP_UNAME;                           // SMTP username
+                                        $mail->Password = SMTP_PWORD;                           // SMTP password
+                                        $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                                        $mail->Port = SMTP_PORT;                               // TCP port to connect to
+                                        //Recipients
+                                        $mail->setFrom(SMTP_UNAME, "Ngô Hữu Văn");
+                                        $mail->addAddress($rsUserEmail, "A"); // Add a recipient | name is option
+                                        $mail->addReplyTo(SMTP_UNAME, 'Ngô Hữu Văn');
+                                        $mail->isHTML(true);                                  // Set email format to HTML
+                                        $mail->Subject = "Thư đặt lại mật khẩu";
+                                        $mail->Body = "Xin chào $rsUserEmail, mật khẩu mới của bạn là $randomP. <br>
+                                        Hãy đăng nhập và đổi lại mật khẩu ngay đi nào!";
+                                        $mail->AltBody = ""; //None HTML
+                                        $result = $mail->send();
+                                        //infused data to client
+                                        if (!$result) {
+                                            $data = array( 'fail'  => "Có lỗi trong quá trình gởi Email!" );
+                                        }
+                                        else{
+                                            $data = array( 'success'  => "Bạn đã đặt lại mật khẩu. Vui lòng kiểm tra hộp thư ! " );
+                                        }
+                                    } catch (Exception $e) {
+                                        $data = array( 'fail'  => "Có lỗi xảy ra!" );
+                                    }
+                                }
+                                else {
+                                    $data = array( 'fail'  => "Có lỗi khi đặt lại mật khẩu" );
+                                }
+                            
+                        }
+                        else{
+                            $data = array( 'fail'  => "Email chưa được đăng kí!" );
+                        }
+                    }
+                    else {
+                        $data = array( 'fail'  => "Email không được rỗng!" );
+                    }
+                     //encode data to object
+                     echo json_encode($data);       
+            }
+        } 
+
+        public function Check(){
+           
+        }
+
+
     }
 ?>

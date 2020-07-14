@@ -3,7 +3,7 @@ require_once "./mvc/view/Blocks/Header.php";
 require_once "./mvc/view/Blocks/Loading.php";
 ?>
 
-<div class="wrap">
+<div id="body-d" class="wrap">
     <form method="post" id="register" enctype="multipart/form-data">
         <div class="wrapper">
             <div class="title">
@@ -59,7 +59,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                 <div class="inputfield">
                   <label>Giới tính: </label>
                   <div class="custom_select">
-                    <select name="userGender">
+                    <select  name="userGender">
                       <option value="Nam">Nam</option>
                       <option value="Nữ">Nữ</option>
                     </select>
@@ -106,6 +106,45 @@ require_once "./mvc/view/Blocks/Footer.php";
         document.getElementById("ct").value = token;
     });
   });
+  //Check password strength
+var pass = document.getElementById("userPass")
+  pass.addEventListener('keyup',function(){
+      checkPassword(pass.value);
+  })
+  function checkPassword(password){
+    var strengthBar = document.getElementById("strength");
+    var strength = 0;
+    if(password.match(/[a-z]+/)){
+      strength += 1;
+    }
+    if(password.match(/[A-Z]+/)){
+      strength += 1;
+    }
+    if(password.match(/[#$^+=!*()@%&]+/)){
+      strength += 1;
+    }
+    if(password.length > 5){
+      strength += 1;
+    }
+    switch(strength){
+      case 0 :
+      strengthBar.value = 20;   
+      break;
+      case 1 :
+      strengthBar.value = 40;
+      break;
+      case 2 :
+      strengthBar.value = 60;
+      break;
+      case 3 :
+      strengthBar.value = 80;
+      break;
+      case 4 :
+      strengthBar.value = 100;
+      break;
+    }
+
+  }
 </script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/login.js");?>></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>

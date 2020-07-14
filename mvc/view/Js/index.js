@@ -1,6 +1,5 @@
     //modal, element only load 1 times
     var isExists = sessionStorage.getItem("pageloadcount");
-    console.log(isExists);
     if (isExists == null ) {
         sessionStorage.setItem("pageloadcount", 1);
         var modal = document.getElementById("myModal");
@@ -39,7 +38,7 @@
         });
 
         $(window).scroll( function(){
-            $('.scrollToTop').toggleClass('toTop-scrolled', $(this).scrollTop() > $('video').height()-100 );
+            $('.scrollToTop').toggleClass('toTop-scrolled', $(this).scrollTop() > $('#vid').height()-100 );
         });
         $('.slick').slick({
             dots: true,

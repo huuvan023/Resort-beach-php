@@ -13,7 +13,7 @@ input[type=text]:invalid {
     color: red;
 }
 .wrapper{
-  max-width: 40%;
+  width: 40%;
   background: #fff;
   margin: 3vw auto;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.125);
@@ -177,15 +177,70 @@ input[type=text]:invalid {
   margin-bottom: 0;
 }
 
-@media (max-width:420px) {
+@media only screen and (max-width:420px) {
   .wrapper .form .inputfield{
     flex-direction: column;
     align-items: flex-start;
   }
+  .wrapper {
+    width: 50%;
+  }
+  .wrapper .title {
+    font-size: 2.5rem;
+  }
   .wrapper .form .inputfield label{
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+    margin-right: 0;
+  }
+  .wrapper .form .inputfield .input, .wrapper .form .inputfield .textarea,.wrapper .form .inputfield .custom_select select{
+    margin-top: 5px;
+    margin-bottom: 10px;
   }
   .wrapper .form .inputfield.terms{
     flex-direction: row;
+  }
+  .terms p {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+  .check {
+    margin-top: 6px;
+  }
+  .wrapper .form .terms .check .checkmark {
+    width: 20px;
+    height: 20px;
+  }
+}
+/*Responsive*/
+@media only screen and (max-width: 1040px) {
+  .wrapper .form .inputfield label {
+    font-size: 1.6rem;
+  }
+  .wrapper .form .inputfield .input, .wrapper .form .inputfield .textarea {
+    font-size: 1.5rem;
+    padding: 0.2rem;
+  }
+  .wrapper .form .inputfield .custom_select select {
+    font-size: 1.5rem;
+    padding: 0.2rem;
+  }
+  .terms p {
+    font-size: 1rem;
+  }
+  .wrapper .form .terms .check .checkmark {
+    width: 10px;
+    height: 10px;
+    margin-right: 20px;
+  }
+  .wrapper .form .terms .check .checkmark:before{
+    top: 1px;
+    left: 1px;
+  }
+  .haveAccount p {
+    font-size: 1.2rem;
+  }
+  .wrapper .form .submitField .btn {
+    font-size: 1.2rem;
+    height: 2.4rem;
   }
 }

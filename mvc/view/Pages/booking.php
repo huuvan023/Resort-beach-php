@@ -8,124 +8,110 @@ require_once "./mvc/view/Blocks/Loading.php";
 ?>
 <section style="z-index: 0;" class="col-xs-12 col-sm-8 col-md-9 col-lg-9 p-0">
         <div class="wrap-content-profile">
-            <h2>Thông tin phòng đã đặt</h2>
-            <div id="booking-alert">
-                <p>Bạn chưa đặt phòng nào ! Bạn có thể click <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/totalroom"> vào đây </a>
-                    để xem thêm phòng<span onclick="closeRoomAlert()">x</span></p>
-            </div>
+            <h2>Thông tin phòng đã đặt <?php if( $data["Bookings"] != 0) echo "( ".count($data["Bookings"])." )";  ?></h2>
+            <?php
+                if($data["Bookings"] == 0) {
+                    echo '<div id="booking-alert">
+                            <p>Bạn chưa đặt phòng nào ! Bạn có thể click   <a href="'.$data["Dashboard"].'/Room/RoomPage/totalroom"> vào đây </a>
+                                để xem thêm phòng<span onclick="closeRoomAlert()">x</span></p>
+                          </div>';
+                }
+            ?>
             <div class="booking-con-wrap">
                 <div class="booking-container">
                     <!--If empty add class "empty"*/-->
-                    <div class="roomEmpty">
-                        <i class="far fa-sticky-note"></i>
-                        <p>Tất cả phòng đặt (0) </p>
-                    </div>
-                    <div class="booking-room-detail">
+                    <?php
+                        if($data["Bookings"] == 0) {
+                            echo '<div class="roomEmpty">
+                                    <i class="far fa-sticky-note"></i>
+                                    <p>Tất cả phòng đặt (0) </p>
+                                </div>';
+                        }
+                    ?>
+                    <div id="showBkDetail" class="booking-room-detail">
+                        <?php if(isset($data["Bookings"])){
+                                if($data["Bookings"] != 0) {
+                                    for( $i = 0 ; $i < count($data["Bookings"]) ; $i++ ){
+                                        $dt = $data["Bookings"][$i];
+                                    ?>
                         <div class="booking-room-card">
-                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
+                            <i onclick="deleteBking('<?php echo $dt['Room']['roomid'] ?>','<?php echo $dt['Booked']['datearrive'] ?>','<?php echo $dt['Booked']['dateleave'] ?>')" class="deleteR fas fa-times-circle"></i>
+                            <img class="booking-img" 
+                            src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($dt["Room"]['mainimage']); ?>"
+                            alt="<?php echo $dt["Room"]["roomame"]; ?>"/>
                             <div class="booking-room-card-content">
-                                <h3><span>Phòng đơn</span>Triple Basic</h3>
+                                <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail/<?php echo $dt["Room"]['roomid'] ?>">
+                                <span class="
+                                <?php
+                                    if( $dt["Room"]["roomtypeid"] == "PHONGTHUONG" ) {
+                                        echo "PhongThuongCSS";
+                                    }
+                                    if( $dt["Room"]["roomtypeid"] == "PHONGVIP"  ) {
+                                        echo "PhongVIPCSS";
+                                    }
+                                    if( $dt["Room"]["roomtypeid"] == "PHONGGIADINH"  ) {
+                                        echo "PhongGiaDinhCSS";
+                                    }
+                                ?>">  
+                                    <?php
+                                     
+                                        if( $dt["Room"]["roomtypeid"] == "PHONGTHUONG" ) {
+                                            echo "Phòng Thường";
+                                        }
+                                        if( $dt["Room"]["roomtypeid"] == "PHONGVIP"  ) {
+                                            echo "Phòng V.I.P";
+                                        }
+                                        if( $dt["Room"]["roomtypeid"] == "PHONGGIADINH"  ) {
+                                            echo "Phòng Gia Đình";
+                                        }
+                                    ?>
+                                </span><?php echo $dt["Room"]["roomame"]; ?></a>
                                 <div class="room-card-option">
                                     <i class="fas fa-users"></i>
-                                    Số người: <span>10</span>
+                                    Số người: <span><?php echo $dt["Room"]["roomquanlity"] ?></span>
+                                </div>
+                                <div class="room-card-checking">
+                                    <div>
+                                        Check in: <span><?php echo $dt["Booked"]["datearrive"] ?></span>
+                                    </div>
+                                    <div>
+                                        Check out: <span><?php echo $dt["Booked"]["dateleave"] ?></span>
+                                    </div> 
                                 </div>
                                 <div class="room-card-discription">
                                     <p>
-                                    Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo
+                                        <?php
+                                            echo substr( $dt["Room"]["discription"], 0, 100);
+                                        ?>...
                                     </p>
                                 </div>
                             </div>
                             <div class="booking-room-card-price">
                                 <div class="booking-card-rate">
-                                    <p>Điểm đánh giá:</p> <span>6.3</span>
+                                    <p>Điểm đánh giá:</p> <span><?php echo $dt["Room"]["roomrate"] ?></span>
                                 </div>
                                 <div class="booking-card-price">
                                     <p id="bk-title">Giá: </p>
-                                    <p>$.500</p>
+                                    <p>$.<?php echo $dt["Room"]["roomprice"] ?></p>
                                 </div>
                             </div>
                         </div>
+                        <?php       
+                                    }
+                                }
+                            }
+                        ?>
 
-                        <div class="booking-room-card">
-                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
-                            <div class="booking-room-card-content">
-                                <h3><span>Phòng đơn</span>Triple Basic</h3>
-                                <div class="room-card-option">
-                                    <i class="fas fa-users"></i>
-                                    Số người: <span>10</span>
-                                </div>
-                                <div class="room-card-discription">
-                                    <p>
-                                    Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="booking-room-card-price">
-                                <div class="booking-card-rate">
-                                    <p>Điểm đánh giá:</p> <span>6.3</span>
-                                </div>
-                                <div class="booking-card-price">
-                                    <p id="bk-title">Giá: </p>
-                                    <p>$.500</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="booking-room-card">
-                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
-                            <div class="booking-room-card-content">
-                                <h3><span>Phòng đơn</span>Triple Basic</h3>
-                                <div class="room-card-option">
-                                    <i class="fas fa-users"></i>
-                                    Số người: <span>10</span>
-                                </div>
-                                <div class="room-card-discription">
-                                    <p>
-                                    Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="booking-room-card-price">
-                                <div class="booking-card-rate">
-                                    <p>Điểm đánh giá:</p> <span>6.3</span>
-                                </div>
-                                <div class="booking-card-price">
-                                    <p id="bk-title">Giá: </p>
-                                    <p>$.500</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="booking-room-card">
-                            <img class="booking-img" src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt=""/>
-                            <div class="booking-room-card-content">
-                                <h3><span>Phòng đơn</span>Triple Basic</h3>
-                                <div class="room-card-option">
-                                    <i class="fas fa-users"></i>
-                                    Số người: <span>10</span>
-                                </div>
-                                <div class="room-card-discription">
-                                    <p>
-                                    Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="booking-room-card-price">
-                                <div class="booking-card-rate">
-                                    <p>Điểm đánh giá:</p> <span>6.3</span>
-                                </div>
-                                <div class="booking-card-price">
-                                    <p id="bk-title">Giá: </p>
-                                    <p>$.500</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div class="booking-cash">
-                    <h3>Tổng thanh toán: </h3> <span>$.2000</span>
-                    <button>Thanh toán</button>
-                </div>
+                <?php
+                    if($data["Bookings"] != 0) {
+                        echo '<div class="booking-cash">
+                                <h3>Tổng thanh toán: </h3> <span>$.'.$data["TotalPrice"].'</span>
+                                <button>Thanh toán</button>
+                              </div>';
+                    }
+                ?>
             </div>
         </div>
 </section>
@@ -134,6 +120,7 @@ require_once "./mvc/view/Blocks/Loading.php";
 <?php
 require_once "./mvc/view/Blocks/Footer.php";
 ?>
-
+<script>
+</script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/profile.js");?>></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>

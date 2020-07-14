@@ -5,10 +5,12 @@
 
 <div id="body-d" class="wrap">
 
-    <section style="background: url('../../public/bg1.jpg') 50%/cover no-repeat;" id="navnavnav" class="wrap-banner row">
+    <section style="background: url('data:image/jpg;charset=utf8;base64,<?php echo base64_encode($data["Room"]['mainimage']); ?>') 50%/cover no-repeat;" id="navnavnav" class="wrap-banner row">
         <div class="overlay">
             <h1 class="overlay-header">
-                Ocean View Suite 
+                <?php
+                   echo $data["Room"]['roomame']
+                ?>
             </h1>
             <div class="line"></div>
             <div class="overlay-button">
@@ -18,40 +20,43 @@
     </section>
     
     <section data-aos="fade-down"  class="room-detail-gallery row">
-        
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-2 room-detail-gallery-img">
-            <img src="../../public/gallery/4056cbae-z-cr-800x450.jpg" alt="a">
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-2 room-detail-gallery-img">
-            <img src="../../public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-2 room-detail-gallery-img">
-            <img src="../../public/gallery/4056cbae-z-cr-800x450.jpg" alt="b">
-        </div>
-
+        <?php
+            for( $num = 1 ; $num <=3 ; $num++ ){
+        ?>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt-2 room-detail-gallery-img">
+                <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($data["Imgs"]["image$num"]); ?>"
+                alt="b">
+            </div>
+        <?php   
+            }
+        ?>
     </section>
 
     <section  class="room-detail-info row">
 
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                 <h2>Mô tả</h2>
-                <p>Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.</p>
+                <p>
+                    <?php
+                        echo $data["Room"]["discription"];
+                    ?>
+                </p>
         </div>
         
         <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                 <h2>Thông tin</h2>
-                <h4>Giá: <span>$500</span></h4>
-                <h4>Loại phòng: <span>Phòng đơn</span></h4>
-                <h4>Số người tối đa: <span>20</span></h4>
-                <h4>Đánh giá: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h4>
-                <h4>Cho phép mang thú cưng</h4>
+                <h4>Giá: <span>$<?php echo $data["Room"]["roomprice"]; ?></span></h4>
+                <h4>Loại phòng: <span><?php echo $data["Type"]["roomtypename"]; ?></span></h4>
+                <h4>Số người tối đa: <span><?php echo $data["Room"]["roomquanlity"]; ?></span></h4>
+                <h4>Đánh giá: <?php echo $data["Room"]["roomrate"]; ?> <i class="fas fa-star"></i></h4>
+                <h4><?php if($data["Room"]["allowpet"] == 1) echo "Cho"; else echo "Không cho"; ?> phép mang thú cưng</h4>
         </div>
         <div class="rent-now">
             <button id="bookingChoose">Đặt phòng ngay!</button>
                 <div id="myModal" class="modal">
 
                 <!-- Modal content -->
-                <div class="modal-content">
+                <form method="post" id="booking" enctype="multipart/form-data" class="modal-content">
                     <div class="modal-header">
                     <h2>Đặt Phòng</h2><span class="close">&times;</span>
                     </div>
@@ -59,94 +64,74 @@
                         <div class="checkDate">
                             <div style="margin-bottom: 7%;" class="dateCheckGr">
                                 <label>Ngày thuê phòng</label>
-                                <input type="date" name="datecome"/>
+                                <input id="dateAr" type="date"
+                                min="<?php $date=date_create(date("Y-m-d"));
+                                    echo date_format($date,"Y-m-d"); ?>"
+                                value="<?php echo date("Y-m-d"); ?>" 
+                                name="dateArrive" require/>
                             </div>
                             <div class="dateCheckGr">
                                 <label>Ngày trả phòng</label>
-                                <input type="date" name="datecome"/>
+                                <input min="<?php $date=date_create(date("Y-m-d"));
+                                    date_add($date,date_interval_create_from_date_string("1 days"));
+                                    echo date_format($date,"Y-m-d"); ?>" id="dateLe" type="date" value="<?php echo date("Y-m-d");  ?>" name="dateLeave" require/>
                             </div>
                         </div>
-                        <div class="checkDatebtn">
-                            <button>Kiểm tra</button>
+                        <div class="pricebk">
+                            <div>Giá: <span id="gia">0$</span></div>
                         </div>
                         <p id="success">Phòng vẫn còn trống !</p>
                         <p id="fail">Phòng đã có người đặt !</p>
                     </div>
                     <div class="modal-footer">
-                        <button>Xác nhận</button>
+                        <button id="btnConfirm" type="submit">Xác nhận</button>
                     </div>
-                </div>
+                </form>
 
                 </div>
         </div>
     </section>
 
-    <section    class="room-other">
+    <section class="room-other">
         <h1>Phòng cùng loại</h1>
         <div class="line"></div>
         <div class="slick">
-            <div class="slick-card">
-                <div class="sl-body">
-                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                    <div class="sl-content">
-                        <h2>Ocean View Suite</h2>
-                        <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
-                        <p class="r-rate">Đánh giá: 6.4 <i class="fas fa-star"></i></p>
-                        <p class="r-pr">Giá phòng: <span>$500</span></p>
-                        <a href="#">Xem chi tiết</a>
+            <?php
+            $roomar = $data["SameType"];
+                if( count($row = $data["RanNum"]) > 0 ) {
+                    for ( $i = 0 ; $i < count($row) ; $i++ ){
+                       $z = $row[$i];
+            ?>
+                <div class="slick-card">
+                    <div class="sl-body">
+                        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($roomar[$z]["mainimage"]); ?>"
+                        alt="<?php echo $roomar[$z]["roomame"] ?>">
+                        <div class="sl-content">
+                            <h2>
+                                <?php echo $roomar[$z]["roomame"] ?>
+                            </h2>
+                            <p class="r-type">Loại phòng: <span  style="color: white"
+                            class=" <?php
+                                if( $data["Type"]["roomtypeid"] == "PHONGTHUONG" ) {
+                                    echo "PhongThuongCSS";
+                                }
+                                if( $data["Type"]["roomtypeid"] == "PHONGVIP"  ) {
+                                    echo "PhongVIPCSS";
+                                }
+                                if( $data["Type"]["roomtypeid"] == "PHONGGIADINH"  ) {
+                                    echo "PhongGiaDinhCSS";
+                                }
+                            ?>"><?php echo $data["Type"]["roomtypename"]; ?></span></p>
+                            <p class="r-rate">Đánh giá: <?php echo $roomar[$z]["roomrate"]?><i class="fas fa-star"></i></p>
+                            <p class="r-pr">Giá phòng: <span>$<?php echo $roomar[$z]["roomprice"] ?></span></p>
+                            <a href="<?php echo ( $data["Dashboard"] );?>/Room/RoomPage/roomdetail/<?php echo $roomar[$z]["roomid"]?>">Xem chi tiết</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="slick-card">
-                <div class="sl-body">
-                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                    <div class="sl-content">
-                        <h2>Ocean View Suite</h2>
-                        <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
-                        <p class="r-rate">Đánh giá: 6.4 <i class="fas fa-star"></i></p>
-                        <p class="r-pr">Giá phòng: <span>$500</span></p>
-                        <a href="#">Xem chi tiết</a>
-                    </div>
-                </div>
-            </div>
-            <div class="slick-card">
-                <div class="sl-body">
-                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                    <div class="sl-content">
-                        <h2>Ocean View Suite</h2>
-                        <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
-                        <p class="r-rate">Đánh giá: 6.4 <i class="fas fa-star"></i></p>
-                        <p class="r-pr">Giá phòng: <span>$500</span></p>
-                        <a href="#">Xem chi tiết</a>
-                    </div>
-                </div>
-            </div>
-            <div class="slick-card">
-                <div class="sl-body">
-                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                    <div class="sl-content">
-                        <h2>Ocean View Suite</h2>
-                        <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
-                        <p class="r-rate">Đánh giá: 6.4 <i class="fas fa-star"></i></p>
-                        <p class="r-pr">Giá phòng: <span>$500</span></p>
-                        <a href="#">Xem chi tiết</a>
-                    </div>
-                </div>
-            </div>
-            <div class="slick-card">
-                <div class="sl-body">
-                    <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg" alt="">
-                    <div class="sl-content">
-                        <h2>Ocean View Suite</h2>
-                        <p class="r-type">Loại phòng: <span>Phòng đơn</span></p>
-                        <p class="r-rate">Đánh giá: 6.4 <i class="fas fa-star"></i></p>
-                        <p class="r-pr">Giá phòng: <span>$500</span></p>
-                        <a href="#">Xem chi tiết</a>
-                    </div>
-                </div>
-            </div>
-
-            
+            <?php
+                }
+            }
+            ?>
         </div>
     </section>
 </div>
@@ -155,8 +140,47 @@
 <?php
 require_once "./mvc/view/Blocks/Footer.php";
 ?>
+<script>
+    var pri = <?php echo $data["Room"]["roomprice"]; ?>;
+    var roomIDD = <?php echo $data["Room"]["roomid"]; ?>;
+    var userIDD = '<?php echo $_SESSION["userid"]; ?>';
+    var dateLea = '<?php echo date("Y-m")."-".(int)(date("d")+1); ?>';
+    var dateArr = '<?php echo date("Y-m-d"); ?>';
+    var rname = '<?php echo $data["Room"]["roomame"]; ?>';
+    /*Modal booking room */
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("bookingChoose");
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }
+    //Handle nav
+    $(document).ready(function(){
+        //Slick
+        $('.slick').slick({
+        infinite: false,
+        slidesToShow: 2,
+        slidesToScroll: 2
+    });
+});
+</script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/slick/slick.min.js");?>></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/slick/slick.js");?>></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/room.js");?>></script>
 <script type="text/javascript" src=<?php echo ( $data["Dashboard"] . "/mvc/view/Js/Master.js");?>></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

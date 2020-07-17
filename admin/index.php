@@ -16,6 +16,7 @@
     }
 
 	if( isset($_POST["action"]) ) {
+		// xóa 1 user
 		if ( $_POST["action"]=="delete" ) {
 			$id = $_POST["id"];
 			$model = new Model();
@@ -24,6 +25,7 @@
 				echo "thanh cong";
 			}
 		}
+		// thêm mới 1 user
 		if ( $_POST["action"]=="add" ) {
 			$username = $fullname = $email = $password = $repass = $gender = $phone = $address ="";
 			// echo "thanh cong";
@@ -54,6 +56,7 @@
 	 			
 			}
 		}
+		// chỉnh sửa thông tin user
 		if( $_POST["action"]=="edit"){
 			if( isset($_POST["email"]) ) {
 				$id = $_POST["id"];
@@ -80,10 +83,8 @@
 				// if( $a ) {
 				// 	echo "thanh cong";
 				// }
-			}
-			
+			}	
 		}
-
 		// xóa ảnh phòng
 		if ( $_POST["action"]=="delImg" ) {
 			$id = $_POST["id"];
@@ -92,6 +93,46 @@
 			if( $a ) {
 				echo "thanh cong";
 			}
+		}
+		// xóa phòng
+		if ( $_POST["action"]=="delRoom" ) {
+			$id = $_POST["id"];
+			$model = new Model();
+			$a = $model->execute("delete from room where roomid=$id");		
+			if( $a ) {
+				echo "thanh cong";
+			}
+		}
+		// chỉnh sửa thông tin phòng
+		if( $_POST["action"]=="edit_Room"){
+			if( isset($_POST["roomame"]) ) {
+				$id = $_POST["id"];
+				$roomame = $_POST["roomame"];
+				$mainimage = ""; // chỉnh sửa ảnh (chưa làm)
+				$roomtypeid = $_POST["roomtypeid"];
+				$roomprice = $_POST["roomprice"];
+				$roomquanlity = $_POST["roomquanlity"];
+				$roomrate = $_POST["roomrate"];
+				$discription = $_POST["discription"];
+				$allowpet = $_POST["allowpet"];
+				$popular = $_POST["popular"];
+				$roomnew = $_POST["roomnew"]; 
+
+				$model = new Model();
+				$a1 = $model->execute("update room set roomame='$roomame' where roomid='$id'");
+				$a2 = $model->execute("update room set roomtypeid='$roomtypeid' where roomid='$id'");
+				$a3 = $model->execute("update room set roomprice='$roomprice' where roomid='$id'");
+				$a4 = $model->execute("update room set roomquanlity='$roomquanlity' where roomid='$id'");
+				$a5 = $model->execute("update room set roomrate='$roomrate' where roomid='$id'");
+				$a6 = $model->execute("update room set discription='$discription' where roomid='$id'");
+				$a7 = $model->execute("update room set allowpet=b'$allowpet' where roomid='$id'");
+				$a8 = $model->execute("update room set popular='$popular' where roomid='$id'");
+
+	
+				if( $a1 == true && $a2 == true && $a3 == true && $a4 == true && $a5 == true && $a6 == true && $a7 == true && $a8 ){
+					echo "thanh cong";
+				}
+			}	
 		}
 	}
 	else {

@@ -123,6 +123,7 @@
     </div>
     <!-- /#wrapper -->
      <script>
+
         function submidFunc(){
             event.preventDefault();
             $.ajax({
@@ -135,19 +136,65 @@
             success:function(data){
                 if( data.trim() === "thanh cong") {
                  window.location.href = "/WebProject-2020/admin/index.php?controller=users/list"; 
-              }
-             
+              } 
             }
             });
-         };
+        }
            
-            function onDelete(id) {
-                var option = window.confirm('Bạn có muốn xóa không?');
-                if(option == true){
-                    $.ajax({
+        function onDelete(id) {
+            var option = window.confirm('Bạn có muốn xóa không?');
+            if(option == true){
+                $.ajax({
+                url: "/WebProject-2020/admin/index.php",
+                method:"POST",
+                data:"action=delete"+"&id=" + id,
+                success:function(data){
+                  if( data.trim() === "thanh cong") {
+                    window.location.reload();
+                  }
+
+                }
+                });
+            }
+            else{
+                console.log("cancer pressed");
+            }
+        }
+
+        function onEdit(id){
+            // console.log("vao dc đây");
+            // console.log(id);
+            var option = window.confirm('Xác nhận cập nhật?');
+            if(option == true){
+                event.preventDefault();
+                $.ajax({
                     url: "/WebProject-2020/admin/index.php",
                     method:"POST",
-                    data:"action=delete"+"&id=" + id,
+                    data:$("#formInputEditUs").serialize() + "&action=edit"+"&id=" + id,
+                    // beforeSend:function(){
+                    //     console.log($("#formInputEditUs").serialize() + "&action=edit"+"&id=" + id,)
+                    // },
+                    success:function(data){
+                        //console.log(data);
+                        if( data.trim() === "thanh cong") {
+                            window.location.href = "/WebProject-2020/admin/index.php?controller=users/list"; 
+                        }
+                    }
+                });
+            }
+            else{
+                console.log("cancer pressed");
+            }
+        }
+
+        // xoa 1 truong anh (Quan ly anh phong)
+        function deleteImage(id){
+            var option = window.confirm('Bạn có muốn xóa không?');
+            if(option == true){
+                $.ajax({
+                    url: "/WebProject-2020/admin/index.php",
+                    method:"POST",
+                    data:"action=delImg"+"&id=" + id,
                     success:function(data){
                       if( data.trim() === "thanh cong") {
                         window.location.reload();
@@ -155,61 +202,60 @@
 
                     }
                     });
-                }
-                else{
-                    console.log("cancer pressed");
-                }
             }
+            else{
+                console.log("Cancer pressed");
+            }
+        }
 
-            function onEdit(id){
-                // console.log("vao dc đây");
-                // console.log(id);
-                var option = window.confirm('Xác nhận cập nhật?');
-                if(option == true){
-                    event.preventDefault();
-                    $.ajax({
-                        url: "/WebProject-2020/admin/index.php",
-                        method:"POST",
-                        data:$("#formInputEditUs").serialize() + "&action=edit"+"&id=" + id,
-                        // beforeSend:function(){
-                        //     console.log($("#formInputEditUs").serialize() + "&action=edit"+"&id=" + id,)
-                        // },
-                        success:function(data){
-                            //console.log(data);
-                            if( data.trim() === "thanh cong") {
-                                window.location.href = "/WebProject-2020/admin/index.php?controller=users/list"; 
-                            }
-                        }
+        // xoa 1 truong room (Danh sach phong)
+        function delRoom(id){
+            var option = window.confirm('Bạn có muốn xóa không?');
+            if(option == true){
+                $.ajax({
+                    url: "/WebProject-2020/admin/index.php",
+                    method:"POST",
+                    data:"action=delRoom"+"&id=" + id,
+                    success:function(data){
+                      if( data.trim() === "thanh cong") {
+                        window.location.reload();
+                      }
+
+                    }
                     });
-                }
-                else{
-                    console.log("cancer pressed");
-                }
             }
+            else{
+                console.log("Cancer pressed");
+            }
+        }
 
-
-            // xoa 1 truong anh (Quan ly anh phong)
-            function deleteImage(id){
-                var option = window.confirm('Bạn có muốn xóa không?');
-                if(option == true){
-                    $.ajax({
-                        url: "/WebProject-2020/admin/index.php",
-                        method:"POST",
-                        data:"action=delImg"+"&id=" + id,
-                        success:function(data){
-                          if( data.trim() === "thanh cong") {
-                            window.location.reload();
-                          }
-
+        // chỉnh sửa thông tin phòng
+        function editRoom(id){
+            var option = window.confirm('Xác nhận cập nhật?');
+            if(option == true){
+                event.preventDefault();
+                $.ajax({
+                    url: "/WebProject-2020/admin/index.php",
+                    method:"POST",
+                    data:$("#formEditRoom").serialize() + "&action=edit_Room"+"&id=" + id,
+                    // beforeSend:function(){
+                    //     console.log($("#formEditRoom").serialize() + "&action=edit_Room"+"&id=" + id,)
+                    // },
+                    success:function(data){
+                        //console.log(data);
+                        if( data.trim() === "thanh cong") {
+                            window.location.href = "/WebProject-2020/admin/index.php?controller=room/list"; 
                         }
-                        });
-                }
-                else{
-                    console.log("Cancer pressed");
-                }
+                    }
+                });
             }
+            else{
+                console.log("cancer pressed");
+            }
+        }
               
     </script>
+
     <!-- jQuery -->
     <script src="../public/js/jquery.js"></script>
 

@@ -36,7 +36,10 @@
 
 		public function execute($sql){
 			 $con=  $this -> DB();
-			mysqli_query($con,$sql);
+			if( mysqli_query($con,$sql)) {
+				return true;
+			}
+			return false;
 		}
 
 		public function count($sql){

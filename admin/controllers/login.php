@@ -12,7 +12,7 @@
 				$check = $this->Model->fetchOne("select * from user where email='$email'");
 
 				if(isset($check["email"]) ) {
-					if($password == $check["password"] && $check["vkey"] == "1") {
+					if($password == $check["password"] && $check["userid"] < 10) {
 						$_SESSION["account"] = $email;
 						$_SESSION["name"] = $check["fullname"];
 						header("location: index.php");

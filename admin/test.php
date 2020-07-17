@@ -16,6 +16,7 @@
     }
 
 	if( isset($_POST["action"]) ) {
+		// xóa 1 user
 		if ( $_POST["action"]=="delete" ) {
 			$id = $_POST["id"];
 			$model = new Model();
@@ -24,6 +25,7 @@
 				echo "thanh cong";
 			}
 		}
+		// thêm mới 1 user
 		if ( $_POST["action"]=="add" ) {
 			$username = $fullname = $email = $password = $repass = $gender = $phone = $address ="";
 			// echo "thanh cong";
@@ -54,6 +56,7 @@
 	 			
 			}
 		}
+		// chỉnh sửa thông tin user
 		if( $_POST["action"]=="edit"){
 			if( isset($_POST["email"]) ) {
 				$id = $_POST["id"];
@@ -81,10 +84,8 @@
 				// 	echo "thanh cong";
 				// }
 			}
-			
-		}
-
-		// xóa ảnh phòng
+        }		
+        // xóa ảnh phòng
 		if ( $_POST["action"]=="delImg" ) {
 			$id = $_POST["id"];
 			$model = new Model();
@@ -93,6 +94,43 @@
 				echo "thanh cong";
 			}
 		}
+		// xóa phòng
+		if ( $_POST["action"]=="delRoom" ) {
+			$id = $_POST["id"];
+			$model = new Model();
+			$a = $model->execute("delete from room where roomid=$id");		
+			if( $a ) {
+				echo "thanh cong";
+			}
+		}
+		// chỉnh sửa thông tin phòng
+		if( $_POST["action"]=="editRoom"){
+			if( isset($_POST["roomame"]) ) {
+				$id = $_POST["id"];
+				$fullname = test_input($_POST["roomame"]);
+				// $password =  $_POST["password"];
+				// $gender =  $_POST["gender"];
+				// $phone =  $_POST["userPhoneNumber"];
+				// $address = $_POST["userAddress"];
+
+				$model = new Model();
+				$a1 = $model->execute("update room set roomame='$fullname' where roomid='$id'");
+				// $a2 = $model->execute("update user set gender='$gender' where userid='$id'");
+				// $a3 = $model->execute("update user set phonenumber='$phone' where userid='$id'");
+				// $a4 = $model->execute("update user set address='$address ' where userid='$id'");
+				// if($password != ''){
+				// 	$model->execute("update user set password='$password' where userid='$id'");
+				// }
+				// if( $a1 == true && $a2 == true && $a3 == true && $a4 == true ){
+				// 	echo "thanh cong";
+				// }
+				if( $a1 )
+				{
+					echo "thanh cong";
+				}
+			}
+		}
+		
 	}
 	else {
 			if(isset($_GET["act"]) && $_GET["act"]=="logout"){

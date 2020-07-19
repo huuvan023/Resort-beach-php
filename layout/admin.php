@@ -80,25 +80,23 @@
                     <li class="active">
                         <a href="index.php?controller=users/list"><i class="fa fa-fw fa-user"></i> Quản lý users</a>
                     </li>
-                    <li class="active">
-                        <a href="index.php?controller=booking/booking"><i class="fa fa-fw fa-book"></i> Quản lý đặt phòng</a>
-                    </li>
-                    <li class="active">
-                        <a href="index.php?controller=roomimage/list"><i class="fa fa-fw fa-book"></i> Quản lý ảnh phòng</a>
-                    </li>
-                    <li class="active">
-                        <a href="index.php?controller=room/list"><i class="fa fa-fw fa-user"></i> Danh sách phòng</a>
-                    </li>
-                    <!-- <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                            
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-book"></i> Quản lý phòng <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
+                            <li class="active">
+                                <a href="index.php?controller=booking/booking"><i class="fa fa-fw fa-book"></i> Quản lý đặt phòng</a>
                             </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
+                            <li class="active">
+                                <a href="index.php?controller=roomimage/list"><i class="fa fa-fw fa-book"></i> Quản lý ảnh phòng</a>
                             </li>
-                        </ul> -->
+                            <li class="active">
+                                <a href="index.php?controller=room/list"><i class="fa fa-fw fa-book"></i> Danh sách phòng</a>
+                            </li>
+                            <li class="active">
+                                <a href="index.php?controller=roomtype/list"><i class="fa fa-fw fa-book"></i> Danh sách loại phòng</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -124,6 +122,7 @@
     <!-- /#wrapper -->
      <script>
 
+        // thêm mới 1 user
         function submidFunc(){
             event.preventDefault();
             $.ajax({
@@ -140,7 +139,8 @@
             }
             });
         }
-           
+        
+        // xóa 1 user
         function onDelete(id) {
             var option = window.confirm('Bạn có muốn xóa không?');
             if(option == true){
@@ -161,6 +161,7 @@
             }
         }
 
+        // chỉnh sửa thông tin user
         function onEdit(id){
             // console.log("vao dc đây");
             // console.log(id);
@@ -229,7 +230,7 @@
             }
         }
 
-        // chỉnh sửa thông tin phòng
+        // chỉnh sửa thông tin phòng (chưa update được phần chỉnh sửa ảnh)
         function editRoom(id){
             var option = window.confirm('Xác nhận cập nhật?');
             if(option == true){
@@ -242,7 +243,7 @@
                     //     console.log($("#formEditRoom").serialize() + "&action=edit_Room"+"&id=" + id,)
                     // },
                     success:function(data){
-                        //console.log(data);
+                        // console.log(data);
                         if( data.trim() === "thanh cong") {
                             window.location.href = "/WebProject-2020/admin/index.php?controller=room/list"; 
                         }
@@ -252,6 +253,64 @@
             else{
                 console.log("cancer pressed");
             }
+        }
+//cai nay phai su sun form data roi. m coi tren
+        // thêm mới 1 phòng (chưa update được phần thêm ảnh)
+        function addRoom(){
+            event.preventDefault();
+            var form_data = new FormData();
+           form_data.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
+           form_data.append("roomid", document.getElementById('RID').value);
+           form_data.append("roomame", document.getElementById('Rname').value);
+           form_data.append("roomtypeid", document.getElementById('RtypeID').value);
+           form_data.append("roomprice", document.getElementById('RPricee').value);
+           form_data.append("roomquanlity", document.getElementById('RquanLT').value);
+           form_data.append("roomrate", document.getElementById('RRatee').value);
+           form_data.append("discription", document.getElementById('RDISCr').value);
+           form_data.append("allowpet", document.getElementById('ALLPet').value);
+           form_data.append("roomnew", document.getElementById('RNeww').value);
+           form_data.append("action","addNewRoom");
+            $.ajax({
+                url: "/WebProject-2020/admin/index.php",
+                method:"POST",
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false, 
+                beforeSend:function(){
+                    //console.log($('#fileToUpload')[0].files[0]);
+                    //console.log(form_data);
+                    //console.log($("#formAddRoom").serialize() + "&action=addNewRoom" + "&fileToUpload=" + $('#fileToUpload')[0].files[0]);
+                },
+                success:function(data){
+                    //console.log(data);
+                    if(data.trim() == "thanh cong"){
+                        window.location.href = "/WebProject-2020/admin/index.php?controller=room/list";
+                    }
+                }
+            });
+        }
+
+        // xóa 1 trường khỏi loại phòng (Danh sách loại phòng)
+        function delRoomType(id){
+            var option = window.confirm('Bạn có muốn xóa không?');
+            if(option == true){
+                $.ajax({
+                    url: "/WebProject-2020/admin/index.php",
+                    method:"POST",
+                    data:"action=deleteRoomType"+"&id=" + id,
+                    success:function(data){
+                      if( data.trim() === "thanh cong") {
+                        window.location.reload();
+                      }
+
+                    }
+                    });
+            }
+            else{
+                console.log("Cancer pressed");
+            }
+            // console.log(id);
         }
               
     </script>

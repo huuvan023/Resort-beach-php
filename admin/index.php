@@ -134,12 +134,65 @@
 				}
 			}	
 		}
+		// thêm mới 1 phòng
+		if ( $_POST["action"]=="addNewRoom" ) {
+			$roomame = $roomtypeid = $roomprice = $roomquanlity = $roomrate = $discription = $allowpet = $popular = $roomnew = "";
+
+			if( isset($_POST["roomame"]) ) {
+				$roomid = $_POST["roomid"];
+				$roomame = test_input($_POST["roomame"]);
+				$roomtypeid = $_POST["roomtypeid"];
+				$roomprice =  $_POST["roomprice"];
+				$roomquanlity =  $_POST["roomquanlity"];
+				$roomrate =  $_POST["roomrate"];
+				$discription =  $_POST["discription"];
+				$allowpet =  $_POST["allowpet"];
+				$roomnew = $_POST["roomnew"];
+
+				// thêm ảnh
+				$img = addslashes(file_get_contents($_FILES["fileToUpload"]["tmp_name"])); //dung de chuyen hinh thanh nhi phan
+				
+
+	 			$model = new Model();
+
+	 			// $checkRoom = $model->checkExist("select * from room where roomid='$roomid'");
+	 			// if( $checkRoom ){
+	 			// 	echo '<script language="javascript">';
+					// echo 'alert("Room ID đã tồn tại, vui lòng chọn ID kh!")';
+					// echo '</script>';
+	 			// }
+	 			// else{
+	 				$a = $model->execute("insert into room(roomid, roomame, mainimage, roomtypeid, roomprice, roomquanlity, roomrate, discription, allowpet, popular, roomnew) value('$roomid', '$roomame', '$img', '$roomtypeid', '$roomprice', '$roomquanlity', '$roomrate', '$discription', b'$allowpet', '0', 'roomnew') ");
+		 			if( $a ){
+		 				echo "thanh cong" ;
+		 			}
+		 			else {
+		 				echo "loi!";
+		 			}	
+	 			// }
+
+	 				
+			}
+
+
+
+		}
+		// xóa loại phòng
+		if ( $_POST["action"]=="deleteRoomType" ) {
+			$id = $_POST["id"];
+			$model = new Model();
+			$a = $model->execute("delete from roomtype where roomtypeid='$id'");		
+			if( $a ) {
+				echo "thanh cong";//dc chua?, chua xoa dc xoa thu xem
+			}
+		}
+
+
 	}
 	else {
 			if(isset($_GET["act"]) && $_GET["act"]=="logout"){
 					unset($_SESSION["account"]);
 				}
-
 
 				if(isset($_SESSION['account'])) {
 					$controller = isset($_GET["controller"])?"controllers/".$_GET["controller"]."Controller.php":"controllers/home.php";

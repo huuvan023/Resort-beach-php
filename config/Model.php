@@ -34,6 +34,18 @@
 			return $rows;
 		}
 
+		public function checkExist($sql){
+			$con =  $this -> DB();
+			$result = mysqli_query($con,$sql);
+			if(mysqli_num_rows( $result )){
+				return true;
+			}
+			else{
+				return false;
+			}
+			
+		}
+
 		public function execute($sql){
 			 $con=  $this -> DB();
 			if( mysqli_query($con,$sql)) {

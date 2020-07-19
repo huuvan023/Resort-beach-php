@@ -7,7 +7,7 @@
 </div> 
 
 <!-- index.php?controller=users/add  -->
-<a href="#" class="btn btn-primary" style="margin-bottom: 20px"> Thêm phòng mới</a>
+<a href="index.php?controller=room/add" class="btn btn-primary" style="margin-bottom: 20px"> Thêm phòng mới</a>
 
 <table class="table table-bordered table-hover">
 	<tr style="text-align: center;font-weight: bold;">

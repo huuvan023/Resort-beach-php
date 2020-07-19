@@ -45,13 +45,13 @@
 					</tr>
 
 					<tr>
-						<td>room quanlity</td>
+						<td>Số lượng người</td>
 						<td>
 							<input name="roomquanlity" type="text" class="form-control" pattern="([0-9]{10})\b" required="" value="<?php echo $data["roomquanlity"] ;?>" >
 						</td>
 					</tr>
 					<tr>
-						<td>room rate</td>
+						<td>Đánh giá</td>
 						<td>
 							<input type="text" name="roomrate" value="<?php echo $data["roomrate"] ;?>" class="form-control" >
 						</td>
@@ -83,7 +83,7 @@
 						</td>
 
 					</tr><tr>
-						<td>room new</td>
+						<td>Ngày tạo</td>
 						<td>
 							<input type="text" name="roomnew" value="<?php echo $data["roomnew"] ;?>" class="form-control" readonly>
 						</td>

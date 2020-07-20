@@ -230,46 +230,57 @@
             }
         }
 
-        // chỉnh sửa thông tin phòng (chưa update được phần chỉnh sửa ảnh)
-        function editRoom(id){
-            var option = window.confirm('Xác nhận cập nhật?');
-            if(option == true){
-                event.preventDefault();
-                $.ajax({
-                    url: "/WebProject-2020/admin/index.php",
-                    method:"POST",
-                    data:$("#formEditRoom").serialize() + "&action=edit_Room"+"&id=" + id,
-                    // beforeSend:function(){
-                    //     console.log($("#formEditRoom").serialize() + "&action=edit_Room"+"&id=" + id,)
-                    // },
-                    success:function(data){
-                        // console.log(data);
-                        if( data.trim() === "thanh cong") {
-                            window.location.href = "/WebProject-2020/admin/index.php?controller=room/list"; 
-                        }
-                    }
-                });
-            }
-            else{
-                console.log("cancer pressed");
-            }
-        }
-//cai nay phai su sun form data roi. m coi tren
         // thêm mới 1 phòng (chưa update được phần thêm ảnh)
         function addRoom(){
             event.preventDefault();
             var form_data = new FormData();
-           form_data.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
-           form_data.append("roomid", document.getElementById('RID').value);
-           form_data.append("roomame", document.getElementById('Rname').value);
-           form_data.append("roomtypeid", document.getElementById('RtypeID').value);
-           form_data.append("roomprice", document.getElementById('RPricee').value);
-           form_data.append("roomquanlity", document.getElementById('RquanLT').value);
-           form_data.append("roomrate", document.getElementById('RRatee').value);
-           form_data.append("discription", document.getElementById('RDISCr').value);
-           form_data.append("allowpet", document.getElementById('ALLPet').value);
-           form_data.append("roomnew", document.getElementById('RNeww').value);
-           form_data.append("action","addNewRoom");
+            form_data.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
+            form_data.append("roomid", document.getElementById('RID').value);
+            form_data.append("roomame", document.getElementById('Rname').value);
+            form_data.append("roomtypeid", document.getElementById('RtypeID').value);
+            form_data.append("roomprice", document.getElementById('RPricee').value);
+            form_data.append("roomquanlity", document.getElementById('RquanLT').value);
+            form_data.append("roomrate", document.getElementById('RRatee').value);
+            form_data.append("discription", document.getElementById('RDISCr').value);
+            form_data.append("allowpet", document.getElementById('ALLPet').value);
+            form_data.append("roomnew", document.getElementById('RNeww').value);
+            form_data.append("action","addNewRoom");
+            $.ajax({
+                url: "/WebProject-2020/admin/index.php",
+                method:"POST",
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false, 
+                beforeSend:function(){
+                    //console.log($('#fileToUpload')[0].files[0]);
+                    //console.log(form_data);
+                    //console.log($("#formAddRoom").serialize() + "&action=addNewRoom" + "&fileToUpload=" + $('#fileToUpload')[0].files[0]);
+                },
+                success:function(data){
+                    console.log(data);
+                    if(data.trim() == "thanh cong"){
+                        window.location.href = "/WebProject-2020/admin/index.php?controller=room/list";
+                    }
+                }
+            });
+            // console.log(form_data);
+        }
+
+         function editRoom(){
+            event.preventDefault();
+            var form_data = new FormData();
+            form_data.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
+            form_data.append("roomid", document.getElementById('RID').value);
+            form_data.append("roomame", document.getElementById('Rname').value);
+            form_data.append("roomtypeid", document.getElementById('RtypeID').value);
+            form_data.append("roomprice", document.getElementById('RPricee').value);
+            form_data.append("roomquanlity", document.getElementById('RquanLT').value);
+            form_data.append("roomrate", document.getElementById('RRatee').value);
+            form_data.append("discription", document.getElementById('RDISCr').value);
+            form_data.append("allowpet", document.getElementById('ALLPet').value);
+            
+            form_data.append("action","edit_Room");
             $.ajax({
                 url: "/WebProject-2020/admin/index.php",
                 method:"POST",
@@ -289,7 +300,10 @@
                     }
                 }
             });
+            // console.log("vao");
         }
+
+        
 
         // xóa 1 trường khỏi loại phòng (Danh sách loại phòng)
         function delRoomType(id){

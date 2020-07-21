@@ -16,7 +16,7 @@
 			$form = ($page-1)*$num_page;
 
 			// $data = $this->Model->fetch("select * from user limit $form,$num_page");
-			$data = $this->Model->fetch("select * from room limit $form,$num_page");
+			$data = $this->Model->fetch("SELECT * FROM room ORDER BY roomid ASC limit $form,$num_page");
 
 			include "views/room/listView.php";
 		}

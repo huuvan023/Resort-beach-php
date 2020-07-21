@@ -17,7 +17,7 @@
 
 			// $data = $this->Model->fetch("select * from user limit $form,$num_page");
 
-			$data = $this->Model->fetch("select * from roomimage limit $form,$num_page");
+			$data = $this->Model->fetch("SELECT * FROM roomimage ORDER BY roomid ASC limit $form,$num_page ");
 
 			include "views/roomimage/listView.php";
 		}

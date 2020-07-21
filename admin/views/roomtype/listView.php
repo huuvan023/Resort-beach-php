@@ -34,7 +34,7 @@
 		<td><img class="imageFormat" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($value["roomtypeimg"]); ?>"></td>
 		<td ><?php echo $value["roomprice_range"]; ?></td>
 		<td>
-			<a href="#">Sửa</a>
+			<a href="index.php?controller=roomtype/edit&id=<?php echo $value["roomtypeid"] ;?>">Sửa</a>
 		</td>
 		<td>
 			<a href="" onclick="delRoomType('<?php echo $value["roomtypeid"];?>')">Xóa</a>

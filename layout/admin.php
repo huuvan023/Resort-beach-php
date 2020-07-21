@@ -122,6 +122,7 @@
     <!-- /#wrapper -->
      <script>
 
+        // --------user------------
         // thêm mới 1 user
         function submidFunc(){
             event.preventDefault();
@@ -139,7 +140,6 @@
             }
             });
         }
-        
         // xóa 1 user
         function onDelete(id) {
             var option = window.confirm('Bạn có muốn xóa không?');
@@ -160,7 +160,6 @@
                 console.log("cancer pressed");
             }
         }
-
         // chỉnh sửa thông tin user
         function onEdit(id){
             // console.log("vao dc đây");
@@ -187,28 +186,11 @@
                 console.log("cancer pressed");
             }
         }
+        // ------end user-----------
 
-        // xoa 1 truong anh (Quan ly anh phong)
-        function deleteImage(id){
-            var option = window.confirm('Bạn có muốn xóa không?');
-            if(option == true){
-                $.ajax({
-                    url: "/WebProject-2020/admin/index.php",
-                    method:"POST",
-                    data:"action=delImg"+"&id=" + id,
-                    success:function(data){
-                      if( data.trim() === "thanh cong") {
-                        window.location.reload();
-                      }
+        
 
-                    }
-                    });
-            }
-            else{
-                console.log("Cancer pressed");
-            }
-        }
-
+        // ------Room--------
         // xoa 1 truong room (Danh sach phong)
         function delRoom(id){
             var option = window.confirm('Bạn có muốn xóa không?');
@@ -229,7 +211,6 @@
                 console.log("Cancer pressed");
             }
         }
-
         // thêm mới 1 phòng (chưa update được phần thêm ảnh)
         function addRoom(){
             event.preventDefault();
@@ -266,8 +247,7 @@
             });
             // console.log(form_data);
         }
-
-         function editRoom(){
+        function editRoom(){
             event.preventDefault();
             var form_data = new FormData();
             form_data.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
@@ -302,9 +282,134 @@
             });
             // console.log("vao");
         }
+        // -----end room--------
 
-        
 
+
+
+
+        // ------Roomimage--------
+        // thêm mới ảnh phòng
+        function addImage(){
+            event.preventDefault();
+            var form_data = new FormData();
+            form_data.append("image1", document.getElementById('image1').files[0]);
+            form_data.append("image2", document.getElementById('image2').files[0]);
+            form_data.append("image3", document.getElementById('image3').files[0]);
+            form_data.append("roomid", document.getElementById('RID').value);
+            form_data.append("action","addNewImage");
+            $.ajax({
+                url: "/WebProject-2020/admin/index.php",
+                method:"POST",
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false, 
+                beforeSend:function(){
+                    //console.log($('#fileToUpload')[0].files[0]);
+                    //console.log(form_data);
+                    //console.log($("#formAddRoom").serialize() + "&action=addNewRoom" + "&fileToUpload=" + $('#fileToUpload')[0].files[0]);
+                },
+                success:function(data){
+                    // console.log(data);
+                    if(data.trim() == "thanh cong"){
+                        window.location.href = "/WebProject-2020/admin/index.php?controller=roomimage/list";
+                    }
+                }
+            });
+            // console.log("adajd");
+        }
+        // xoa 1 truong anh (Quan ly anh phong)
+        function deleteImage(id){
+            var option = window.confirm('Bạn có muốn xóa không?');
+            if(option == true){
+                $.ajax({
+                    url: "/WebProject-2020/admin/index.php",
+                    method:"POST",
+                    data:"action=delImg"+"&id=" + id,
+                    success:function(data){
+                      if( data.trim() === "thanh cong") {
+                        window.location.reload();
+                      }
+
+                    }
+                    });
+            }
+            else{
+                console.log("Cancer pressed");
+            }
+        }
+        function editImage(){
+            event.preventDefault();
+            var form_data = new FormData();
+            form_data.append("image1", document.getElementById('image1').files[0]);
+            form_data.append("image2", document.getElementById('image2').files[0]);
+            form_data.append("image3", document.getElementById('image3').files[0]);
+            form_data.append("roomid", document.getElementById('RID').value);
+            form_data.append("action","edit_Image");
+            $.ajax({
+                url: "/WebProject-2020/admin/index.php",
+                method:"POST",
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false, 
+                beforeSend:function(){
+                    //console.log($('#fileToUpload')[0].files[0]);
+                    //console.log(form_data);
+                    //console.log($("#formAddRoom").serialize() + "&action=addNewRoom" + "&fileToUpload=" + $('#fileToUpload')[0].files[0]);
+                },
+                success:function(data){
+                    console.log(data);
+                    if(data.trim() == "khong thanh cong"){
+                        alert("Vui lòng chọn ảnh cần cập nhật!");
+                    }
+                    if(data.trim() == "thanh cong"){
+                        window.location.href = "/WebProject-2020/admin/index.php?controller=roomimage/list";
+                    }
+                }
+            });
+            
+            //console.log("vao");
+        }
+        // ------end Roomimage----
+
+
+
+
+
+        // --------roomtype------------
+        // thêm loại phòng
+        function addRoomType(){
+            event.preventDefault();
+            var form_data = new FormData();
+            form_data.append("roomtypeimg", document.getElementById('roomtypeimg').files[0]);
+            form_data.append("roomtypeid", document.getElementById('RID').value);
+            form_data.append("roomtypename", document.getElementById('roomtypename').value);
+            form_data.append("roomprice_range1", document.getElementById('roomprice_range1').value);
+            form_data.append("roomprice_range2", document.getElementById('roomprice_range2').value);
+            form_data.append("action","addNewRoomType");
+            $.ajax({
+                url: "/WebProject-2020/admin/index.php",
+                method:"POST",
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false, 
+                beforeSend:function(){
+                    //console.log($('#fileToUpload')[0].files[0]);
+                    //console.log(form_data);
+                    //console.log($("#formAddRoom").serialize() + "&action=addNewRoom" + "&fileToUpload=" + $('#fileToUpload')[0].files[0]);
+                },
+                success:function(data){
+                    // console.log(data);
+                    if(data.trim() == "thanh cong"){
+                        window.location.href = "/WebProject-2020/admin/index.php?controller=roomtype/list";
+                    }
+                }
+            });
+            // console.log(form_data);
+        }
         // xóa 1 trường khỏi loại phòng (Danh sách loại phòng)
         function delRoomType(id){
             var option = window.confirm('Bạn có muốn xóa không?');
@@ -326,6 +431,41 @@
             }
             // console.log(id);
         }
+        function editRoomType(){
+            event.preventDefault();
+            var form_data = new FormData();
+            form_data.append("roomtypeid", document.getElementById('RID').value);
+            form_data.append("roomtypename", document.getElementById('roomtypename').value);
+            form_data.append("roomprice_range1", document.getElementById('roomprice_range1').value);
+            form_data.append("roomprice_range2", document.getElementById('roomprice_range2').value);
+            form_data.append("roomtypeimg", document.getElementById('roomtypeimg').files[0]);
+            form_data.append("action","editRoomType");
+
+            $.ajax({
+                url: "/WebProject-2020/admin/index.php",
+                method:"POST",
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false, 
+                beforeSend:function(){
+                    //console.log($('#fileToUpload')[0].files[0]);
+                    //console.log(form_data);
+                    //console.log($("#formAddRoom").serialize() + "&action=addNewRoom" + "&fileToUpload=" + $('#fileToUpload')[0].files[0]);
+                },
+                success:function(data){
+                    // console.log(data);
+                    // if(data.trim() == "khong thanh cong"){
+                    //     alert("Vui lòng chọn ảnh cần cập nhật!");
+                    // }
+                    if(data.trim() == "thanh cong"){
+                        window.location.href = "/WebProject-2020/admin/index.php?controller=roomtype/list";
+                    }
+                }
+            });
+        }
+
+        // ---------end roomtype----------
               
     </script>
 

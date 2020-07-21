@@ -22,7 +22,7 @@
 					<tr>
 						<td>Ảnh</td>
 						<td>
-							<input type="file" name="fileToUpload" id="fileToUpload" class="form-control" placeholder="Nếu muốn thay đổi ảnh, vui lòng chọn ảnh mới" />
+							<input type="file" name="fileToUpload" id="fileToUpload" class="form-control" />
 							<!-- <input type="file" name="image" id="image" class="form-control"/> -->
 						</td>
 					</tr>
@@ -83,13 +83,9 @@
 					<tr>
 						<td></td>
 						<td>
-							<!-- <button type="submit" class="btn btn-primary" id="smUs">Cập nhật thông tin</button>   -->
-							<a href="#" onclick="editRoom()" charset="btn btn-success"></a>
 							<a href="#" type="submit" onclick="editRoom(<?php echo $data["roomid"]?>)" class="btn btn-success">Cập nhật phòng</a>
 							<a href="index.php?controller=room/list" class="btn btn-success">Quay Lại</a>
-
-							
-
+				
 						</td>
 					</tr>
 			</table>

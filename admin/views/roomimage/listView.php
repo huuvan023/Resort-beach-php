@@ -16,7 +16,7 @@
 		<td >Ảnh 1</td>
 		<td >Ảnh 2</td>
 		<td >Ảnh 3</td>
-		<td>Cập nhật</td>
+		<td colspan="2">Cập nhật</td>
 	</tr>
 
 	<?php
@@ -31,6 +31,9 @@
 		<td><img class="imageFormat" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($value["image1"]); ?>"></td>
 		<td><img class="imageFormat" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($value["image2"]); ?>"></td>
 		<td><img class="imageFormat" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($value["image3"]); ?>"></td>
+		<td>
+			<a href="index.php?controller=roomimage/edit&id=<?php echo $value["roomid"] ;?>">Sửa</a>
+		</td>
 		<td>
 			<a onclick="deleteImage(<?php echo $value["roomid"];?>)" href="#">Xóa</a>
 		</td>

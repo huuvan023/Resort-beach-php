@@ -16,6 +16,7 @@
     }
 
 	if( isset($_POST["action"]) ) {
+		// ------------User---------------
 		// xóa 1 user
 		if ( $_POST["action"]=="delete" ) {
 			$id = $_POST["id"];
@@ -85,15 +86,9 @@
 				// }
 			}	
 		}
-		// xóa ảnh phòng
-		if ( $_POST["action"]=="delImg" ) {
-			$id = $_POST["id"];
-			$model = new Model();
-			$a = $model->execute("delete from roomimage where roomid=$id");		
-			if( $a ) {
-				echo "thanh cong";
-			}
-		}
+		// -----------End User-------------
+
+		// ------------Room----------------	
 		// xóa phòng
 		if ( $_POST["action"]=="delRoom" ) {
 			$id = $_POST["id"];
@@ -103,7 +98,6 @@
 				echo "thanh cong";
 			}
 		}
-
 		// thêm mới 1 phòng
 		if ( $_POST["action"]=="addNewRoom" ) {
 			$roomame = $roomtypeid = $roomprice = $roomquanlity = $roomrate = $discription = $allowpet = $popular = $roomnew = "";
@@ -146,7 +140,6 @@
 	 				
 			}
 		}
-
 		// Chỉnh sửa 1 phòng
 		if ( $_POST["action"]=="edit_Room" ) {
 			
@@ -187,7 +180,80 @@
 				}	
 			}
 		}
-		
+		// ------------End Room--------------
+
+		// xóa ảnh phòng
+		if ( $_POST["action"]=="delImg" ) {
+			$id = $_POST["id"];
+			$model = new Model();
+			$a = $model->execute("delete from roomimage where roomid=$id");		
+			if( $a ) {
+				echo "thanh cong";
+			}
+		}
+		// thêm ảnh phòng
+		if ( $_POST["action"]=="addNewImage" ) {
+			$roomame = $roomtypeid = $roomprice = $roomquanlity = $roomrate = $discription = $allowpet = $popular = $roomnew = "";
+
+			if( isset($_POST["roomid"]) ) {
+				$roomid = $_POST["roomid"];
+
+				if(!empty($_FILES)){
+					// thêm ảnh			
+					$img1 = addslashes(file_get_contents($_FILES["image1"]["tmp_name"])); //dung de chuyen hinh thanh nhi phan
+					$img2 = addslashes(file_get_contents($_FILES["image2"]["tmp_name"])); //dung de chuyen hinh thanh nhi phan
+					$img3 = addslashes(file_get_contents($_FILES["image3"]["tmp_name"])); //dung de chuyen hinh thanh nhi phan
+
+	 			}
+
+	 			$model = new Model();
+
+	 				$a = $model->execute("insert into roomimage(roomid, image1, image2, image3) value('$roomid', '$img1', '$img2', '$img3') ");
+		 			if( $a ){
+		 				echo "thanh cong" ;
+		 			}
+		 			else {
+		 				echo "loi!";
+		 			}	
+
+	 				
+			}
+				// echo $roomid;
+		}
+		// Chỉnh sửa ảnh phòng
+		if ( $_POST["action"]=="edit_Image" ) {
+			if( isset($_POST["roomid"]) ) {
+				$roomid = $_POST["roomid"];
+
+	 			$model = new Model();
+	
+	 			$a = $b =$c ="";
+	 			if(empty($_FILES)){
+	 				echo "khong thanh cong";
+	 			}
+	 			else{ 
+	 				if(!empty($_FILES["image1"])){
+	 					$img1 = addslashes(file_get_contents($_FILES["image1"]["tmp_name"])); //dung de chuyen hinh thanh nhi phan
+	 					$a = $model->execute("update roomimage set image1='$img1' where roomid='$roomid'");
+	 				}
+	 				if(!empty($_FILES["image2"])){
+	 					$img2 = addslashes(file_get_contents($_FILES["image2"]["tmp_name"])); //dung de chuyen hinh thanh nhi phan
+	 					$b = $model->execute("update roomimage set image2='$img2' where roomid='$roomid'");
+	 				}
+	 				if(!empty($_FILES["image3"])){
+	 					$img3 = addslashes(file_get_contents($_FILES["image3"]["tmp_name"])); //dung de chuyen hinh thanh nhi phan
+	 					$c = $model->execute("update roomimage set image3='$img3' where roomid='$roomid'");
+	 				}
+	 			}
+
+	 			if($a == true || $b == true || $c == true){
+	 				echo "thanh cong";
+	 			}
+
+	 				
+			}
+
+		}
 		// xóa loại phòng
 		if ( $_POST["action"]=="deleteRoomType" ) {
 			$id = $_POST["id"];
@@ -197,7 +263,69 @@
 				echo "thanh cong";//dc chua?, chua xoa dc xoa thu xem
 			}
 		}
+		// thêm loại phòng
+		if ( $_POST["action"]=="addNewRoomType" ) {
+			$roomame = $roomtypeid = $roomprice = $roomquanlity = $roomrate = $discription = $allowpet = $popular = $roomnew = "";
 
+			if( isset($_POST["roomtypename"]) ) {
+				$roomtypeid = $_POST["roomtypeid"];
+				$roomtypename = test_input($_POST["roomtypename"]);
+				$roomprice_range1 = $_POST["roomprice_range1"];
+				$roomprice_range2 = $_POST["roomprice_range2"];
+				$roomprice_range = '$'.$roomprice_range1.' - $'.$roomprice_range2;
+
+				if(!empty($_FILES)){
+					// thêm ảnh			
+					$img = addslashes(file_get_contents($_FILES["roomtypeimg"]["tmp_name"])); //dung de chuyen hinh thanh nhi phan
+
+	 			}
+
+	 			$model = new Model();
+
+ 				$a = $model->execute("insert into roomtype(roomtypeid, roomtypename, roomtypeimg, roomprice_range) 
+ 					value('$roomtypeid', '$roomtypename', '$img', '$roomprice_range')");
+	 			if( $a ){
+	 				echo "thanh cong" ;
+	 			}
+	 			else {
+	 				echo "loi!";
+	 			}	
+
+	 				
+			}
+		}
+		// chỉnh sửa loại phòng
+		if ( $_POST["action"]=="editRoomType" ) {
+			if( isset($_POST["roomtypename"]) ) {
+				$roomtypeid = $_POST["roomtypeid"];
+				$roomtypename = test_input($_POST["roomtypename"]);
+				$roomprice_range1 = $_POST["roomprice_range1"];
+				$roomprice_range2 = $_POST["roomprice_range2"];
+				$roomprice_range = '$'.$roomprice_range1.' - $'.$roomprice_range2;
+				
+
+	 			$model = new Model();
+
+				$a1 = $model->execute("update roomtype set roomtypename='$roomtypename' where roomtypeid='$roomtypeid'");
+				$a2 = $model->execute("update roomtype set roomprice_range='$roomprice_range' where roomtypeid='$roomtypeid'");
+
+
+
+
+
+				if(!empty($_FILES)){
+					// thêm ảnh			
+					$img = addslashes(file_get_contents($_FILES["roomtypeimg"]["tmp_name"])); //dung de chuyen hinh thanh nhi phan
+	 				$a3 = $model->execute("update roomtype set roomtypeimg='$img' where roomtypeid='$roomtypeid'");
+
+	 			}
+
+
+				if( $a1 == true && $a2 == true){
+					echo "thanh cong";
+				}	
+			}
+		}	
 
 	}
 	else {

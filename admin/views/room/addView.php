@@ -27,10 +27,17 @@
 						<td>Loại phòng</td>
 						<td>
 							<select name="roomtypeid" id="RtypeID" class="form-control">
-								<option value="PHONGTHUONG">Phòng thường</option>
-								<option value="PHONGGIADINH">Phòng gia đình</option>
-								<option value="PHONGVIP">Phòng VIP</option>
+ 
+								<?php
+									$stt = 0;
+									foreach ($data as $value) {
+										echo "<option value='{$value["roomtypeid"]}'>{$value["roomtypename"]}</option>";
+										$stt++;
+								?>
+
+								<?php } ?>
 							</select>
+
 						</td>
 					</tr>
 					<tr>

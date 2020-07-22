@@ -142,7 +142,7 @@
                         window.location.href = "http://localhost/WebProject-2020/admin/index.php?controller=users/list"; 
                         } 
                         else{
-                            window.alert(data);
+                            console.log(data);
                         }
                     }
                 }); 
@@ -277,11 +277,6 @@
             });
         }
         // -----end room--------
-
-
-
-
-
         // ------Roomimage--------
         // thêm mới ảnh phòng
         function addImage(){
@@ -290,7 +285,10 @@
             form_data.append("image1", document.getElementById('image1').files[0]);
             form_data.append("image2", document.getElementById('image2').files[0]);
             form_data.append("image3", document.getElementById('image3').files[0]);
-            form_data.append("roomid", document.getElementById('RID').value);
+            var strr = document.getElementById('RID').value;
+            var dttt = strr.split("-", 1);
+            dttt = dttt.toString();
+            form_data.append("roomid",dttt);
             form_data.append("action","addNewImage");
             $.ajax({
                 url: "http://localhost/WebProject-2020/admin/index.php",
@@ -300,6 +298,7 @@
                 cache: false,
                 processData: false, 
                 success:function(data){
+                    console.log(data);
                     if(data.trim() == "thanh cong"){
                         window.location.href = "http://localhost/WebProject-2020/admin/index.php?controller=roomimage/list";
                     }

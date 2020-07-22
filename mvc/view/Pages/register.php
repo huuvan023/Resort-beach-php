@@ -33,7 +33,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                   <label>Mật khẩu: </label>
                   <input id="userPass" type="password" name="userPass" placeholder="Mật khẩu..."
                   value="" class="input" required
-                  autofocus pattern="^(?=.*[a-z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,20}$"
+                  autofocus pattern="^(?=.*[a-z])(?=.*\d).{6,20}$"
                   oninvalid="this.setCustomValidity('Định dạng mật khẩu không đúng! (Mật khẩu từ 6-20 kí tự, bao gồm kí tự latin, kí tự đặt biệt và số )')"
                   oninput="this.setCustomValidity('')" title="Mật khẩu từ 6-20 kí tự bao gồm kí tự, số, kí tự đặt biệt"  />
                 </div>
@@ -45,7 +45,7 @@ require_once "./mvc/view/Blocks/Loading.php";
                   <label>Xác nhận mật khẩu: </label>
                   <input id="userConfirm" type="password" name="userConfirm" placeholder="Nhập lại mật khẩu"
                   value="" class="input" required
-                  autofocus pattern="^(?=.*[a-z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,20}$"
+                  autofocus pattern="^(?=.*[a-z])(?=.*\d).{6,20}$"
                   oninvalid="this.setCustomValidity('Mật khẩu không giống nhau!')"
                   oninput="this.setCustomValidity('')"  />
                 </div> 

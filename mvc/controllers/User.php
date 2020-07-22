@@ -24,7 +24,7 @@
                             $fetchInfor = $infor -> fetch_assoc();
                             $priceTotal += ($days * $fetchInfor["roomprice"]);
 
-                            $push = ["Room" => $fetchInfor, "Booked" => $row];
+                            $push = ["Room" => $fetchInfor, "Booked" => $row, "RoomOnlyPr" => $days * $fetchInfor["roomprice"]];
                             array_push($bookingArr, $push );
                         }
                         $this -> view("UserPage",["Dashboard" => $this->dashboard,"Page" => "booking","Bookings" => $bookingArr,"TotalPrice" => $priceTotal ]);
@@ -47,7 +47,7 @@
             $data = htmlspecialchars($data);        //Escape htmlSpecialChar
             return $data;
         }
-        //
+        
         public function Edit1(){
             if( $_SERVER["REQUEST_METHOD"] == "POST" ) {
                 $data = NULL;
@@ -56,7 +56,9 @@
                     $a = $this -> test_input($_POST["profileName"]);
                     $exec = $model -> EditUser("fullname",$a,$_SESSION["userid"]);
                     if( $exec )
+                        
                         $data = array( 'success'  => "Đổi tên thành công!");
+                        
                     else 
                         $data = array( 'fail'  => "Có lỗi khi đổi thông tin!");
                 }
@@ -174,7 +176,7 @@
         //Log out
         public function Logout(){
             session_destroy();
-            header("Location: http://localhost/WebProject-2020/");
+            header("Location: http://resortbeach.epizy.com/");
         }
     }
 ?>

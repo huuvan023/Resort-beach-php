@@ -32,6 +32,7 @@
 			$username = $fullname = $email = $password = $repass = $gender = $phone = $address ="";
 			// echo "thanh cong";
 			if( isset($_POST["fullname"]) ) {
+				
 				$fullname = test_input($_POST["fullname"]);
 				$username = $_POST["username"];
 				$email =  $_POST["email"];
@@ -46,19 +47,29 @@
 	 			$model = new Model();
 
 	 			if($password == $repass){
+					
                     $emailCheckUS = $model->count("SELECT * FROM user WHERE email='$email'");
                     if( $emailCheckUS == 0 ) {
                         $a = $model->execute("insert into user(fullname, loginname, password, email, gender, phonenumber, vkey, address, confirm)
-			 				value('$fullname', '$username', '$password', '$email', '$gender', '$phone', '$strVkey', '$address', '1') ");
-                        if( $a ){
+			 				value('$fullname', '$username', '$password', '$email', '$gender', '$phone', '$strVkey', '$address', 1) ");
+						if( $a ){
                             echo "thanh cong";
-                        }
+						}
+						else {
+							echo "Them user that bai!";
+						}
                     }
 	 				else {
                          echo "Email đã được đăng kí!";
                     }
-	 			}
+				 }
+				 else {
+					 echo "Mat khau va mat khau xac nhan phai giong nhau";
+				 }
 	 			
+			}
+			else {
+				echo "Khong co ten!";
 			}
 		}
 		// chỉnh sửa thông tin user
@@ -209,7 +220,7 @@
 		 				echo "thanh cong" ;
 		 			}
 		 			else {
-		 				echo "loi!";
+		 				echo "insert into roomimage(roomid, image1, image2, image3) value('$roomid', '$img1', '$img2', '$img3')";
 		 			}	
 
 	 				

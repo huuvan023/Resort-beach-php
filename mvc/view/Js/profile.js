@@ -85,7 +85,7 @@ $(document).ready(function(){
       success: function(data)
         {
           var tenmoi = $("#nameMod").val();
-          console.log(tenmoi)
+          console.log("Dasd");
             if( data.success ){
               option = {
                 content: data.success ,
@@ -97,8 +97,9 @@ $(document).ready(function(){
               }
               new jBox('Notice', option);
               $("#"+field+"").text(modVl);
-              handleToggle(handleTggl);
               $("#nameHeader").text(tenmoi);
+              handleToggle(handleTggl);
+              
             }
             if( data.fail ) {
               option = {

@@ -213,6 +213,9 @@ $(document).ready(function(){
              confirmButtonColor: '#04B404',
              confirmButtonText: 'OK Tuyệt!',
              closeOnConfirm: false,
+           },
+           function(){
+               window.location.reload(); 
            });
          }
          if(data.fail)

@@ -91,7 +91,7 @@ use PHPMailer\PHPMailer\Exception;
                                     }
                                 }
                                 else {
-                                    $data = array( 'fail'  => "Lỗi captcha hoặc lỗi khi thêm user mới" );
+                                    $data = array( 'fail'  => "Lỗi khi thêm user mới" );
                                 }
                             }
                             else {

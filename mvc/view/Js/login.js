@@ -94,13 +94,13 @@ $('#login').on('submit', function(event){
          title: "Đăng nhập thành công!",
          text: "Chúc mừng. Bạn đã đăng nhập tài khoản thành công!",
          confirmButtonColor: '#04B404',
-         confirmButtonText: "Trở lại",
+         confirmButtonText: "OK",
          closeOnConfirm: false,
          imageUrl: '/WebProject-2020/public/success.gif',
          //closeOnCancel: false
        },
        function(){
-        window.location.href = "/WebProject-2020";  
+        window.location.href = "/WebProject-2020/Home/IndexPage/index";  
        });
      }
      if(data.fail)

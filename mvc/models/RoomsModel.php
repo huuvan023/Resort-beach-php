@@ -213,9 +213,22 @@
                 echo "Something was wrong". $e;
             }
         }
-        public function check(){
-            echo "b";
-            echo $this -> test;
+        public function getRoomNews() {
+            $conn = $this -> __construct();
+            $conn->set_charset("utf8");
+            $sql = "SELECT * FROM room ORDER BY room.roomnew DESC";
+            try {
+                if( $result = $conn -> query($sql) ) 
+                {
+                    if( $result -> num_rows > 0) {
+                        $this -> closeConnection();
+                        return $result;
+                    }
+                }
+            }
+            catch( Exception $e) {
+                echo "Something was wrong". $e;
+            }
         }
     }
 ?>

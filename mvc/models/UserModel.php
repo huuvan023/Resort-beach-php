@@ -6,7 +6,7 @@
                 $conn = $this -> __construct();
                 $conn->set_charset("utf8");
                 $sql = "INSERT INTO user(userid, fullname, loginname, password, email,vkey, gender, phonenumber, address,confirm) 
-                        VALUES ('','$userFullName','$userName','$userPass','$userEmail','$vkey','$userGender',$userPhoneNumber,'$userAddress',0)";    
+                        VALUES (NULL,'$userFullName','$userName','$userPass','$userEmail','$vkey','$userGender',$userPhoneNumber,'$userAddress',0)";    
                 if ( mysqli_query($conn, $sql) ) {
                     mysqli_set_charset($conn,'utf8');
                     mysqli_query($conn,"SET NAMES 'UTF8'");

@@ -15,6 +15,7 @@
 			// số user hiện có
 			$userCount = $this->Model->count("select * from user");
 
+<<<<<<< HEAD
 
 
 			// So ban ghi hien thi tren mot trang
@@ -24,6 +25,8 @@
 			$room = $this->Model->fetch("select * from room limit 0,$num_page");
 			$roomtype = $this->Model->fetch("select * from roomtype limit 0,$num_page");
 
+=======
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 			include "views/home.php";
 		}
 	}

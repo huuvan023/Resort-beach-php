@@ -17,12 +17,21 @@
 		<td >Ảnh chính</td>
 		<td >Loại phòng</td>
 		<td >Giá phòng</td>
+<<<<<<< HEAD
 		<td >Số người</td>
 		<td >Đánh giá</td>
 		<td >Mô tả</td>
 		<td>Thú cưng</td>
 		<td >Độ thịnh hành</td>
 		<td >Thời điểm thêm</td>
+=======
+		<td >room quanlity</td>
+		<td >room rate</td>
+		<td >Mô tả</td>
+		<td>Thú cưng</td>
+		<td >popular</td>
+		<td >room new</td>
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 		<td colspan="2" >Cập nhật</td>
 	</tr>
 
@@ -44,6 +53,7 @@
 		<td><?php echo $value["roomprice"]; ?></td>
 		<td><?php echo $value["roomquanlity"]; ?></td>
 		<td><?php echo $value["roomrate"]; ?></td>
+<<<<<<< HEAD
 		<td>
 			<div class="Rdiscription">
 				<?php echo $value["discription"]; ?>
@@ -54,6 +64,10 @@
 					else echo "Không cho phép";
 			?>
 		</td>
+=======
+		<td><?php echo $value["discription"]; ?></td>
+		<td><?php echo $value["allowpet"]; ?></td>
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 		<td><?php echo $value["popular"]; ?></td>
 		<td><?php echo $value["roomnew"]; ?></td>
 		<td>

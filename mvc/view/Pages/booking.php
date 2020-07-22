@@ -91,8 +91,13 @@ require_once "./mvc/view/Blocks/Loading.php";
                                     <p>Điểm đánh giá:</p> <span><?php echo $dt["Room"]["roomrate"] ?></span>
                                 </div>
                                 <div class="booking-card-price">
+<<<<<<< HEAD
                                     <p id="bk-title">Tổng giá: </p>
                                     <p>$.<?php echo $dt["RoomOnlyPr"] ?></p>
+=======
+                                    <p id="bk-title">Giá: </p>
+                                    <p>$.<?php echo $dt["Room"]["roomprice"] ?></p>
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                                 </div>
                             </div>
                         </div>

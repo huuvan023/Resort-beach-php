@@ -202,6 +202,13 @@ $(document).ready(function(){
         //hàm serialize lấy ra các thành phần trong form và mã hóa thành giá chuỗi
         data:$(this).serialize() + "&userID=" + userIDD + "&roomID=" + roomIDD + "&price=" + pri,
         dataType:"json",
+<<<<<<< HEAD
+=======
+        beforeSend:function()
+          {
+            console.log($("#booking").serialize() + "&userID=" + userIDD + "&roomID=" + roomIDD + "&price=" + pri);
+          },
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
         success:function(data)
         {
          if(data.success)
@@ -211,15 +218,24 @@ $(document).ready(function(){
              title: "Đặt phòng thành công!",
              text: "Chúc mừng. Bạn đã đặt phòng " +rname+ " thành công!",
              confirmButtonColor: '#04B404',
+<<<<<<< HEAD
              confirmButtonText: 'OK Tuyệt!',
              closeOnConfirm: false,
            },
            function(){
                window.location.reload(); 
+=======
+             confirmButtonText: 'Quay lại',
+             closeOnConfirm: false,
+           },
+           function(){
+             window.history.back();
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
            });
          }
          if(data.fail)
          {
+<<<<<<< HEAD
            if( data.fail == "Bạn chưa đăng nhập! Hãy đăng nhập để đặt phòng") {
                 swal({
                 title: "Đặt phòng thất bại!",
@@ -239,10 +255,21 @@ $(document).ready(function(){
                 confirmButtonColor: '#DF013A',
                 });
            }
+=======
+           swal({
+             title: "Đặt phòng thất bại!",
+             text: data.fail,
+             confirmButtonColor: '#DF013A',
+           });
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
          }
         }
        })
     });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
     
     
 

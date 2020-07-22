@@ -6,7 +6,11 @@
                 $conn = $this -> __construct();
                 $conn->set_charset("utf8");
                 $sql = "INSERT INTO user(userid, fullname, loginname, password, email,vkey, gender, phonenumber, address,confirm) 
+<<<<<<< HEAD
                         VALUES (NULL,'$userFullName','$userName','$userPass','$userEmail','$vkey','$userGender',$userPhoneNumber,'$userAddress',0)";    
+=======
+                        VALUES ('','$userFullName','$userName','$userPass','$userEmail','$vkey','$userGender',$userPhoneNumber,'$userAddress',0)";    
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                 if ( mysqli_query($conn, $sql) ) {
                     mysqli_set_charset($conn,'utf8');
                     mysqli_query($conn,"SET NAMES 'UTF8'");
@@ -108,9 +112,14 @@
             try {
                 $conn = $this -> __construct();
                 $conn->set_charset("utf8");
+<<<<<<< HEAD
                 $sql = "UPDATE user SET user.$row = '$value' WHERE user.userid=$id LIMIT 1";
                 if (mysqli_query($conn, $sql)) {
                     $_SESSION["userfullname"] = $value;
+=======
+                $sql = "UPDATE user SET user.$row = $value WHERE user.userid=$id LIMIT 1";
+                if (mysqli_query($conn, $sql)) {
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     $this -> closeConnection();
                     return true;
                 }

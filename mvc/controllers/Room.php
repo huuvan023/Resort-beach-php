@@ -148,6 +148,7 @@ class Room extends Controller {
             $data = NULL;
             $dateArrive = $dateLeave = $userID = $roomID = $price ="";
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
+<<<<<<< HEAD
                 if( isset($_SESSION["user"]) ) {
                     $dateArrive = $this -> test_input($_POST["dateArrive"]);
                     $dateLeave = $this -> test_input($_POST["dateLeave"]);
@@ -175,6 +176,30 @@ class Room extends Controller {
                 else {
                     $data = array( "fail" => "Bạn chưa đăng nhập! Hãy đăng nhập để đặt phòng");
                 }
+=======
+                $dateArrive = $this -> test_input($_POST["dateArrive"]);
+                $dateLeave = $this -> test_input($_POST["dateLeave"]);
+                $userID = $this -> test_input($_POST["userID"]);
+                $roomID = $this -> test_input($_POST["roomID"]);
+                $price = $this -> test_input($_POST["price"]);
+                $model = new BookingModel();
+                $check = $model -> checkDateValidate($roomID, $dateArrive, $dateLeave);
+                    if ( $check == true   ) {
+                        $bool = $model -> insertBooking($dateArrive, $dateLeave, $userID, $roomID, $price);
+                        if ( $bool ){
+                            require_once "./mvc/models/RoomsModel.php";
+                            $m = new RoomsModel();
+                            $m -> insertPopularRoom($roomID);
+                            $data = array( 'success'  => "Đã đặt phòng");
+                        }
+                        else {
+                            $data = array( 'fail'  => "Có lỗi khi đặt phòng");
+                        }
+                    }
+                    else {
+                        $data = array( "fail" => "Sai định dạng ngày hoặc đã phòng đã được đặt");
+                    }
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                 echo json_encode($data);
             }
         }
@@ -267,7 +292,11 @@ class Room extends Controller {
                         </div>
                         <div class="room-card-discription">
                             <p>
+<<<<<<< HEAD
                             '.substr($arr[$i]['discription'], 0, 1000).'
+=======
+                            '.substr($arr[$i]['discription'], 0, 300).'
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                             </p>
                         </div>
                     </div>

@@ -213,6 +213,7 @@
                 echo "Something was wrong". $e;
             }
         }
+<<<<<<< HEAD
         public function getRoomNews() {
             $conn = $this -> __construct();
             $conn->set_charset("utf8");
@@ -229,6 +230,11 @@
             catch( Exception $e) {
                 echo "Something was wrong". $e;
             }
+=======
+        public function check(){
+            echo "b";
+            echo $this -> test;
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
         }
     }
 ?>

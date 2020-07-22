@@ -36,6 +36,12 @@
 		<td>
 			<a href="index.php?controller=roomtype/edit&id=<?php echo $value["roomtypeid"] ;?>">Sửa</a>
 		</td>
+<<<<<<< HEAD
+=======
+		<td>
+			<a href="" onclick="delRoomType('<?php echo $value["roomtypeid"];?>')">Xóa</a>
+		</td>
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 	</tr>
 	<?php } ?>
 

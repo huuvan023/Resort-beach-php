@@ -1,8 +1,15 @@
 
+<<<<<<< HEAD
 <!-- <h1 style="text-align: center; font-weight: bold;font-style: italic;">BEACH RESORT</h1> -->
 
 
 <!-- <table class="table table-bordered table-hover" style="text-align: center; align-items: center;">
+=======
+<h1 style="text-align: center; font-weight: bold;font-style: italic;">BEACH RESORT</h1>
+
+
+<table class="table table-bordered table-hover" style="text-align: center; align-items: center;">
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
     <tr>
         <td >Số phòng đã đặt</td>
         <td ><?php echo $bookingCount ?></td>
@@ -19,6 +26,7 @@
         <td >Số tài khoản hiện có</td>
         <td ><?php echo $userCount ?></td>
     </tr>
+<<<<<<< HEAD
 </table> -->
 <!-- Page Heading -->
 <div class="row">
@@ -245,3 +253,6 @@
     </div>
 </div>
 <!-- /.row -->
+=======
+</table>
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8

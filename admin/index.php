@@ -21,9 +21,14 @@
 		if ( $_POST["action"]=="delete" ) {
 			$id = $_POST["id"];
 			$model = new Model();
+<<<<<<< HEAD
 			$a = $model->execute("delete from booking where userid=$id");		
             $b = $model->execute("delete from user where userid=$id");	
 			if( $a && $b ) {
+=======
+			$a = $model->execute("delete from user where userid=$id");		
+			if( $a ) {
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 				echo "thanh cong";
 			}
 		}
@@ -32,7 +37,10 @@
 			$username = $fullname = $email = $password = $repass = $gender = $phone = $address ="";
 			// echo "thanh cong";
 			if( isset($_POST["fullname"]) ) {
+<<<<<<< HEAD
 				
+=======
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 				$fullname = test_input($_POST["fullname"]);
 				$username = $_POST["username"];
 				$email =  $_POST["email"];
@@ -46,6 +54,7 @@
 
 	 			$model = new Model();
 
+<<<<<<< HEAD
 	 			if($password == $repass){
 					
                     $emailCheckUS = $model->count("SELECT * FROM user WHERE email='$email'");
@@ -71,6 +80,20 @@
 			else {
 				echo "Khong co ten!";
 			}
+=======
+	 			if($password != $repass){
+
+	 			}
+	 			else{
+	 				$a = $model->execute("insert into user(fullname, loginname, password, email, gender, phonenumber, vkey, address, confirm)
+			 				value('$fullname', '$username', '$password', '$email', '$gender', '$phone', '$strVkey', '$address', '1') ");
+		 			if( $a ){
+		 				echo "thanh cong";
+		 			}
+	 			}
+	 			
+			}
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 		}
 		// chỉnh sửa thông tin user
 		if( $_POST["action"]=="edit"){
@@ -102,10 +125,15 @@
 		if ( $_POST["action"]=="delRoom" ) {
 			$id = $_POST["id"];
 			$model = new Model();
+<<<<<<< HEAD
             $c = $model->execute("delete from booking where roomid=$id");	
             $b = $model->execute("delete from roomimage where roomid=$id");	
 			$a = $model->execute("delete from room where roomid=$id");		
 			if( $a && $b && $c ) {
+=======
+			$a = $model->execute("delete from room where roomid=$id");		
+			if( $a ) {
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 				echo "thanh cong";
 			}
 		}
@@ -172,7 +200,11 @@
 				$a5 = $model->execute("update room set roomrate='$roomrate' where roomid='$id'");
 				$a6 = $model->execute("update room set discription='$discription' where roomid='$id'");
 				$a7 = $model->execute("update room set allowpet=b'$allowpet' where roomid='$id'");
+<<<<<<< HEAD
                 $a8 = $model->execute("update booking set price='$roomprice' where roomid='$id'");
+=======
+
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 
 				if(!empty($_FILES)){
 					// thêm ảnh			
@@ -220,7 +252,11 @@
 		 				echo "thanh cong" ;
 		 			}
 		 			else {
+<<<<<<< HEAD
 		 				echo "insert into roomimage(roomid, image1, image2, image3) value('$roomid', '$img1', '$img2', '$img3')";
+=======
+		 				echo "loi!";
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 		 			}	
 
 	 				
@@ -334,6 +370,7 @@
 			}
 		}	
 
+<<<<<<< HEAD
         		// xóa booking
 		if ( $_POST["action"]=="deleteBooking" ) {
 			$id = $_POST["id"];
@@ -347,6 +384,8 @@
 			}
 		}
 
+=======
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 	}
 	else {
 			if(isset($_GET["act"]) && $_GET["act"]=="logout"){

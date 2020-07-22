@@ -24,7 +24,11 @@
                             $fetchInfor = $infor -> fetch_assoc();
                             $priceTotal += ($days * $fetchInfor["roomprice"]);
 
+<<<<<<< HEAD
                             $push = ["Room" => $fetchInfor, "Booked" => $row, "RoomOnlyPr" => $days * $fetchInfor["roomprice"]];
+=======
+                            $push = ["Room" => $fetchInfor, "Booked" => $row];
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                             array_push($bookingArr, $push );
                         }
                         $this -> view("UserPage",["Dashboard" => $this->dashboard,"Page" => "booking","Bookings" => $bookingArr,"TotalPrice" => $priceTotal ]);
@@ -47,18 +51,29 @@
             $data = htmlspecialchars($data);        //Escape htmlSpecialChar
             return $data;
         }
+<<<<<<< HEAD
         
+=======
+        //
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
         public function Edit1(){
             if( $_SERVER["REQUEST_METHOD"] == "POST" ) {
                 $data = NULL;
                 $model = $this -> model("UserModel");
                 if( isset($_POST["profileName"]) && $_POST["profileName"] != "" ) {
+<<<<<<< HEAD
                     $a = $this -> test_input($_POST["profileName"]);
                     $exec = $model -> EditUser("fullname",$a,$_SESSION["userid"]);
                     if( $exec )
                         
                         $data = array( 'success'  => "Đổi tên thành công!");
                         
+=======
+                    $a = "'".$this -> test_input($_POST["profileName"])."'";
+                    $exec = $model -> EditUser("fullname",$a,$_SESSION["userid"]);
+                    if( $exec )
+                        $data = array( 'success'  => "Đổi tên thành công!");
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     else 
                         $data = array( 'fail'  => "Có lỗi khi đổi thông tin!");
                 }
@@ -176,7 +191,11 @@
         //Log out
         public function Logout(){
             session_destroy();
+<<<<<<< HEAD
             header("Location: http://resortbeach.epizy.com/");
+=======
+            header("Location: http://localhost/WebProject-2020/");
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
         }
     }
 ?>

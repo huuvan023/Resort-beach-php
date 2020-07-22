@@ -73,7 +73,11 @@ require_once "./mvc/view/Blocks/Loading.php";
                             <label>Nhập mật khẩu mới</label>
                             <input id="userPass" type="password" name="profilePass" placeholder="Mật khẩu..."
                             value="" class="input" required
+<<<<<<< HEAD
                             pattern="^(?=.*[a-z])(?=.*\d).{6,20}$" autofocus 
+=======
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,20}$" autofocus 
+>>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                             oninvalid="this.setCustomValidity('Định dạng mật khẩu không đúng! (Mật khẩu từ 6-20 kí tự, bao gồm kí tự latin chữ thường, chữ hoa, kí tự đặt biệt và số )')"
                             oninput="this.setCustomValidity('')" title="Mật khẩu bao gồm kí tự, số, kí tự đặt biệt"  />
                         </div>

@@ -57,11 +57,27 @@
 
 <ul class="paginate">
 	<?php for($i=1;$i<=$page_show; $i++) { ?>
-	<li><a href="index.php?controller=users/list&p=<?php echo $i?>"><?php echo $i; ?></a></li>
+	<a href="index.php?controller=users/list&p=<?php echo $i; ?>" style="font-weight: bold;"><li><?php echo $i; ?></li></a>
 	<?php } ?>
+
+	<?php
+		$page_index = isset($_GET["p"])?$_GET["p"]:1;
+		if($page_index>1) { 
+	?>
+	<a href="index.php?controller=users/list&p=<?php echo $page_index - 1 ;?>"><li> << </li></a>
+	<?php } ?>
+
+	<?php
+		$page_index2 = isset($_GET["p"])?$_GET["p"]:1;
+		if($page_index2<$page_show) { 
+	?>
+	<a href="index.php?controller=users/list&p=<?php echo $page_index2 + 1 ;?>"><li> >> </li></a>
+	<?php } ?>
+	
 </ul>
 <label style="float: right;">
 	<?php 
-		echo $_GET["p"];
- 	?>
+		$page_index = isset($_GET["p"])?$_GET["p"]:1;
+		echo $page_index;
+	?>
 </label>

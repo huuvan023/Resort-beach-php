@@ -242,3 +242,7 @@ ul.alert-dropdown {
 .paginate li:hover a {
     color: white;
 }
+.imageFormat {
+    width: 400px;
+    height: 250px;  
+}

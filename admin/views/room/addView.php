@@ -76,11 +76,7 @@
 					<tr>
 						<td></td>
 						<td>
-<<<<<<< HEAD
 							<button type="submit" class="btn btn-primary" id="smUs">Thêm phòng mới</button>  
-=======
-							<button type="submit" class="btn btn-primary" id="smUs">Tạo tài khoản mới</button>  
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 							<a href="index.php?controller=room/list" class="btn btn-success">Quay Lại</a>
 						</td>
 					</tr>

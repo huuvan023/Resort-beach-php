@@ -84,11 +84,8 @@ $(document).ready(function(){
       dataType:"json",
       success: function(data)
         {
-<<<<<<< HEAD
           var tenmoi = $("#nameMod").val();
           console.log("Dasd");
-=======
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
             if( data.success ){
               option = {
                 content: data.success ,
@@ -100,13 +97,9 @@ $(document).ready(function(){
               }
               new jBox('Notice', option);
               $("#"+field+"").text(modVl);
-<<<<<<< HEAD
               $("#nameHeader").text(tenmoi);
               handleToggle(handleTggl);
               
-=======
-              handleToggle(handleTggl);
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
             }
             if( data.fail ) {
               option = {

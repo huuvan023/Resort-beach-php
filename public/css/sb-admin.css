@@ -41,7 +41,6 @@ body {
         padding: 10px;
     }
 }
-<<<<<<< HEAD
 .Rdiscription {
     height: 100px !important;
     overflow-y: auto;
@@ -51,8 +50,6 @@ body {
     width: 200px;
     height: 100px;
 }
-=======
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 
 /* Top Navigation */
 
@@ -253,11 +250,4 @@ ul.alert-dropdown {
 }
 .paginate li:hover a {
     color: white;
-<<<<<<< HEAD
-=======
-}
-.imageFormat {
-    width: 400px;
-    height: 250px;  
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 }

@@ -10,7 +10,6 @@
     <meta name="author" content="">
 
     <title>Admin Beach Resort</title>
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -32,21 +31,6 @@
 
     <!-- Custom Fonts -->
     <link href="http://localhost/WebProject-2020/public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-=======
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- Bootstrap Core CSS -->
-    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../public/css/sb-admin.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="../public/css/plugins/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -83,11 +67,7 @@
                         <?php
                             echo isset($_SESSION["account"]) ? $_SESSION["name"]:"";
                         ?>
-<<<<<<< HEAD
                          
-=======
-                        <i class="fa fa-fw fa-caret-down"></i>
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     </a>
 
                     <ul class="dropdown-menu">
@@ -152,7 +132,6 @@
         // thêm mới 1 user
         function submidFunc(){
             event.preventDefault();
-<<<<<<< HEAD
             if( $("#passCurr").val() === $("#passConfir").val() ) {
                 $.ajax({
                     url: "http://localhost/WebProject-2020/admin/index.php",
@@ -172,29 +151,13 @@
                 window.alert("Mật khẩu và mật khẩu xác nhận phải giống nhau!");
             }
 
-=======
-            $.ajax({
-            url: "/WebProject-2020/admin/index.php",
-            method:"POST",
-            data:$("#formInputAdduser").serialize() + "&action=add",
-            success:function(data){
-                if( data.trim() === "thanh cong") {
-                 window.location.href = "/WebProject-2020/admin/index.php?controller=users/list"; 
-              } 
-            }
-            });
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
         }
         // xóa 1 user
         function onDelete(id) {
             var option = window.confirm('Bạn có muốn xóa không?');
             if(option == true){
                 $.ajax({
-<<<<<<< HEAD
                     url: "http://localhost/WebProject-2020/admin/index.php",
-=======
-                    url: "/WebProject-2020/admin/index.php",
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     method:"POST",
                     data:"action=delete"+"&id=" + id,
                     success:function(data){
@@ -214,20 +177,12 @@
             if(option == true){
                 event.preventDefault();
                 $.ajax({
-<<<<<<< HEAD
                     url: "http://localhost/WebProject-2020/admin/index.php",
-=======
-                    url: "/WebProject-2020/admin/index.php",
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     method:"POST",
                     data:$("#formInputEditUs").serialize() + "&action=edit"+"&id=" + id,
                     success:function(data){
                         if( data.trim() === "thanh cong") {
-<<<<<<< HEAD
                             window.location.href = "http://localhost/WebProject-2020/admin/index.php?controller=users/list"; 
-=======
-                            window.location.href = "/WebProject-2020/admin/index.php?controller=users/list"; 
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                         }
                     }
                 });
@@ -246,11 +201,7 @@
             var option = window.confirm('Bạn có muốn xóa không?');
             if(option == true){
                 $.ajax({
-<<<<<<< HEAD
                     url: "http://localhost/WebProject-2020/admin/index.php",
-=======
-                    url: "/WebProject-2020/admin/index.php",
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     method:"POST",
                     data:"action=delRoom"+"&id=" + id,
                     success:function(data){
@@ -279,11 +230,7 @@
             form_data.append("allowpet", document.getElementById('ALLPet').value);
             form_data.append("action","addNewRoom");
             $.ajax({
-<<<<<<< HEAD
                 url: "http://localhost/WebProject-2020/admin/index.php",
-=======
-                url: "/WebProject-2020/admin/index.php",
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                 method:"POST",
                 data: form_data,
                 contentType: false,
@@ -295,11 +242,7 @@
                         alert("id phòng đã tồn tại, vui lòng chọn id khác");
                     }
                     if(data.trim() == "thanh cong"){
-<<<<<<< HEAD
                         window.location.href = "http://localhost/WebProject-2020/admin/index.php?controller=room/list";
-=======
-                        window.location.href = "/WebProject-2020/admin/index.php?controller=room/list";
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     }
                 }
             });
@@ -319,11 +262,7 @@
             
             form_data.append("action","edit_Room");
             $.ajax({
-<<<<<<< HEAD
                 url: "http://localhost/WebProject-2020/admin/index.php",
-=======
-                url: "/WebProject-2020/admin/index.php",
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                 method:"POST",
                 data: form_data,
                 contentType: false,
@@ -332,24 +271,12 @@
                 success:function(data){
                     //console.log(data);
                     if(data.trim() == "thanh cong"){
-<<<<<<< HEAD
                         window.location.href = "http://localhost/WebProject-2020/admin/index.php?controller=room/list";
-=======
-                        window.location.href = "/WebProject-2020/admin/index.php?controller=room/list";
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     }
                 }
             });
         }
         // -----end room--------
-<<<<<<< HEAD
-=======
-
-
-
-
-
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
         // ------Roomimage--------
         // thêm mới ảnh phòng
         function addImage(){
@@ -358,7 +285,6 @@
             form_data.append("image1", document.getElementById('image1').files[0]);
             form_data.append("image2", document.getElementById('image2').files[0]);
             form_data.append("image3", document.getElementById('image3').files[0]);
-<<<<<<< HEAD
             var strr = document.getElementById('RID').value;
             var dttt = strr.split("-", 1);
             dttt = dttt.toString();
@@ -366,26 +292,15 @@
             form_data.append("action","addNewImage");
             $.ajax({
                 url: "http://localhost/WebProject-2020/admin/index.php",
-=======
-            form_data.append("roomid", document.getElementById('RID').value);
-            form_data.append("action","addNewImage");
-            $.ajax({
-                url: "/WebProject-2020/admin/index.php",
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                 method:"POST",
                 data: form_data,
                 contentType: false,
                 cache: false,
                 processData: false, 
                 success:function(data){
-<<<<<<< HEAD
                     console.log(data);
                     if(data.trim() == "thanh cong"){
                         window.location.href = "http://localhost/WebProject-2020/admin/index.php?controller=roomimage/list";
-=======
-                    if(data.trim() == "thanh cong"){
-                        window.location.href = "/WebProject-2020/admin/index.php?controller=roomimage/list";
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     }
                 }
             });
@@ -395,11 +310,7 @@
             var option = window.confirm('Bạn có muốn xóa không?');
             if(option == true){
                 $.ajax({
-<<<<<<< HEAD
                     url: "http://localhost/WebProject-2020/admin/index.php",
-=======
-                    url: "/WebProject-2020/admin/index.php",
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     method:"POST",
                     data:"action=delImg"+"&id=" + id,
                     success:function(data){
@@ -423,11 +334,7 @@
             form_data.append("roomid", document.getElementById('RID').value);
             form_data.append("action","edit_Image");
             $.ajax({
-<<<<<<< HEAD
                 url: "http://localhost/WebProject-2020/admin/index.php",
-=======
-                url: "/WebProject-2020/admin/index.php",
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                 method:"POST",
                 data: form_data,
                 contentType: false,
@@ -439,11 +346,7 @@
                         alert("Vui lòng chọn ảnh cần cập nhật!");
                     }
                     if(data.trim() == "thanh cong"){
-<<<<<<< HEAD
                         window.location.href = "http://localhost/WebProject-2020/admin/index.php?controller=roomimage/list";
-=======
-                        window.location.href = "/WebProject-2020/admin/index.php?controller=roomimage/list";
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     }
                 }
             });
@@ -466,11 +369,7 @@
             form_data.append("roomprice_range2", document.getElementById('roomprice_range2').value);
             form_data.append("action","addNewRoomType");
             $.ajax({
-<<<<<<< HEAD
                 url: "http://localhost/WebProject-2020/admin/index.php",
-=======
-                url: "/WebProject-2020/admin/index.php",
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                 method:"POST",
                 data: form_data,
                 contentType: false,
@@ -478,11 +377,7 @@
                 processData: false, 
                 success:function(data){
                     if(data.trim() == "thanh cong"){
-<<<<<<< HEAD
                         window.location.href = "http://localhost/WebProject-2020/admin/index.php?controller=roomtype/list";
-=======
-                        window.location.href = "/WebProject-2020/admin/index.php?controller=roomtype/list";
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     }
                 }
             });
@@ -492,11 +387,7 @@
             var option = window.confirm('Bạn có muốn xóa không?');
             if(option == true){
                 $.ajax({
-<<<<<<< HEAD
                     url: "http://localhost/WebProject-2020/admin/index.php",
-=======
-                    url: "/WebProject-2020/admin/index.php",
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     method:"POST",
                     data:"action=deleteRoomType"+"&id=" + id,
                     success:function(data){
@@ -520,11 +411,7 @@
             form_data.append("roomtypeimg", document.getElementById('roomtypeimg').files[0]);
             form_data.append("action","editRoomType");
             $.ajax({
-<<<<<<< HEAD
                 url: "http://localhost/WebProject-2020/admin/index.php",
-=======
-                url: "/WebProject-2020/admin/index.php",
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                 method:"POST",
                 data: form_data,
                 contentType: false,
@@ -532,18 +419,13 @@
                 processData: false, 
                 success:function(data){
                     if(data.trim() == "thanh cong"){
-<<<<<<< HEAD
                         window.location.href = "http://localhost/WebProject-2020/admin/index.php?controller=roomtype/list";
-=======
-                        window.location.href = "/WebProject-2020/admin/index.php?controller=roomtype/list";
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
                     }
                 }
             });
         }
 
         // ---------end roomtype----------
-<<<<<<< HEAD
            // xóa booking
         function deleteBooking(id,dateAR,dateLE) {
             var option = window.confirm('Bạn có muốn xóa không?');
@@ -563,13 +445,10 @@
                 console.log("cancer pressed");
             }
         }
-=======
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
               
     </script>
 
     <!-- jQuery -->
-<<<<<<< HEAD
     <script src="http://localhost/WebProject-2020/public/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -579,17 +458,6 @@
     <script src="http://localhost/WebProject-2020/public/js/plugins/morris/raphael.min.js"></script>
     <script src="http://localhost/WebProject-2020/public/js/plugins/morris/morris.min.js"></script>
     <script src="http://localhost/WebProject-2020/public/js/plugins/morris/morris-data.js"></script>
-=======
-    <script src="../public/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../public/js/bootstrap.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="../public/js/plugins/morris/raphael.min.js"></script>
-    <script src="../public/js/plugins/morris/morris.min.js"></script>
-    <script src="../public/js/plugins/morris/morris-data.js"></script>
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
        
 
 </body>

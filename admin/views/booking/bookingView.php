@@ -15,10 +15,7 @@
 		<td >Ngày đi</td>
 		<td >Giá($)</td>
 		<td >Chi tiết đặt phòng</td>
-<<<<<<< HEAD
 		<td>Cập nhật</td>
-=======
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 	</tr>
 
 	<?php
@@ -35,12 +32,9 @@
 		<td><?php echo $value["dateleave"]; ?></td>
 		<td><?php echo $value["price"]; ?></td>
 		<td><?php echo $value["bookingdetail"]; ?></td>
-<<<<<<< HEAD
 		<td>
 			<a onclick="deleteBooking(<?php echo $value["userid"];?>,'<?php echo $value["datearrive"];?>','<?php echo $value["dateleave"];?>')" href="#">Xóa</a>
 		</td>
-=======
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
 	</tr>
 	<?php } ?>
 </table>

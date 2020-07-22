@@ -6,11 +6,7 @@
          $servername = "localhost";
          $username = "root";
          $password = ""; 
-<<<<<<< HEAD
          $dbname = "resortProject";
-=======
-         $dbname = "resortproject";
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
             $conn = mysqli_connect($servername, $username, $password, $dbname);
             // Check connection
             if (!$conn) {

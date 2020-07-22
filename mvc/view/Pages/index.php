@@ -130,7 +130,6 @@ require_once "./mvc/view/Blocks/Header.php";
             <h1>Phòng mới</h1>
             <div class="line"></div>
             <div class="new-room">
-<<<<<<< HEAD
 
                 <?php
                     if( isset($data["RommNew"]) ) {
@@ -178,34 +177,6 @@ require_once "./mvc/view/Blocks/Header.php";
                     }
                 ?>
 
-=======
-                <div class="room-card row">
-                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 imgmid">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg">
-                    </div>
-                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                        <div class="room-card-content">
-                            <h2>Ocean View Suite</h2>
-                            <p>Loại phòng: <span>Phòng đơn</span></p>
-                            <p>Giá phòng: <span>$500</span></p>
-                            <a href="#">Xem chi tiết</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="room-card row">
-                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 imgmid">
-                        <img src="<?php echo $data["Dashboard"] ?>/public/gallery/4056cbae-z-cr-800x450.jpg">
-                    </div>
-                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                        <div class="room-card-content">
-                            <h2>Ocean View Suite</h2>
-                            <p>Loại phòng: <span>Phòng đơn</span></p>
-                            <p>Giá phòng: <span>$500</span></p>
-                            <a href="#">Xem chi tiết</a>
-                        </div>
-                    </div>
-                </div>
->>>>>>> 0c797f9db95e8ec3a86cf17372cb6156cb50d0f8
             </div>
         </div>
     </section>

@@ -85,7 +85,6 @@ $(document).ready(function(){
       success: function(data)
         {
           var tenmoi = $("#nameMod").val();
-          console.log("Dasd");
             if( data.success ){
               option = {
                 content: data.success ,

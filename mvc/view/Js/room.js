@@ -56,9 +56,6 @@ $(document).ready(function(){
         url: escapeHtml("/WebProject-2020/Room/RoomSort"),
         method:"POST",
         data:"action=" + action + "&type=" + type + "&display=" +dis+ "&filterName=" + filterName + "&filterType=" +filterType+ "&inputPrice=" +inputPrice+ "&filterMaxNum=" +filterMaxNum,
-        beforeSend:function(){
-          console.log("action=" + action + "&type=" + type + "&display=" +dis+ "&filterName=" + filterName + "&filterType=" +filterType+ "&inputPrice=" +inputPrice+ "&filterMaxNum=" +filterMaxNum)
-        },
         success:function(data)
         {
           $("#view").html(data);      
@@ -66,11 +63,9 @@ $(document).ready(function(){
       });
     }
     $('.common_selector').click(function(){
-      //console.log($("#inputPrice").val())
       modifiedData();
     });
     $('.common_selector').change(function(){
-      //console.log($("#inputPrice").val())
       modifiedData();
     });
     AOS.init({

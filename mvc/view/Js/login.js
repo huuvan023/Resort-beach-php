@@ -133,7 +133,6 @@ $('#rsPass').on('submit', function(event){
     },
     success:function(data)
     {
-      console.log(data);
      if(data.success)
      {
       //sử dụng sweetAlert

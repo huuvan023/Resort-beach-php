@@ -155,7 +155,8 @@ class Room extends Controller {
                     $roomID = $this -> test_input($_POST["roomID"]);
                     $price = $this -> test_input($_POST["price"]);
                     $model = new BookingModel();
-                    $check = $model -> checkDateValidate($roomID, $dateArrive, $dateLeave);
+                    if( strtotime($dateArrive) != strtotime($dateLeave)  ) {
+                        $check = $model -> checkDateValidate($roomID, $dateArrive, $dateLeave);
                         if ( $check == true   ) {
                             $bool = $model -> insertBooking($dateArrive, $dateLeave, $userID, $roomID, $price);
                             if ( $bool ){
@@ -171,6 +172,10 @@ class Room extends Controller {
                         else {
                             $data = array( "fail" => "Sai định dạng ngày hoặc đã phòng đã được đặt");
                         }
+                    }
+                    else {
+                        $data = array( "fail" => "Sai định dạng ngày");
+                    }
                 }
                 else {
                     $data = array( "fail" => "Bạn chưa đăng nhập! Hãy đăng nhập để đặt phòng");

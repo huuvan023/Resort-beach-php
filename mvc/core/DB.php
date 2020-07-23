@@ -12,7 +12,7 @@
         protected $servername = "localhost";
         protected $username = "root";
         protected $password = ""; 
-        protected $dbname = "resortProject";
+        protected $dbname = "resortproject";
         function __construct()
         {
             $conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
